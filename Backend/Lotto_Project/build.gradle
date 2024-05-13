@@ -1,0 +1,40 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.5'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	// 引入 Spring Boot 的 Web 部分，用於開發 Web 應用程序。
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 引入 Spring Boot 的 JPA 部分，用於支持與 JPA 相關的數據庫操作。
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// 引入 MySQL 連接器，用於與 MySQL 數據庫建立連接。
+	implementation 'mysql:mysql-connector-java:8.0.31'
+	// 引入 Springfox Swagger UI，用於自動化生成和展示 API 文檔。
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	// 引入 Springfox Swagger 2，用於自動化生成和展示 API 文檔。
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	// 引入 Spring Boot 的郵件相關庫，用於郵件發送功能。
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	// 引入 Spring Boot 的測試相關庫，用於編寫單元測試和集成測試。
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// 引入 JUnit 平台啟動器，用於執行測試。
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
