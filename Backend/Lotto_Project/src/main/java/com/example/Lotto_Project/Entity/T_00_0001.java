@@ -26,7 +26,7 @@ public class T_00_0001 {
 
 	// -----------------------------------------------
 	public T_00_0001() {
-		
+
 	}
 
 	public T_00_0001(String table_name, int t_serialNumber_1, LocalDateTime t_date_1, LocalDateTime t_date_2,
@@ -80,6 +80,7 @@ public class T_00_0001 {
 	}
 	// -----------------------------------------------
 	// Note :
-	// 流水號註記 : @GeneratedValue(strategy = GenerationType.IDENTITY)
+	// 流水號 註記 : @GeneratedValue(strategy = GenerationType.IDENTITY)
+	// UUID 註記 : @Type(type = "uuid-char")
 	// -----------------------------------------------
 }

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name = "t_01_0002")
 public class T_01_0002 {
 	// -----------------------------------------------
-	// 管理編碼的table_1
+	// 管理編碼的table_2
 	// -----------------------------------------------
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
