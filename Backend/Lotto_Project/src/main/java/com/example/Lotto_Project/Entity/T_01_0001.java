@@ -13,6 +13,8 @@ import javax.persistence.Table;
 @Table(name = "t_01_0001")
 public class T_01_0001 {
 	// -----------------------------------------------
+	// 管理編碼的table_1
+	// -----------------------------------------------
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_serial_number_1")

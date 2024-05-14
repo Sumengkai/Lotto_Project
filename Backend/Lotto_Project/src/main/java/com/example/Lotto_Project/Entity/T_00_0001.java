@@ -10,6 +10,8 @@ import javax.persistence.Table;
 @Table(name = "t_00_0001")
 public class T_00_0001 {
 	// -----------------------------------------------
+	// 管理需要流水號的table
+	// -----------------------------------------------
 	@Id
 	@Column(name = "table_name")
 	private String table_name;
@@ -24,6 +26,7 @@ public class T_00_0001 {
 
 	// -----------------------------------------------
 	public T_00_0001() {
+		
 	}
 
 	public T_00_0001(String table_name, int t_serialNumber_1, LocalDateTime t_date_1, LocalDateTime t_date_2,
