@@ -4,8 +4,11 @@ import com.example.Lotto_Project.Entity.T_00_0001;
 
 public class Lotto_Res_1 {
 	// -----------------------------------------------
+	// 回傳訊息
 	private String rtn_Message;
+	// 回應訊息代碼
 	private String rtn_Code;
+	// 物件<T_00_0001>
 	private T_00_0001 t_00_0001;
 
 	// -----------------------------------------------
