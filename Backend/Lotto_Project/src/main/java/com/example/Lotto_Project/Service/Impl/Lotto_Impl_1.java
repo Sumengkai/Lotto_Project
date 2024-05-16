@@ -136,7 +136,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		T_01_0001 t_01_0001 = new T_01_0001();
 		// -------------------------
 		// 邏輯處理
-		// 放Table名稱進去。管理流水號
+		// 抓資料 - T_01_0001
 		Optional<T_01_0001> t_01_0001_O = t_01_0001_Dao.findByTableCode1(T_01_0001_t_code_1);
 		// 是null會掉進去
 		// 基本上不會
@@ -179,12 +179,15 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
-		String rtn_Message_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
-		String rtn_Code_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
 		List<T_01_0001> T_01_0001_List = t_01_0001_Dao.search_By_TableCode1_TableDescribe(T_01_0001_t_code_1,
 				t_describe);
 		// -------------------------
 		// 邏輯處理
+		if (T_01_0001_List.size() == 0) {
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, T_01_0001_List);
+		}
 		// -------------------------
 		_logger.info("查詢 : T_01_0001 (End) _ 1 ");
 		_logger.info("-----------------------------------------------");
@@ -193,14 +196,46 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
-	// "刪除" - T_01_0001
+	// "刪除" - T_01_0001 (未完成)
 	@Override
 	public Lotto_Res_1 Delete__T_01_0001(Lotto_Req_1 req) {
-		return null;
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("刪除 : T_01_0001 (Start)");
+		_logger.info("方法名稱 : " + "Delete__T_01_0001");
+		// -------------------------
+		// 需求參數
+		String T_01_0001_t_code_1 = req.getT_01_0001__t_code_1();
+		// -------------------------
+		// 一般參數
+		// 訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// -------------------------
+		// 邏輯處理
+		// 還需要處理其他檢查，以及連同其他表一起刪除。
+		// 抓資料 - T_01_0001
+		Optional<T_01_0001> t_01_0001_O = t_01_0001_Dao.findByTableCode1(T_01_0001_t_code_1);
+		// 是null會掉進去
+		// 基本上不會
+		if (!t_01_0001_O.isPresent()) {
+			_logger.info("資料找不到。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		t_01_0001_Dao.deleteByTableCode1(T_01_0001_t_code_1);
+		// -------------------------
+		_logger.info("刪除 : T_01_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1);
 	}
 
-	// ================================================
-	// "新增"或"修改" - T_00_0001 (私有)
+	// -----------------------------------------------
+	// ===============================================
+	// (私有方法)
+	// "新增"或"修改" - T_00_0001
 	private Lotto_Res_1 Create_Update__T_00_0001(String req_table_name) {
 		// -------------------------
 		_logger.info("-----------------------------------------------");

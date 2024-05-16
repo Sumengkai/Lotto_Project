@@ -15,7 +15,11 @@ import com.example.Lotto_Project.Entity.T_01_0001;
 public interface T_01_0001_Dao extends JpaRepository<T_01_0001, Integer> {
 	// -----------------------------------------------
 	// "查詢" - T_01_0001 - By 編碼_01
-	public Optional<T_01_0001> findByTableCode1(String tCode1);
+	public Optional<T_01_0001> findByTableCode1(String tableCode1);
+
+	// -----------------------------------------------
+	// "刪除" - T_01_0001 - By 編碼_01
+	public void deleteByTableCode1(String tableCode1);
 
 	// -----------------------------------------------
 	@Query("SELECT t FROM T_01_0001 t "

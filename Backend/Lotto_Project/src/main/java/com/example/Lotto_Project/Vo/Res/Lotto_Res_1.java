@@ -45,6 +45,11 @@ public class Lotto_Res_1 {
 		this.t_01_0001_List = t_01_0001_List;
 	}
 
+	public Lotto_Res_1(String rtn_Message, String rtn_Code) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+	}
+
 	// -----------------------------------------------
 
 	public String getRtn_Message() {
