@@ -4,8 +4,12 @@ public enum Lotto_RtnCode_1 {
 	// -----------------------------------------------
 	// 管理"回傳訊息"的"Enum"
 	// -----------------------------------------------
-	//
-	SUCCESSFUL("200", "成功");
+	// Successful
+	SUCCESSFUL("200", "成功"),
+	// Duplicate data
+	DUPLICATE_DATA("400", "資料重複"),
+	// Not found data
+	NOT_FOUND_DATA("400", "資料找不到");
 
 	// -----------------------------------------------
 	private String code;

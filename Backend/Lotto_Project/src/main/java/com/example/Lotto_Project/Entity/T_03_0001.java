@@ -19,125 +19,125 @@ public class T_03_0001 {
 	@Id
 	@Column(name = "t_uuid_1")
 	@Type(type = "uuid-char")
-	private UUID t_uuid_1;
+	private UUID tableUuid1;
 	@Column(name = "user_account")
-	private String user_account;
+	private String userAccount;
 	@Column(name = "user_password")
-	private String user_password;
+	private String userPassword;
 	@Column(name = "user_name")
-	private String user_name;
+	private String userName;
 	@Column(name = "user_gender")
-	private String user_gender;
+	private String userGender;
 	@Column(name = "user_mail")
-	private String user_mail;
+	private String userMail;
 	@Column(name = "company_bol")
-	private String company_bol;
+	private String companyBol;
 	@Column(name = "t_date_1")
-	private LocalDateTime t_date_1;
+	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
-	private LocalDateTime t_date_2;
+	private LocalDateTime tableDate2;
 	@Column(name = "t_special_treatment_1")
-	private String t_special_treatment_1;
+	private String tableSpecialTreatment1;
 
 	// -----------------------------------------------
 	public T_03_0001() {
 
 	}
 
-	public T_03_0001(UUID t_uuid_1, String user_account, String user_password, String user_name, String user_gender,
-			String user_mail, String company_bol, LocalDateTime t_date_1, LocalDateTime t_date_2,
-			String t_special_treatment_1) {
-		this.t_uuid_1 = t_uuid_1;
-		this.user_account = user_account;
-		this.user_password = user_password;
-		this.user_name = user_name;
-		this.user_gender = user_gender;
-		this.user_mail = user_mail;
-		this.company_bol = company_bol;
-		this.t_date_1 = t_date_1;
-		this.t_date_2 = t_date_2;
-		this.t_special_treatment_1 = t_special_treatment_1;
+	public T_03_0001(UUID tableUuid1, String userAccount, String userPassword, String userName, String userGender,
+			String userMail, String companyBol, LocalDateTime tableDate1, LocalDateTime tableDate2,
+			String tableSpecialTreatment1) {
+		this.tableUuid1 = tableUuid1;
+		this.userAccount = userAccount;
+		this.userPassword = userPassword;
+		this.userName = userName;
+		this.userGender = userGender;
+		this.userMail = userMail;
+		this.companyBol = companyBol;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
-
 	// -----------------------------------------------
-	public UUID getT_uuid_1() {
-		return t_uuid_1;
+
+	public UUID getTableUuid1() {
+		return tableUuid1;
 	}
 
-	public void setT_uuid_1(UUID t_uuid_1) {
-		this.t_uuid_1 = t_uuid_1;
+	public void setTableUuid1(UUID tableUuid1) {
+		this.tableUuid1 = tableUuid1;
 	}
 
-	public String getUser_account() {
-		return user_account;
+	public String getUserAccount() {
+		return userAccount;
 	}
 
-	public void setUser_account(String user_account) {
-		this.user_account = user_account;
+	public void setUserAccount(String userAccount) {
+		this.userAccount = userAccount;
 	}
 
-	public String getUser_password() {
-		return user_password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setUser_password(String user_password) {
-		this.user_password = user_password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getUser_gender() {
-		return user_gender;
+	public String getUserGender() {
+		return userGender;
 	}
 
-	public void setUser_gender(String user_gender) {
-		this.user_gender = user_gender;
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
 	}
 
-	public String getUser_mail() {
-		return user_mail;
+	public String getUserMail() {
+		return userMail;
 	}
 
-	public void setUser_mail(String user_mail) {
-		this.user_mail = user_mail;
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 
-	public String getCompany_bol() {
-		return company_bol;
+	public String getCompanyBol() {
+		return companyBol;
 	}
 
-	public void setCompany_bol(String company_bol) {
-		this.company_bol = company_bol;
+	public void setCompanyBol(String companyBol) {
+		this.companyBol = companyBol;
 	}
 
-	public LocalDateTime getT_date_1() {
-		return t_date_1;
+	public LocalDateTime getTableDate1() {
+		return tableDate1;
 	}
 
-	public void setT_date_1(LocalDateTime t_date_1) {
-		this.t_date_1 = t_date_1;
+	public void setTableDate1(LocalDateTime tableDate1) {
+		this.tableDate1 = tableDate1;
 	}
 
-	public LocalDateTime getT_date_2() {
-		return t_date_2;
+	public LocalDateTime getTableDate2() {
+		return tableDate2;
 	}
 
-	public void setT_date_2(LocalDateTime t_date_2) {
-		this.t_date_2 = t_date_2;
+	public void setTableDate2(LocalDateTime tableDate2) {
+		this.tableDate2 = tableDate2;
 	}
 
-	public String getT_special_treatment_1() {
-		return t_special_treatment_1;
+	public String getTableSpecialTreatment1() {
+		return tableSpecialTreatment1;
 	}
 
-	public void setT_special_treatment_1(String t_special_treatment_1) {
-		this.t_special_treatment_1 = t_special_treatment_1;
+	public void setTableSpecialTreatment1(String tableSpecialTreatment1) {
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
 
 }

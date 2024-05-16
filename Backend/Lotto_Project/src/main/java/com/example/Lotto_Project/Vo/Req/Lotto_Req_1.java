@@ -4,7 +4,10 @@ public class Lotto_Req_1 {
 	// -----------------------------------------------
 	// Table名稱
 	private String table_name;
+	// 描述
+	private String t_describe;
 	// T_01_0001
+	private String t_01_0001__t_serial_number_1;
 	private String t_01_0001__t_code_1;
 	private String t_01_0001__t_code_2;
 	private String t_01_0001__t_describe_1;
@@ -18,6 +21,15 @@ public class Lotto_Req_1 {
 	}
 
 	// -----------------------------------------------
+
+	public String getT_01_0001__t_serial_number_1() {
+		return t_01_0001__t_serial_number_1;
+	}
+
+	public void setT_01_0001__t_serial_number_1(String t_01_0001__t_serial_number_1) {
+		this.t_01_0001__t_serial_number_1 = t_01_0001__t_serial_number_1;
+	}
+
 	public String getTable_name() {
 		return table_name;
 	}
@@ -72,6 +84,14 @@ public class Lotto_Req_1 {
 
 	public void setT_01_0001__t_special_treatment_1(String t_01_0001__t_special_treatment_1) {
 		this.t_01_0001__t_special_treatment_1 = t_01_0001__t_special_treatment_1;
+	}
+
+	public String getT_describe() {
+		return t_describe;
+	}
+
+	public void setT_describe(String t_describe) {
+		this.t_describe = t_describe;
 	}
 
 }

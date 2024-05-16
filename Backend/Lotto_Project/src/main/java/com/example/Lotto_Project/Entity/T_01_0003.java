@@ -18,217 +18,193 @@ public class T_01_0003 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_serial_number_1")
-	private int t_serialNumber_1;
+	private int tableSerialNumber1;
 	@Column(name = "t_code_1")
-	private String t_code_1;
+	private String tableCode1;
 	@Column(name = "t_code_2")
-	private String t_code_2;
+	private String tableCode2;
 	@Column(name = "t_describe_1")
-	private String t_describe_1;
+	private String tableDescribe1;
 	@Column(name = "t_describe_2")
-	private String t_describe_2;
+	private String tableDescribe2;
 	@Column(name = "t_describe_3")
-	private String t_describe_3;
+	private String tableDescribe3;
 	@Column(name = "t_describe_4")
-	private String t_describe_4;
+	private String tableDescribe4;
 	@Column(name = "total_several_numbers")
-	private int total_several_numbers;
+	private int totalSeveralNumbers;
 	@Column(name = "winning_total_several_numbers")
-	private int winning_total_several_numbers;
+	private int winningTotalSeveralNumbers;
 	@Column(name = "top_winning_total_several_numbers")
-	private int top_winning_total_several_numbers;
+	private int topWinningTotalSeveralNumbers;
 	@Column(name = "special_total_several_numbers")
-	private int special_total_several_numbers;
+	private int specialTotalSeveralNumbers;
 	@Column(name = "generally_total_several_numbers")
-	private int generally_total_several_numbers;
+	private int generallyTotalSeveralNumbers;
 	@Column(name = "t_date_1")
-	private LocalDateTime t_date_1;
+	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
-	private LocalDateTime t_date_2;
+	private LocalDateTime tableDate2;
 	@Column(name = "table_name")
-	private String table_name;
+	private String tableName;
 	@Column(name = "t_special_treatment_1")
-	private String t_special_treatment_1;
+	private String tableSpecialTreatment1;
 
 	// -----------------------------------------------
 	public T_01_0003() {
 
 	}
 
-	public T_01_0003(String t_code_1, String t_code_2, String t_describe_1, String t_describe_2, String t_describe_3,
-			String t_describe_4, int total_several_numbers, int winning_total_several_numbers,
-			int top_winning_total_several_numbers, int special_total_several_numbers,
-			int generally_total_several_numbers, LocalDateTime t_date_1, LocalDateTime t_date_2, String table_name,
-			String t_special_treatment_1) {
-
-		this.t_code_1 = t_code_1;
-		this.t_code_2 = t_code_2;
-		this.t_describe_1 = t_describe_1;
-		this.t_describe_2 = t_describe_2;
-		this.t_describe_3 = t_describe_3;
-		this.t_describe_4 = t_describe_4;
-		this.total_several_numbers = total_several_numbers;
-		this.winning_total_several_numbers = winning_total_several_numbers;
-		this.top_winning_total_several_numbers = top_winning_total_several_numbers;
-		this.special_total_several_numbers = special_total_several_numbers;
-		this.generally_total_several_numbers = generally_total_several_numbers;
-		this.t_date_1 = t_date_1;
-		this.t_date_2 = t_date_2;
-		this.table_name = table_name;
-		this.t_special_treatment_1 = t_special_treatment_1;
+	public T_01_0003(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
+			String tableDescribe2, String tableDescribe3, String tableDescribe4, int totalSeveralNumbers,
+			int winningTotalSeveralNumbers, int topWinningTotalSeveralNumbers, int specialTotalSeveralNumbers,
+			int generallyTotalSeveralNumbers, LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName,
+			String tableSpecialTreatment1) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDescribe3 = tableDescribe3;
+		this.tableDescribe4 = tableDescribe4;
+		this.totalSeveralNumbers = totalSeveralNumbers;
+		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
+		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
+		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
+		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
-
-	public T_01_0003(int t_serialNumber_1, String t_code_1, String t_code_2, String t_describe_1, String t_describe_2,
-			String t_describe_3, String t_describe_4, int total_several_numbers, int winning_total_several_numbers,
-			int top_winning_total_several_numbers, int special_total_several_numbers,
-			int generally_total_several_numbers, LocalDateTime t_date_1, LocalDateTime t_date_2, String table_name,
-			String t_special_treatment_1) {
-
-		this.t_serialNumber_1 = t_serialNumber_1;
-		this.t_code_1 = t_code_1;
-		this.t_code_2 = t_code_2;
-		this.t_describe_1 = t_describe_1;
-		this.t_describe_2 = t_describe_2;
-		this.t_describe_3 = t_describe_3;
-		this.t_describe_4 = t_describe_4;
-		this.total_several_numbers = total_several_numbers;
-		this.winning_total_several_numbers = winning_total_several_numbers;
-		this.top_winning_total_several_numbers = top_winning_total_several_numbers;
-		this.special_total_several_numbers = special_total_several_numbers;
-		this.generally_total_several_numbers = generally_total_several_numbers;
-		this.t_date_1 = t_date_1;
-		this.t_date_2 = t_date_2;
-		this.table_name = table_name;
-		this.t_special_treatment_1 = t_special_treatment_1;
-	}
-
 	// -----------------------------------------------
-	public int getT_serialNumber_1() {
-		return t_serialNumber_1;
+
+	public int getTableSerialNumber1() {
+		return tableSerialNumber1;
 	}
 
-	public void setT_serialNumber_1(int t_serialNumber_1) {
-		this.t_serialNumber_1 = t_serialNumber_1;
+	public void setTableSerialNumber1(int tableSerialNumber1) {
+		this.tableSerialNumber1 = tableSerialNumber1;
 	}
 
-	public String getT_code_1() {
-		return t_code_1;
+	public String getTableCode1() {
+		return tableCode1;
 	}
 
-	public void setT_code_1(String t_code_1) {
-		this.t_code_1 = t_code_1;
+	public void setTableCode1(String tableCode1) {
+		this.tableCode1 = tableCode1;
 	}
 
-	public String getT_code_2() {
-		return t_code_2;
+	public String getTableCode2() {
+		return tableCode2;
 	}
 
-	public void setT_code_2(String t_code_2) {
-		this.t_code_2 = t_code_2;
+	public void setTableCode2(String tableCode2) {
+		this.tableCode2 = tableCode2;
 	}
 
-	public String getT_describe_1() {
-		return t_describe_1;
+	public String getTableDescribe1() {
+		return tableDescribe1;
 	}
 
-	public void setT_describe_1(String t_describe_1) {
-		this.t_describe_1 = t_describe_1;
+	public void setTableDescribe1(String tableDescribe1) {
+		this.tableDescribe1 = tableDescribe1;
 	}
 
-	public String getT_describe_2() {
-		return t_describe_2;
+	public String getTableDescribe2() {
+		return tableDescribe2;
 	}
 
-	public void setT_describe_2(String t_describe_2) {
-		this.t_describe_2 = t_describe_2;
+	public void setTableDescribe2(String tableDescribe2) {
+		this.tableDescribe2 = tableDescribe2;
 	}
 
-	public String getT_describe_3() {
-		return t_describe_3;
+	public String getTableDescribe3() {
+		return tableDescribe3;
 	}
 
-	public void setT_describe_3(String t_describe_3) {
-		this.t_describe_3 = t_describe_3;
+	public void setTableDescribe3(String tableDescribe3) {
+		this.tableDescribe3 = tableDescribe3;
 	}
 
-	public String getT_describe_4() {
-		return t_describe_4;
+	public String getTableDescribe4() {
+		return tableDescribe4;
 	}
 
-	public void setT_describe_4(String t_describe_4) {
-		this.t_describe_4 = t_describe_4;
+	public void setTableDescribe4(String tableDescribe4) {
+		this.tableDescribe4 = tableDescribe4;
 	}
 
-	public int getTotal_several_numbers() {
-		return total_several_numbers;
+	public int getTotalSeveralNumbers() {
+		return totalSeveralNumbers;
 	}
 
-	public void setTotal_several_numbers(int total_several_numbers) {
-		this.total_several_numbers = total_several_numbers;
+	public void setTotalSeveralNumbers(int totalSeveralNumbers) {
+		this.totalSeveralNumbers = totalSeveralNumbers;
 	}
 
-	public int getWinning_total_several_numbers() {
-		return winning_total_several_numbers;
+	public int getWinningTotalSeveralNumbers() {
+		return winningTotalSeveralNumbers;
 	}
 
-	public void setWinning_total_several_numbers(int winning_total_several_numbers) {
-		this.winning_total_several_numbers = winning_total_several_numbers;
+	public void setWinningTotalSeveralNumbers(int winningTotalSeveralNumbers) {
+		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
 	}
 
-	public int getTop_winning_total_several_numbers() {
-		return top_winning_total_several_numbers;
+	public int getTopWinningTotalSeveralNumbers() {
+		return topWinningTotalSeveralNumbers;
 	}
 
-	public void setTop_winning_total_several_numbers(int top_winning_total_several_numbers) {
-		this.top_winning_total_several_numbers = top_winning_total_several_numbers;
+	public void setTopWinningTotalSeveralNumbers(int topWinningTotalSeveralNumbers) {
+		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
 	}
 
-	public int getSpecial_total_several_numbers() {
-		return special_total_several_numbers;
+	public int getSpecialTotalSeveralNumbers() {
+		return specialTotalSeveralNumbers;
 	}
 
-	public void setSpecial_total_several_numbers(int special_total_several_numbers) {
-		this.special_total_several_numbers = special_total_several_numbers;
+	public void setSpecialTotalSeveralNumbers(int specialTotalSeveralNumbers) {
+		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
 	}
 
-	public int getGenerally_total_several_numbers() {
-		return generally_total_several_numbers;
+	public int getGenerallyTotalSeveralNumbers() {
+		return generallyTotalSeveralNumbers;
 	}
 
-	public void setGenerally_total_several_numbers(int generally_total_several_numbers) {
-		this.generally_total_several_numbers = generally_total_several_numbers;
+	public void setGenerallyTotalSeveralNumbers(int generallyTotalSeveralNumbers) {
+		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
 	}
 
-	public LocalDateTime getT_date_1() {
-		return t_date_1;
+	public LocalDateTime getTableDate1() {
+		return tableDate1;
 	}
 
-	public void setT_date_1(LocalDateTime t_date_1) {
-		this.t_date_1 = t_date_1;
+	public void setTableDate1(LocalDateTime tableDate1) {
+		this.tableDate1 = tableDate1;
 	}
 
-	public LocalDateTime getT_date_2() {
-		return t_date_2;
+	public LocalDateTime getTableDate2() {
+		return tableDate2;
 	}
 
-	public void setT_date_2(LocalDateTime t_date_2) {
-		this.t_date_2 = t_date_2;
+	public void setTableDate2(LocalDateTime tableDate2) {
+		this.tableDate2 = tableDate2;
 	}
 
-	public String getTable_name() {
-		return table_name;
+	public String getTableName() {
+		return tableName;
 	}
 
-	public void setTable_name(String table_name) {
-		this.table_name = table_name;
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
 	}
 
-	public String getT_special_treatment_1() {
-		return t_special_treatment_1;
+	public String getTableSpecialTreatment1() {
+		return tableSpecialTreatment1;
 	}
 
-	public void setT_special_treatment_1(String t_special_treatment_1) {
-		this.t_special_treatment_1 = t_special_treatment_1;
+	public void setTableSpecialTreatment1(String tableSpecialTreatment1) {
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
 
 }

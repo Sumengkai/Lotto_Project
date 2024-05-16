@@ -9,14 +9,20 @@ public interface Lotto_Service_1 {
 //	public Lotto_Res_1 Create_Update__T_00_0001(Lotto_Req_1 req);
 
 	// -----------------------------------------------
-	// "新增" - T_01_0001
+	// "新增"(C) - T_01_0001
 	public Lotto_Res_1 Create__T_01_0001(Lotto_Req_1 req);
 
 	// -----------------------------------------------
-	// "修改" - T_01_0001
+	// "查詢"(R) - T_01_0001
+	public Lotto_Res_1 Search__T_01_0001___1(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "修改"(U) - T_01_0001
 	public Lotto_Res_1 Update__T_01_0001(Lotto_Req_1 req);
 
 	// -----------------------------------------------
-	// "檢查用戶" (單個) - T_03_0001
-	public Lotto_Res_1 Select__T_03_0001(Lotto_Req_1 req);
+	// "刪除"(D) - T_01_0001
+	public Lotto_Res_1 Delete__T_01_0001(Lotto_Req_1 req);
+
+	// -----------------------------------------------
 }

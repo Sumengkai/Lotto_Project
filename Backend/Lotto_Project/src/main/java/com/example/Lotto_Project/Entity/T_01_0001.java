@@ -16,128 +16,116 @@ public class T_01_0001 {
 	// 管理編碼的table_1
 	// -----------------------------------------------
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_serial_number_1")
-	private int t_serialNumber_1;
+	private int tableSerialNumber1;
 	@Column(name = "t_code_1")
-	private String t_code_1;
+	private String tableCode1;
 	@Column(name = "t_describe_1")
-	private String t_describe_1;
+	private String tableDescribe1;
 	@Column(name = "t_describe_2")
-	private String t_describe_2;
+	private String tableDescribe2;
 	@Column(name = "t_date_1")
-	private LocalDateTime t_date_1;
+	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
-	private LocalDateTime t_date_2;
+	private LocalDateTime tableDate2;
 	@Column(name = "table_name")
-	private String table_name;
+	private String tableName;
 	@Column(name = "t_user")
-	private String t_user;
+	private String tableUser;
 	@Column(name = "t_special_treatment_1")
-	private String t_special_treatment_1;
+	private String tableSpecialTreatment1;
 
 	// -----------------------------------------------
 	public T_01_0001() {
 
 	}
 
-	public T_01_0001(int t_serialNumber_1, String t_code_1, String t_describe_1, String t_describe_2,
-			LocalDateTime t_date_1, LocalDateTime t_date_2, String table_name, String t_user,
-			String t_special_treatment_1) {
-		this.t_serialNumber_1 = t_serialNumber_1;
-		this.t_code_1 = t_code_1;
-		this.t_describe_1 = t_describe_1;
-		this.t_describe_2 = t_describe_2;
-		this.t_date_1 = t_date_1;
-		this.t_date_2 = t_date_2;
-		this.table_name = table_name;
-		this.t_user = t_user;
-		this.t_special_treatment_1 = t_special_treatment_1;
+	// 流水號、編碼1、描述1、描述2、時間1、時間2、表名、用戶、特殊處理
+	public T_01_0001(int tableSerialNumber1, String tableCode1, String tableDescribe1, String tableDescribe2,
+			LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName, String tableUser,
+			String tableSpecialTreatment1) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableUser = tableUser;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
-
-	public T_01_0001(String t_code_1, String t_describe_1, String t_describe_2, LocalDateTime t_date_1,
-			LocalDateTime t_date_2, String table_name, String t_user, String t_special_treatment_1) {
-		this.t_code_1 = t_code_1;
-		this.t_describe_1 = t_describe_1;
-		this.t_describe_2 = t_describe_2;
-		this.t_date_1 = t_date_1;
-		this.t_date_2 = t_date_2;
-		this.table_name = table_name;
-		this.t_user = t_user;
-		this.t_special_treatment_1 = t_special_treatment_1;
-	}
-
 	// -----------------------------------------------
-	public int getT_serialNumber_1() {
-		return t_serialNumber_1;
+
+	public int getTableSerialNumber1() {
+		return tableSerialNumber1;
 	}
 
-	public void setT_serialNumber_1(int t_serialNumber_1) {
-		this.t_serialNumber_1 = t_serialNumber_1;
+	public void setTableSerialNumber1(int tableSerialNumber1) {
+		this.tableSerialNumber1 = tableSerialNumber1;
 	}
 
-	public String getT_code_1() {
-		return t_code_1;
+	public String getTableCode1() {
+		return tableCode1;
 	}
 
-	public void setT_code_1(String t_code_1) {
-		this.t_code_1 = t_code_1;
+	public void setTableCode1(String tableCode1) {
+		this.tableCode1 = tableCode1;
 	}
 
-	public String getT_describe_1() {
-		return t_describe_1;
+	public String getTableDescribe1() {
+		return tableDescribe1;
 	}
 
-	public void setT_describe_1(String t_describe_1) {
-		this.t_describe_1 = t_describe_1;
+	public void setTableDescribe1(String tableDescribe1) {
+		this.tableDescribe1 = tableDescribe1;
 	}
 
-	public String getT_describe_2() {
-		return t_describe_2;
+	public String getTableDescribe2() {
+		return tableDescribe2;
 	}
 
-	public void setT_describe_2(String t_describe_2) {
-		this.t_describe_2 = t_describe_2;
+	public void setTableDescribe2(String tableDescribe2) {
+		this.tableDescribe2 = tableDescribe2;
 	}
 
-	public LocalDateTime getT_date_1() {
-		return t_date_1;
+	public LocalDateTime getTableDate1() {
+		return tableDate1;
 	}
 
-	public void setT_date_1(LocalDateTime t_date_1) {
-		this.t_date_1 = t_date_1;
+	public void setTableDate1(LocalDateTime tableDate1) {
+		this.tableDate1 = tableDate1;
 	}
 
-	public LocalDateTime getT_date_2() {
-		return t_date_2;
+	public LocalDateTime getTableDate2() {
+		return tableDate2;
 	}
 
-	public void setT_date_2(LocalDateTime t_date_2) {
-		this.t_date_2 = t_date_2;
+	public void setTableDate2(LocalDateTime tableDate2) {
+		this.tableDate2 = tableDate2;
 	}
 
-	public String getTable_name() {
-		return table_name;
+	public String getTableName() {
+		return tableName;
 	}
 
-	public void setTable_name(String table_name) {
-		this.table_name = table_name;
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
 	}
 
-	public String getT_user() {
-		return t_user;
+	public String getTableUser() {
+		return tableUser;
 	}
 
-	public void setT_user(String t_user) {
-		this.t_user = t_user;
+	public void setTableUser(String tableUser) {
+		this.tableUser = tableUser;
 	}
 
-	public String getT_special_treatment_1() {
-		return t_special_treatment_1;
+	public String getTableSpecialTreatment1() {
+		return tableSpecialTreatment1;
 	}
 
-	public void setT_special_treatment_1(String t_special_treatment_1) {
-		this.t_special_treatment_1 = t_special_treatment_1;
+	public void setTableSpecialTreatment1(String tableSpecialTreatment1) {
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
 
 }
