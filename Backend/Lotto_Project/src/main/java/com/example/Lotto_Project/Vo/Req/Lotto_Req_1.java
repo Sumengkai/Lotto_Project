@@ -19,6 +19,18 @@ public class Lotto_Req_1 {
 	private String t_01_0002__t_describe_2;
 	private String t_01_0002__t_user;
 	private String t_01_0002__t_special_treatment_1;
+	// T_01_0003
+	private int t_01_0003__t_serial_number_1;
+	private String t_01_0003__t_describe_1;
+	private String t_01_0003__t_describe_2;
+	private String t_01_0003__t_describe_3;
+	private String t_01_0003__t_describe_4;
+	private int t_01_0003__total_several_numbers;
+	private int t_01_0003__winning_several_numbers;
+	private int t_01_0003__top_winning_total_several_numbers;
+	private int t_01_0003__special_total_several_numbers;
+	private int t_01_0003__generally_total_several_numbers;
+	private String t_01_0003__t_special_treatment_1;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -129,6 +141,94 @@ public class Lotto_Req_1 {
 
 	public void setT_01_0002__t_special_treatment_1(String t_01_0002__t_special_treatment_1) {
 		this.t_01_0002__t_special_treatment_1 = t_01_0002__t_special_treatment_1;
+	}
+
+	public int getT_01_0003__t_serial_number_1() {
+		return t_01_0003__t_serial_number_1;
+	}
+
+	public void setT_01_0003__t_serial_number_1(int t_01_0003__t_serial_number_1) {
+		this.t_01_0003__t_serial_number_1 = t_01_0003__t_serial_number_1;
+	}
+
+	public String getT_01_0003__t_describe_1() {
+		return t_01_0003__t_describe_1;
+	}
+
+	public void setT_01_0003__t_describe_1(String t_01_0003__t_describe_1) {
+		this.t_01_0003__t_describe_1 = t_01_0003__t_describe_1;
+	}
+
+	public String getT_01_0003__t_describe_2() {
+		return t_01_0003__t_describe_2;
+	}
+
+	public void setT_01_0003__t_describe_2(String t_01_0003__t_describe_2) {
+		this.t_01_0003__t_describe_2 = t_01_0003__t_describe_2;
+	}
+
+	public String getT_01_0003__t_describe_3() {
+		return t_01_0003__t_describe_3;
+	}
+
+	public void setT_01_0003__t_describe_3(String t_01_0003__t_describe_3) {
+		this.t_01_0003__t_describe_3 = t_01_0003__t_describe_3;
+	}
+
+	public String getT_01_0003__t_describe_4() {
+		return t_01_0003__t_describe_4;
+	}
+
+	public void setT_01_0003__t_describe_4(String t_01_0003__t_describe_4) {
+		this.t_01_0003__t_describe_4 = t_01_0003__t_describe_4;
+	}
+
+	public int getT_01_0003__total_several_numbers() {
+		return t_01_0003__total_several_numbers;
+	}
+
+	public void setT_01_0003__total_several_numbers(int t_01_0003__total_several_numbers) {
+		this.t_01_0003__total_several_numbers = t_01_0003__total_several_numbers;
+	}
+
+	public int getT_01_0003__winning_several_numbers() {
+		return t_01_0003__winning_several_numbers;
+	}
+
+	public void setT_01_0003__winning_several_numbers(int t_01_0003__winning_several_numbers) {
+		this.t_01_0003__winning_several_numbers = t_01_0003__winning_several_numbers;
+	}
+
+	public int getT_01_0003__top_winning_total_several_numbers() {
+		return t_01_0003__top_winning_total_several_numbers;
+	}
+
+	public void setT_01_0003__top_winning_total_several_numbers(int t_01_0003__top_winning_total_several_numbers) {
+		this.t_01_0003__top_winning_total_several_numbers = t_01_0003__top_winning_total_several_numbers;
+	}
+
+	public int getT_01_0003__special_total_several_numbers() {
+		return t_01_0003__special_total_several_numbers;
+	}
+
+	public void setT_01_0003__special_total_several_numbers(int t_01_0003__special_total_several_numbers) {
+		this.t_01_0003__special_total_several_numbers = t_01_0003__special_total_several_numbers;
+	}
+
+	public int getT_01_0003__generally_total_several_numbers() {
+		return t_01_0003__generally_total_several_numbers;
+	}
+
+	public void setT_01_0003__generally_total_several_numbers(int t_01_0003__generally_total_several_numbers) {
+		this.t_01_0003__generally_total_several_numbers = t_01_0003__generally_total_several_numbers;
+	}
+
+	public String getT_01_0003__t_special_treatment_1() {
+		return t_01_0003__t_special_treatment_1;
+	}
+
+	public void setT_01_0003__t_special_treatment_1(String t_01_0003__t_special_treatment_1) {
+		this.t_01_0003__t_special_treatment_1 = t_01_0003__t_special_treatment_1;
 	}
 
 }

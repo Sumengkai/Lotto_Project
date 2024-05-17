@@ -59,6 +59,7 @@ public class T_01_0002 {
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
 
+	// 流水號、編碼1、編碼2、描述1、描述2、時間1、時間2、表名、用戶、特殊處理、刪除布林值
 	public T_01_0002(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
 			String tableDescribe2, LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName,
 			String tableUser, String tableSpecialTreatment1, String deleteBol) {

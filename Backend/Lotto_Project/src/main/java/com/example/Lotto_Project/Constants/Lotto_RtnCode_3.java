@@ -6,10 +6,12 @@ public enum Lotto_RtnCode_3 {
 	// -----------------------------------------------
 	// 樂透_代碼
 	T_01_0001__T_CODE_1__01("01"),
+	// 樂透_特殊處理_代碼 (代表有支線)
+	TABLE_SPECIAL_TREATMENT__1("A"),
 	// 是或否_代碼
-	DELETE_Bol_Y("Y"),
+	Bol_Y("Y"),
 	//
-	DELETE_Bol_N("N")
+	Bol_N("N")
 	//
 	;
 

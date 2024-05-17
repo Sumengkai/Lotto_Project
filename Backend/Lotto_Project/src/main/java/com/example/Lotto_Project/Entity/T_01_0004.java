@@ -13,10 +13,9 @@ import javax.persistence.Table;
 @Table(name = "t_01_0004")
 public class T_01_0004 {
 	// -----------------------------------------------
-	// 樂透開幾紀錄table
+	// 樂透開獎紀錄table
 	// -----------------------------------------------
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_serial_number_1")
 	private int tableSerialNumber1;
 	@Column(name = "t_serial_number_2")

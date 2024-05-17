@@ -145,4 +145,47 @@ class LottoProjectApplicationTests {
 		System.out.println("訊息 : " + res.getRtn_Message());
 
 	}
+
+	// -----------------------------------------------
+	// "新增" - T_01_0003
+	@Test
+	public void Create__T_01_0003() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0002__t_code_2("01-B");
+		req.setT_01_0003__t_describe_1("樂透-B- EX: 小樂透");
+		req.setT_01_0003__t_describe_2("樂透-B- EX: 小樂透 (英文)");
+		req.setT_01_0003__t_describe_3("樂透-B- EX: 小樂透 (玩法描述)");
+		req.setT_01_0003__t_describe_4("樂透-B- EX: 小樂透 (玩法描述) (英文)");
+		req.setT_01_0003__t_special_treatment_1("");
+		req.setT_01_0003__total_several_numbers(20);
+		req.setT_01_0003__winning_several_numbers(2);
+		req.setT_01_0003__top_winning_total_several_numbers(5);
+		req.setT_01_0003__special_total_several_numbers(4);
+		req.setT_01_0003__generally_total_several_numbers(1);
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0003(req);
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
+	// -----------------------------------------------
+	// "修改" - T_01_0003
+	@Test
+	public void Update__T_01_0003() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0002__t_code_2("01-A");
+		req.setT_01_0003__t_describe_1("樂透-A- EX: 大樂透_改");
+		req.setT_01_0003__t_describe_2("樂透-A- EX: 大樂透 (英文)_改");
+		req.setT_01_0003__t_describe_3("樂透-A- EX: 大樂透 (玩法描述)_改");
+		req.setT_01_0003__t_describe_4("樂透-A- EX: 大樂透 (玩法描述) (英文)_改");
+		req.setT_01_0003__t_special_treatment_1("");
+		req.setT_01_0003__total_several_numbers(49);
+		req.setT_01_0003__winning_several_numbers(2);
+		req.setT_01_0003__top_winning_total_several_numbers(6);
+		req.setT_01_0003__special_total_several_numbers(1);
+		req.setT_01_0003__generally_total_several_numbers(5);
+		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0003(req);
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
 }

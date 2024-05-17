@@ -9,7 +9,11 @@ public enum Lotto_RtnCode_1 {
 	// Duplicate data
 	DUPLICATE_DATA("400", "資料重複"),
 	// Not found data
-	NOT_FOUND_DATA("400", "資料找不到");
+	NOT_FOUND_DATA("400", "資料找不到"),
+	// Error data
+	ERROR_DATA("404", "資料不正確")
+	//
+	;
 
 	// -----------------------------------------------
 	private String code;

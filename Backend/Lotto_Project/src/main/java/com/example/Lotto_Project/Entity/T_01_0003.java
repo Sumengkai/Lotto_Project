@@ -31,15 +31,15 @@ public class T_01_0003 {
 	@Column(name = "t_describe_4")
 	private String tableDescribe4;
 	@Column(name = "total_several_numbers")
-	private int totalSeveralNumbers;
-	@Column(name = "winning_total_several_numbers")
-	private int winningTotalSeveralNumbers;
+	private int totalSeveralNumbers;// 號碼總數
+	@Column(name = "winning_several_numbers")
+	private int winningSeveralNumbers;// 中獎號碼數量 (至少需要中幾個號碼)
 	@Column(name = "top_winning_total_several_numbers")
-	private int topWinningTotalSeveralNumbers;
+	private int topWinningTotalSeveralNumbers; // 頭獎號碼中獎數量
 	@Column(name = "special_total_several_numbers")
-	private int specialTotalSeveralNumbers;
+	private int specialTotalSeveralNumbers; // 特別號數量
 	@Column(name = "generally_total_several_numbers")
-	private int generallyTotalSeveralNumbers;
+	private int generallyTotalSeveralNumbers; // 一般號碼數量
 	@Column(name = "t_date_1")
 	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
@@ -56,32 +56,10 @@ public class T_01_0003 {
 
 	}
 
+	// 流水號、編碼1、編碼2、描述1、描述2、描述3、描述4、號碼總數量、中獎號碼數量(至少中獎號碼數量)、頭獎號碼數量、特別號碼數量、一般號碼數量、時間1、時間2、表名、特殊處理、刪除布林值
 	public T_01_0003(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
 			String tableDescribe2, String tableDescribe3, String tableDescribe4, int totalSeveralNumbers,
-			int winningTotalSeveralNumbers, int topWinningTotalSeveralNumbers, int specialTotalSeveralNumbers,
-			int generallyTotalSeveralNumbers, LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName,
-			String tableSpecialTreatment1) {
-		this.tableSerialNumber1 = tableSerialNumber1;
-		this.tableCode1 = tableCode1;
-		this.tableCode2 = tableCode2;
-		this.tableDescribe1 = tableDescribe1;
-		this.tableDescribe2 = tableDescribe2;
-		this.tableDescribe3 = tableDescribe3;
-		this.tableDescribe4 = tableDescribe4;
-		this.totalSeveralNumbers = totalSeveralNumbers;
-		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
-		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
-		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
-		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
-		this.tableDate1 = tableDate1;
-		this.tableDate2 = tableDate2;
-		this.tableName = tableName;
-		this.tableSpecialTreatment1 = tableSpecialTreatment1;
-	}
-
-	public T_01_0003(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
-			String tableDescribe2, String tableDescribe3, String tableDescribe4, int totalSeveralNumbers,
-			int winningTotalSeveralNumbers, int topWinningTotalSeveralNumbers, int specialTotalSeveralNumbers,
+			int winningSeveralNumbers, int topWinningTotalSeveralNumbers, int specialTotalSeveralNumbers,
 			int generallyTotalSeveralNumbers, LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName,
 			String tableSpecialTreatment1, String deleteBol) {
 		this.tableSerialNumber1 = tableSerialNumber1;
@@ -92,7 +70,7 @@ public class T_01_0003 {
 		this.tableDescribe3 = tableDescribe3;
 		this.tableDescribe4 = tableDescribe4;
 		this.totalSeveralNumbers = totalSeveralNumbers;
-		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
+		this.winningSeveralNumbers = winningSeveralNumbers;
 		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
 		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
 		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
@@ -169,12 +147,12 @@ public class T_01_0003 {
 		this.totalSeveralNumbers = totalSeveralNumbers;
 	}
 
-	public int getWinningTotalSeveralNumbers() {
-		return winningTotalSeveralNumbers;
+	public int getWinningSeveralNumbers() {
+		return winningSeveralNumbers;
 	}
 
-	public void setWinningTotalSeveralNumbers(int winningTotalSeveralNumbers) {
-		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
+	public void setWinningSeveralNumbers(int winningSeveralNumbers) {
+		this.winningSeveralNumbers = winningSeveralNumbers;
 	}
 
 	public int getTopWinningTotalSeveralNumbers() {

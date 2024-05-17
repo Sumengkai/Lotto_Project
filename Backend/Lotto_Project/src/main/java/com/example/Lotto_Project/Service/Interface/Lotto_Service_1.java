@@ -39,4 +39,17 @@ public interface Lotto_Service_1 {
 	// -----------------------------------------------
 	// "刪除"(D) - T_01_0002
 	public Lotto_Res_1 Delete__T_01_0002(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "新增"(C) - T_01_0003
+	public Lotto_Res_1 Create__T_01_0003(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "修改"(U) - T_01_0003
+	public Lotto_Res_1 Update__T_01_0003(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "查詢"(R) - T_01_0003
+	public Lotto_Res_1 Search__T_01_0003___1(Lotto_Req_1 req);
+
 }

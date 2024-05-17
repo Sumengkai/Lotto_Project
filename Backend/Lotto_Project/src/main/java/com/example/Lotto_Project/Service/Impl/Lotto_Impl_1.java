@@ -2,6 +2,7 @@ package com.example.Lotto_Project.Service.Impl;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -77,22 +78,24 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
-		// 訊息
+		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
 		String rtn_Message_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
 		String rtn_Code_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		// 代碼_表名
+		String T_01_0001_table_name = Lotto_RtnCode_2.T_01_0001.getTable_name();
 		// 日期時間
 		LocalDateTime localDateTime = LocalDateTime.now();
 		// T_01_0001
 		T_01_0001 t_01_0001 = new T_01_0001();
-		String T_01_0001_table_name = Lotto_RtnCode_2.T_01_0001.getTable_name();
+
 		// -------------------------
 		// 邏輯處理
 		// 放Table名稱進去。管理流水號
 		Optional<T_01_0001> t_01_0001_O = t_01_0001_Dao.findByTableCode1(T_01_0001_t_code_1);
-		// 不是null會掉進去
+		// 不是null會掉進去 (應該不會)
 		if (t_01_0001_O.isPresent()) {
 			_logger.info("資料重複。已被彈出該方法");
 			t_01_0001 = t_01_0001_O.get();
@@ -101,7 +104,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 處理該表流水號
 		Lotto_Res_1 lotto_Res_1 = Create_Update__T_00_0001(T_01_0001_table_name);
 		int T_01_0001_t_serialNumber_1 = lotto_Res_1.getT_00_0001().getTableSerialNumber1();
-		// 流水號、編碼1、描述1、描述2、時間1、時間2、表名、用戶、特殊處理
+		// 流水號、編碼1、描述1、描述2、時間1、時間2、表名、用戶、特殊處理、刪除布林值
 		t_01_0001 = new T_01_0001(T_01_0001_t_serialNumber_1, T_01_0001_t_code_1, T_01_0001_t_describe_1,
 				T_01_0001_t_describe_2, localDateTime, localDateTime, T_01_0001_table_name, T_01_0001_t_user,
 				T_01_0001_t_special_treatment_1, delete_Bol);
@@ -148,8 +151,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 邏輯處理
 		// 抓資料 - T_01_0001
 		Optional<T_01_0001> t_01_0001_O = t_01_0001_Dao.findByTableCode1(T_01_0001_t_code_1);
-		// 是null會掉進去
-		// 基本上不會
+		// 是null會掉進去 (應該不會)
 		if (!t_01_0001_O.isPresent()) {
 			_logger.info("資料找不到。已被彈出該方法");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_01_0001);
@@ -199,10 +201,10 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 				t_describe);
 		// -------------------------
 		// 邏輯處理
+		T_01_0001_List = FilterList__T_01_0001___1(T_01_0001_List);
 		if (T_01_0001_List.size() == 0) {
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, T_01_0001_List);
 		}
-		T_01_0001_List = FilterList__T_01_0001___1(T_01_0001_List);
 		// -------------------------
 		_logger.info("資料長度 : " + T_01_0001_List.size());
 		_logger.info("查詢 : T_01_0001 (End) _ 1 ");
@@ -225,7 +227,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "Y"
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_Y.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.Bol_Y.getSpecial_code_1();
 		// 訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -240,8 +242,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 還需要處理其他檢查，以及連同其他表一起刪除。
 		// 抓資料 - T_01_0001
 		Optional<T_01_0001> t_01_0001_O = t_01_0001_Dao.findByTableCode1(T_01_0001_t_code_1);
-		// 是null會掉進去
-		// 基本上不會
+		// 是null會掉進去 (應該不會)
 		if (!t_01_0001_O.isPresent()) {
 			_logger.info("資料找不到。已被彈出該方法");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
@@ -284,22 +285,23 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
-		// 訊息
+		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
 		String rtn_Message_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
 		String rtn_Code_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		// 代碼_表名
+		String T_01_0002_table_name = Lotto_RtnCode_2.T_01_0002.getTable_name();
 		// 日期時間
 		LocalDateTime localDateTime = LocalDateTime.now();
 		// T_01_0002
 		T_01_0002 t_01_0002 = new T_01_0002();
-		String T_01_0002_table_name = Lotto_RtnCode_2.T_01_0002.getTable_name();
 		// -------------------------
 		// 邏輯處理
 		Optional<T_01_0002> t_01_0002_O = t_01_0002_Dao.findByTableCode1AndTableCode2(T_01_0001_t_code_1,
 				T_01_0002_t_code_2);
-		// 不是null會掉進去
+		// 不是null會掉進去 (應該不會)
 		if (t_01_0002_O.isPresent()) {
 			_logger.info("資料重複。已被彈出該方法");
 			t_01_0002 = t_01_0002_O.get();
@@ -308,7 +310,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 處理該表流水號
 		Lotto_Res_1 lotto_Res_1 = Create_Update__T_00_0001(T_01_0002_table_name);
 		int T_01_0002_t_serialNumber_1 = lotto_Res_1.getT_00_0001().getTableSerialNumber1();
-		// 流水號、編碼1、編碼2、描述1、描述2、時間1、時間2、表名、用戶、特殊處理
+		// 流水號、編碼1、編碼2、描述1、描述2、時間1、時間2、表名、用戶、特殊處理、刪除布林值
 		t_01_0002 = new T_01_0002(T_01_0002_t_serialNumber_1, T_01_0001_t_code_1, T_01_0002_t_code_2,
 				T_01_0002_t_describe_1, T_01_0002_t_describe_2, localDateTime, localDateTime, T_01_0002_table_name,
 				T_01_0002_t_user, T_01_0002_t_special_treatment_1, delete_Bol);
@@ -359,8 +361,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 邏輯處理
 		Optional<T_01_0002> t_01_0002_O = t_01_0002_Dao.findByTableCode1AndTableCode2(T_01_0001_t_code_1,
 				T_01_0002_t_code_2);
-		// 是null會掉進去
-		// 基本上不會
+		// 是null會掉進去 (應該不會)
 		if (!t_01_0002_O.isPresent()) {
 			_logger.info("資料找不到。已被彈出該方法");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_01_0002);
@@ -412,10 +413,10 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 				T_01_0002_t_code_2, t_describe);
 		// -------------------------
 		// 邏輯處理
+		T_01_0002_List = FilterList__T_01_0002___1(T_01_0002_List);
 		if (T_01_0002_List.size() == 0) {
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, T_01_0002_List, "");
 		}
-		T_01_0002_List = FilterList__T_01_0002___1(T_01_0002_List);
 		// -------------------------
 		_logger.info("資料長度 : " + T_01_0002_List.size());
 		_logger.info("查詢 : T_01_0002 (End) _ 1 ");
@@ -439,8 +440,8 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "Y"
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_Y.getSpecial_code_1();
-		// 訊息
+		String delete_Bol = Lotto_RtnCode_3.Bol_Y.getSpecial_code_1();
+		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
 		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
@@ -455,8 +456,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// 抓資料 - T_01_0002
 		Optional<T_01_0002> t_01_0002_O = t_01_0002_Dao.findByTableCode1AndTableCode2(T_01_0001_t_code_1,
 				T_01_0002_t_code_2);
-		// 是null會掉進去
-		// 基本上不會
+		// 是null會掉進去 (應該不會)
 		if (!t_01_0002_O.isPresent()) {
 			_logger.info("資料找不到。已被彈出該方法");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
@@ -479,7 +479,202 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0002);
 	}
 
+	// -----------------------------------------------
+	// "新增" - T_01_0003
+	@Override
+	public Lotto_Res_1 Create__T_01_0003(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("新增 : T_01_0003 (Start)");
+		_logger.info("方法名稱 : " + "Create__T_01_0003");
+		// -------------------------
+		// 需求參數
+		// T_01_0001
+		String T_01_0001_t_code_1 = req.getT_01_0001__t_code_1().trim();
+		// T_01_0002
+		String T_01_0002_t_code_2 = req.getT_01_0002__t_code_2().trim();
+		// T_01_0003
+		String T_01_0003__t_describe_1 = req.getT_01_0003__t_describe_1().trim();
+		String T_01_0003__t_describe_2 = req.getT_01_0003__t_describe_2().trim();
+		String T_01_0003__t_describe_3 = req.getT_01_0003__t_describe_3().trim();
+		String T_01_0003__t_describe_4 = req.getT_01_0003__t_describe_4().trim();
+		String T_01_0003__t_special_treatment_1 = req.getT_01_0003__t_special_treatment_1().trim();
+		int T_01_0003__total_several_numbers = req.getT_01_0003__total_several_numbers();
+		int T_01_0003__winning_several_numbers = req.getT_01_0003__winning_several_numbers();
+		int T_01_0003__top_winning_total_several_numbers = req.getT_01_0003__top_winning_total_several_numbers();
+		int T_01_0003__special_total_several_numbers = req.getT_01_0003__special_total_several_numbers();
+		int T_01_0003__generally_total_several_numbers = req.getT_01_0003__generally_total_several_numbers();
+		// -------------------------
+		// 一般參數
+		// 代碼_刪除布林值 - "N"
+		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String T_01_0001__T_CODE_1__01 = Lotto_RtnCode_3.T_01_0001__T_CODE_1__01.getSpecial_code_1();
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		// 代碼_表名
+		String T_01_0003_table_name = Lotto_RtnCode_2.T_01_0003.getTable_name();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		List<Integer> numberList_1 = Arrays.asList(T_01_0003__total_several_numbers, T_01_0003__winning_several_numbers,
+				T_01_0003__top_winning_total_several_numbers, T_01_0003__generally_total_several_numbers);
+		// T_01_0003
+		T_01_0003 t_01_0003 = new T_01_0003();
+		// -------------------------
+		// 邏輯處理
+		Optional<T_01_0003> t_01_0003_O = t_01_0003_Dao.findByTableCode1AndTableCode2(T_01_0001_t_code_1,
+				T_01_0002_t_code_2);
+		// != "01"<樂透代碼> (應該不會)
+		if (!T_01_0001_t_code_1.equals(T_01_0001__T_CODE_1__01)) {
+			_logger.info("資料不正確。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		// 不是null會掉進去 (應該不會)
+		if (t_01_0003_O.isPresent()) {
+			_logger.info("資料重複。已被彈出該方法");
+			t_01_0003 = t_01_0003_O.get();
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_01_0003);
+		}
+		// 檢查數字
+		boolean checkNumber_1 = checkNumber_1(numberList_1, true);
+		boolean checkNumber_2 = checkNumber_2(T_01_0003__total_several_numbers, T_01_0003__winning_several_numbers,
+				T_01_0003__top_winning_total_several_numbers, T_01_0003__special_total_several_numbers,
+				T_01_0003__generally_total_several_numbers);
+		if (checkNumber_2 == false || checkNumber_1 == false) {
+			_logger.info("資料不正確。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		// 處理該表流水號
+		Lotto_Res_1 lotto_Res_1 = Create_Update__T_00_0001(T_01_0003_table_name);
+		int T_01_0003_t_serialNumber_1 = lotto_Res_1.getT_00_0001().getTableSerialNumber1();
+		// 流水號、編碼1、編碼2、描述1、描述2、描述3、描述4、號碼總數量、中獎號碼數量(至少中獎號碼數量)、頭獎號碼數量、特別號碼數量、一般號碼數量、時間1、時間2、表名、特殊處理、刪除布林值
+		t_01_0003 = new T_01_0003(T_01_0003_t_serialNumber_1, T_01_0001_t_code_1, T_01_0002_t_code_2,
+				T_01_0003__t_describe_1, T_01_0003__t_describe_2, T_01_0003__t_describe_3, T_01_0003__t_describe_4,
+				T_01_0003__total_several_numbers, T_01_0003__winning_several_numbers,
+				T_01_0003__top_winning_total_several_numbers, T_01_0003__special_total_several_numbers,
+				T_01_0003__generally_total_several_numbers, localDateTime, localDateTime, T_01_0003_table_name,
+				T_01_0003__t_special_treatment_1, delete_Bol);
+		// 儲存
+		t_01_0003 = t_01_0003_Dao.save(t_01_0003);
+		// -------------------------
+		_logger.info("流水號 : " + t_01_0003.getTableSerialNumber1());
+		_logger.info("編碼_1 : " + t_01_0003.getTableCode1());
+		_logger.info("編碼_2 : " + t_01_0003.getTableCode2());
+		_logger.info("描述_1 : " + t_01_0003.getTableDescribe1());
+		_logger.info("描述_2 : " + t_01_0003.getTableDescribe2());
+		_logger.info("特殊處理 : " + t_01_0003.getTableSpecialTreatment1());
+		_logger.info("新增 : T_01_0003 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0003);
+	}
+
+	// -----------------------------------------------
+	// "修改" - T_01_0003
+	@Override
+	public Lotto_Res_1 Update__T_01_0003(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("修改 : T_01_0003 (Start)");
+		_logger.info("方法名稱 : " + "Update__T_01_0003");
+		// -------------------------
+		// 需求參數
+		// T_01_0001
+		String T_01_0001_t_code_1 = req.getT_01_0001__t_code_1().trim();
+		// T_01_0002
+		String T_01_0002_t_code_2 = req.getT_01_0002__t_code_2().trim();
+		// T_01_0003
+		String T_01_0003__t_describe_1 = req.getT_01_0003__t_describe_1().trim();
+		String T_01_0003__t_describe_2 = req.getT_01_0003__t_describe_2().trim();
+		String T_01_0003__t_describe_3 = req.getT_01_0003__t_describe_3().trim();
+		String T_01_0003__t_describe_4 = req.getT_01_0003__t_describe_4().trim();
+		String T_01_0003__t_special_treatment_1 = req.getT_01_0003__t_special_treatment_1().trim();
+		int T_01_0003__total_several_numbers = req.getT_01_0003__total_several_numbers();
+		int T_01_0003__winning_several_numbers = req.getT_01_0003__winning_several_numbers();
+		int T_01_0003__top_winning_total_several_numbers = req.getT_01_0003__top_winning_total_several_numbers();
+		int T_01_0003__special_total_several_numbers = req.getT_01_0003__special_total_several_numbers();
+		int T_01_0003__generally_total_several_numbers = req.getT_01_0003__generally_total_several_numbers();
+		// -------------------------
+		// 一般參數
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String T_01_0001__T_CODE_1__01 = Lotto_RtnCode_3.T_01_0001__T_CODE_1__01.getSpecial_code_1();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_01_0003
+		T_01_0003 t_01_0003 = new T_01_0003();
+		List<Integer> numberList_1 = Arrays.asList(T_01_0003__total_several_numbers, T_01_0003__winning_several_numbers,
+				T_01_0003__top_winning_total_several_numbers, T_01_0003__generally_total_several_numbers);
+		// -------------------------
+		// 邏輯處理
+		Optional<T_01_0003> t_01_0003_O = t_01_0003_Dao.findByTableCode1AndTableCode2(T_01_0001_t_code_1,
+				T_01_0002_t_code_2);
+		// != "01"<樂透代碼> (應該不會)
+		if (!T_01_0001_t_code_1.equals(T_01_0001__T_CODE_1__01)) {
+			_logger.info("資料不正確。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		// 是null會掉進去 (應該不會)
+		if (!t_01_0003_O.isPresent()) {
+			_logger.info("資料找不到。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_01_0003);
+		}
+		// 檢查數字
+		boolean checkNumber_1 = checkNumber_1(numberList_1, true);
+		boolean checkNumber_2 = checkNumber_2(T_01_0003__total_several_numbers, T_01_0003__winning_several_numbers,
+				T_01_0003__top_winning_total_several_numbers, T_01_0003__special_total_several_numbers,
+				T_01_0003__generally_total_several_numbers);
+		if (checkNumber_2 == false || checkNumber_1 == false) {
+			_logger.info("資料不正確。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		// 抓到原有資料
+		t_01_0003 = t_01_0003_O.get();
+		// 描述1、描述2、描述3、描述4、時間2、特殊處理、號碼總數量、中獎號碼數量(至少中獎號碼數量)、頭獎號碼數量、特別號碼數量、一般號碼數量
+		t_01_0003.setTableDescribe1(T_01_0003__t_describe_1);
+		t_01_0003.setTableDescribe2(T_01_0003__t_describe_2);
+		t_01_0003.setTableDescribe3(T_01_0003__t_describe_3);
+		t_01_0003.setTableDescribe4(T_01_0003__t_describe_4);
+		t_01_0003.setTableDate2(localDateTime);
+		t_01_0003.setTableSpecialTreatment1(T_01_0003__t_special_treatment_1);
+		t_01_0003.setTotalSeveralNumbers(T_01_0003__total_several_numbers);
+		t_01_0003.setWinningSeveralNumbers(T_01_0003__winning_several_numbers);
+		t_01_0003.setTopWinningTotalSeveralNumbers(T_01_0003__top_winning_total_several_numbers);
+		t_01_0003.setSpecialTotalSeveralNumbers(T_01_0003__special_total_several_numbers);
+		t_01_0003.setGenerallyTotalSeveralNumbers(T_01_0003__generally_total_several_numbers);
+		// 儲存
+		t_01_0003 = t_01_0003_Dao.save(t_01_0003);
+		// -------------------------
+		_logger.info("流水號 : " + t_01_0003.getTableSerialNumber1());
+		_logger.info("編碼_1 : " + t_01_0003.getTableCode1());
+		_logger.info("編碼_2 : " + t_01_0003.getTableCode2());
+		_logger.info("描述_1 : " + t_01_0003.getTableDescribe1());
+		_logger.info("描述_2 : " + t_01_0003.getTableDescribe2());
+		_logger.info("修改 : T_01_0003 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0003);
+	}
+
+	// -----------------------------------------------
+	// "查詢" - T_01_0003 - 1
+	@Override
+	public Lotto_Res_1 Search__T_01_0003___1(Lotto_Req_1 req) {
+		return null;
+	}
+
+	// -----------------------------------------------
 	// ==============================================================================================================
+	// -----------------------------------------------
 	// (私有方法)
 	// "新增"或"修改" - T_00_0001
 	private Lotto_Res_1 Create_Update__T_00_0001(String req_table_name) {
@@ -523,7 +718,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0001> FilterList__T_01_0001___1(List<T_01_0001> list) {
 		List<T_01_0001> newList = new ArrayList<T_01_0001>();
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
 		for (T_01_0001 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
@@ -538,13 +733,54 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0002> FilterList__T_01_0002___1(List<T_01_0002> list) {
 		List<T_01_0002> newList = new ArrayList<T_01_0002>();
-		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
 		for (T_01_0002 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
 			}
 		}
 		return newList;
+	}
+
+	// -----------------------------------------------
+	// 檢查數字_1 - 有沒有小於 0 或 = 0
+	private boolean checkNumber_1(List<Integer> list, boolean lessThanZero) {
+		if (lessThanZero == true) {
+			// 小於、等於 0
+			for (int item : list) {
+				if (item <= 0) {
+					return false;
+				}
+			}
+		} else {
+			// 小於 0
+			for (int item : list) {
+				if (item < 0) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	// -----------------------------------------------
+	// 檢查數字_2 - 號碼數量正確
+	private boolean checkNumber_2(int total_several_numbers, int winning_several_numbers,
+			int top_winning_total_several_numbers, int special_total_several_numbers,
+			int generally_total_several_numbers) {
+		// 頭獎號碼數量 != (特別號數量 + 一般號數量)
+		if (top_winning_total_several_numbers != (special_total_several_numbers + generally_total_several_numbers)) {
+			return false;
+		}
+		// 中獎號碼數量 > 頭獎號碼數量
+		if (winning_several_numbers > top_winning_total_several_numbers) {
+			return false;
+		}
+		// 頭獎號碼數量 > 號碼總數
+		if (top_winning_total_several_numbers > total_several_numbers) {
+			return false;
+		}
+		return true;
 
 	}
 
