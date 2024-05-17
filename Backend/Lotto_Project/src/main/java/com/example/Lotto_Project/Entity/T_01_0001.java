@@ -34,6 +34,8 @@ public class T_01_0001 {
 	private String tableUser;
 	@Column(name = "t_special_treatment_1")
 	private String tableSpecialTreatment1;
+	@Column(name = "delete_bol")
+	private String deleteBol;
 
 	// -----------------------------------------------
 	public T_01_0001() {
@@ -54,6 +56,22 @@ public class T_01_0001 {
 		this.tableUser = tableUser;
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
+
+	public T_01_0001(int tableSerialNumber1, String tableCode1, String tableDescribe1, String tableDescribe2,
+			LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName, String tableUser,
+			String tableSpecialTreatment1, String deleteBol) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableUser = tableUser;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+		this.deleteBol = deleteBol;
+	}
+
 	// -----------------------------------------------
 
 	public int getTableSerialNumber1() {
@@ -126,6 +144,14 @@ public class T_01_0001 {
 
 	public void setTableSpecialTreatment1(String tableSpecialTreatment1) {
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+	}
+
+	public String getDeleteBol() {
+		return deleteBol;
+	}
+
+	public void setDeleteBol(String deleteBol) {
+		this.deleteBol = deleteBol;
 	}
 
 }

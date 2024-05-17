@@ -16,7 +16,6 @@ public class T_01_0003 {
 	// 樂透種類table
 	// -----------------------------------------------
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_serial_number_1")
 	private int tableSerialNumber1;
 	@Column(name = "t_code_1")
@@ -49,6 +48,8 @@ public class T_01_0003 {
 	private String tableName;
 	@Column(name = "t_special_treatment_1")
 	private String tableSpecialTreatment1;
+	@Column(name = "delete_bol")
+	private String deleteBol;
 
 	// -----------------------------------------------
 	public T_01_0003() {
@@ -77,6 +78,31 @@ public class T_01_0003 {
 		this.tableName = tableName;
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 	}
+
+	public T_01_0003(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
+			String tableDescribe2, String tableDescribe3, String tableDescribe4, int totalSeveralNumbers,
+			int winningTotalSeveralNumbers, int topWinningTotalSeveralNumbers, int specialTotalSeveralNumbers,
+			int generallyTotalSeveralNumbers, LocalDateTime tableDate1, LocalDateTime tableDate2, String tableName,
+			String tableSpecialTreatment1, String deleteBol) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDescribe3 = tableDescribe3;
+		this.tableDescribe4 = tableDescribe4;
+		this.totalSeveralNumbers = totalSeveralNumbers;
+		this.winningTotalSeveralNumbers = winningTotalSeveralNumbers;
+		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
+		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
+		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+		this.deleteBol = deleteBol;
+	}
+
 	// -----------------------------------------------
 
 	public int getTableSerialNumber1() {
@@ -205,6 +231,14 @@ public class T_01_0003 {
 
 	public void setTableSpecialTreatment1(String tableSpecialTreatment1) {
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+	}
+
+	public String getDeleteBol() {
+		return deleteBol;
+	}
+
+	public void setDeleteBol(String deleteBol) {
+		this.deleteBol = deleteBol;
 	}
 
 }

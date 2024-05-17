@@ -18,10 +18,6 @@ public interface T_01_0001_Dao extends JpaRepository<T_01_0001, Integer> {
 	public Optional<T_01_0001> findByTableCode1(String tableCode1);
 
 	// -----------------------------------------------
-	// "刪除" - T_01_0001 - By 編碼_01
-	public void deleteByTableCode1(String tableCode1);
-
-	// -----------------------------------------------
 	@Query("SELECT t FROM T_01_0001 t "
 			//
 			+ "WHERE 1 = 1 "
@@ -36,8 +32,14 @@ public interface T_01_0001_Dao extends JpaRepository<T_01_0001, Integer> {
 			@Param("tableDescribe") String tableDescribe);
 
 	// -----------------------------------------------
+	// -----------------------------------------------
 	// 範例 :
-	@Query("SELECT t FROM T_01_0001 t " + "WHERE 1 = 1 " + "AND t.tableCode1 = :tableCode1 ")
+	@Query("SELECT t FROM T_01_0001 t "
+			//
+			+ "WHERE 1 = 1 "
+			// t.(Entity裡面的屬性名稱)
+			// : (@Param("名稱"))
+			+ "AND t.tableCode1 = :tableCode1 ")
 	public List<T_01_0001> search_EX(
 			//
 			@Param("tableCode1") String tableCode1);

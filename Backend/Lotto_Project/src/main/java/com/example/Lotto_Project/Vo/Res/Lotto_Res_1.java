@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.Lotto_Project.Entity.T_00_0001;
 import com.example.Lotto_Project.Entity.T_01_0001;
+import com.example.Lotto_Project.Entity.T_01_0002;
 
 public class Lotto_Res_1 {
 	// -----------------------------------------------
@@ -17,7 +18,15 @@ public class Lotto_Res_1 {
 	private T_01_0001 t_01_0001;
 	// 物件<T_01_0001> List
 	private List<T_01_0001> t_01_0001_List;
+	// 物件<T_01_0002>
+	private T_01_0002 t_01_0002;
+	// 物件<T_01_0002> List
+	private List<T_01_0002> t_01_0002_List;
+	// -----------------------
+	// 無意義字串_用來讓建構方法區分用的
+	private String not_Interesting_1;
 
+	// -----------------------
 	// -----------------------------------------------
 	public Lotto_Res_1() {
 
@@ -45,9 +54,22 @@ public class Lotto_Res_1 {
 		this.t_01_0001_List = t_01_0001_List;
 	}
 
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, T_01_0002 t_01_0002) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0002 = t_01_0002;
+	}
+
 	public Lotto_Res_1(String rtn_Message, String rtn_Code) {
 		this.rtn_Message = rtn_Message;
 		this.rtn_Code = rtn_Code;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0002> t_01_0002_List, String not_Interesting_1) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0002_List = t_01_0002_List;
+		this.not_Interesting_1 = not_Interesting_1;
 	}
 
 	// -----------------------------------------------
@@ -90,6 +112,30 @@ public class Lotto_Res_1 {
 
 	public void setT_01_0001_List(List<T_01_0001> t_01_0001_List) {
 		this.t_01_0001_List = t_01_0001_List;
+	}
+
+	public T_01_0002 getT_01_0002() {
+		return t_01_0002;
+	}
+
+	public void setT_01_0002(T_01_0002 t_01_0002) {
+		this.t_01_0002 = t_01_0002;
+	}
+
+	public List<T_01_0002> getT_01_0002_List() {
+		return t_01_0002_List;
+	}
+
+	public void setT_01_0002_List(List<T_01_0002> t_01_0002_List) {
+		this.t_01_0002_List = t_01_0002_List;
+	}
+
+	public String getNot_Interesting_1() {
+		return not_Interesting_1;
+	}
+
+	public void setNot_Interesting_1(String not_Interesting_1) {
+		this.not_Interesting_1 = not_Interesting_1;
 	}
 
 }
