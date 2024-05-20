@@ -18,8 +18,10 @@ public class T_01_0004 {
 	@Id
 	@Column(name = "t_serial_number_1")
 	private int tableSerialNumber1;
-	@Column(name = "t_serial_number_2")
-	private int tableSerialNumber2;
+	@Column(name = "t_code_1")
+	private String tableCode1;
+	@Column(name = "t_code_2")
+	private String tableCode2;
 	@Column(name = "winning_number")
 	private String winningNumber;
 	@Column(name = "special_winning_number_bol")
@@ -36,6 +38,8 @@ public class T_01_0004 {
 	private String tableName;
 	@Column(name = "t_special_treatment_1")
 	private String tableSpecialTreatment1;
+	@Column(name = "number_sort")
+	private int numberSort;
 	@Column(name = "delete_bol")
 	private String deleteBol;
 
@@ -44,27 +48,12 @@ public class T_01_0004 {
 
 	}
 
-	public T_01_0004(int tableSerialNumber1, int tableSerialNumber2, String winningNumber,
-			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
-			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1) {
-		this.tableSerialNumber1 = tableSerialNumber1;
-		this.tableSerialNumber2 = tableSerialNumber2;
-		this.winningNumber = winningNumber;
-		this.specialWinningNumberBol = specialWinningNumberBol;
-		this.tableDescribe1 = tableDescribe1;
-		this.tableDescribe2 = tableDescribe2;
-		this.tableDate1 = tableDate1;
-		this.tableDate2 = tableDate2;
-		this.tableName = tableName;
-		this.tableSpecialTreatment1 = tableSpecialTreatment1;
-	}
-
-	public T_01_0004(int tableSerialNumber1, int tableSerialNumber2, String winningNumber,
+	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
 			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
 			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, String deleteBol) {
-		super();
 		this.tableSerialNumber1 = tableSerialNumber1;
-		this.tableSerialNumber2 = tableSerialNumber2;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
 		this.winningNumber = winningNumber;
 		this.specialWinningNumberBol = specialWinningNumberBol;
 		this.tableDescribe1 = tableDescribe1;
@@ -76,6 +65,25 @@ public class T_01_0004 {
 		this.deleteBol = deleteBol;
 	}
 
+	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
+			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
+			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, int numberSort,
+			String deleteBol) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
+		this.winningNumber = winningNumber;
+		this.specialWinningNumberBol = specialWinningNumberBol;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+		this.numberSort = numberSort;
+		this.deleteBol = deleteBol;
+	}
+
 	// -----------------------------------------------
 
 	public int getTableSerialNumber1() {
@@ -84,14 +92,6 @@ public class T_01_0004 {
 
 	public void setTableSerialNumber1(int tableSerialNumber1) {
 		this.tableSerialNumber1 = tableSerialNumber1;
-	}
-
-	public int getTableSerialNumber2() {
-		return tableSerialNumber2;
-	}
-
-	public void setTableSerialNumber2(int tableSerialNumber2) {
-		this.tableSerialNumber2 = tableSerialNumber2;
 	}
 
 	public String getWinningNumber() {
@@ -164,6 +164,30 @@ public class T_01_0004 {
 
 	public void setDeleteBol(String deleteBol) {
 		this.deleteBol = deleteBol;
+	}
+
+	public String getTableCode1() {
+		return tableCode1;
+	}
+
+	public void setTableCode1(String tableCode1) {
+		this.tableCode1 = tableCode1;
+	}
+
+	public String getTableCode2() {
+		return tableCode2;
+	}
+
+	public void setTableCode2(String tableCode2) {
+		this.tableCode2 = tableCode2;
+	}
+
+	public int getNumberSort() {
+		return numberSort;
+	}
+
+	public void setNumberSort(int numberSort) {
+		this.numberSort = numberSort;
 	}
 
 }

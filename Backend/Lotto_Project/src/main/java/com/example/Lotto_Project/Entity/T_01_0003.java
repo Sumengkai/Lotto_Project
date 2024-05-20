@@ -36,14 +36,16 @@ public class T_01_0003 {
 	private int winningSeveralNumbers;// 中獎號碼數量 (至少需要中幾個號碼)
 	@Column(name = "top_winning_total_several_numbers")
 	private int topWinningTotalSeveralNumbers; // 頭獎號碼中獎數量
-	@Column(name = "special_total_several_numbers")
-	private int specialTotalSeveralNumbers; // 特別號數量
 	@Column(name = "generally_total_several_numbers")
 	private int generallyTotalSeveralNumbers; // 一般號碼數量
+	@Column(name = "special_total_several_numbers")
+	private int specialTotalSeveralNumbers; // 特別號數量
 	@Column(name = "t_date_1")
 	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
 	private LocalDateTime tableDate2;
+	@Column(name = "lotto_price")
+	private int lottoPrice;
 	@Column(name = "table_name")
 	private String tableName;
 	@Column(name = "t_special_treatment_1")
@@ -81,8 +83,33 @@ public class T_01_0003 {
 		this.deleteBol = deleteBol;
 	}
 
-	// -----------------------------------------------
+	// 流水號、編碼1、編碼2、描述1、描述2、描述3、描述4、號碼總數量、中獎號碼數量(至少中獎號碼數量)、頭獎號碼數量、特別號碼數量、一般號碼數量、時間1、時間2、價格、表名、特殊處理、刪除布林值
+	public T_01_0003(int tableSerialNumber1, String tableCode1, String tableCode2, String tableDescribe1,
+			String tableDescribe2, String tableDescribe3, String tableDescribe4, int totalSeveralNumbers,
+			int winningSeveralNumbers, int topWinningTotalSeveralNumbers, int generallyTotalSeveralNumbers,
+			int specialTotalSeveralNumbers, LocalDateTime tableDate1, LocalDateTime tableDate2, int lottoPrice,
+			String tableName, String tableSpecialTreatment1, String deleteBol) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDescribe3 = tableDescribe3;
+		this.tableDescribe4 = tableDescribe4;
+		this.totalSeveralNumbers = totalSeveralNumbers;
+		this.winningSeveralNumbers = winningSeveralNumbers;
+		this.topWinningTotalSeveralNumbers = topWinningTotalSeveralNumbers;
+		this.generallyTotalSeveralNumbers = generallyTotalSeveralNumbers;
+		this.specialTotalSeveralNumbers = specialTotalSeveralNumbers;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.lottoPrice = lottoPrice;
+		this.tableName = tableName;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+		this.deleteBol = deleteBol;
+	}
 
+	// -----------------------------------------------
 	public int getTableSerialNumber1() {
 		return tableSerialNumber1;
 	}
@@ -217,6 +244,14 @@ public class T_01_0003 {
 
 	public void setDeleteBol(String deleteBol) {
 		this.deleteBol = deleteBol;
+	}
+
+	public int getLottoPrice() {
+		return lottoPrice;
+	}
+
+	public void setLottoPrice(int lottoPrice) {
+		this.lottoPrice = lottoPrice;
 	}
 
 }

@@ -31,6 +31,7 @@ public class Lotto_Req_1 {
 	private int t_01_0003__special_total_several_numbers;
 	private int t_01_0003__generally_total_several_numbers;
 	private String t_01_0003__t_special_treatment_1;
+	private int lottoPrice;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -229,6 +230,14 @@ public class Lotto_Req_1 {
 
 	public void setT_01_0003__t_special_treatment_1(String t_01_0003__t_special_treatment_1) {
 		this.t_01_0003__t_special_treatment_1 = t_01_0003__t_special_treatment_1;
+	}
+
+	public int getLottoPrice() {
+		return lottoPrice;
+	}
+
+	public void setLottoPrice(int lottoPrice) {
+		this.lottoPrice = lottoPrice;
 	}
 
 }

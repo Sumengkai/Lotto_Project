@@ -1,6 +1,9 @@
 package com.example.Lotto_Project;
 
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_2;
 import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
+import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Service.Interface.Lotto_Service_1;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -29,9 +33,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0001__t_describe_1("樂透_樂透種類");
-		req.setT_01_0001__t_describe_2("樂透_樂透種類(英文)");
+		req.setT_01_0001__t_code_1("02");
+		req.setT_01_0001__t_describe_1("樂透_是否為特別號");
+		req.setT_01_0001__t_describe_2("樂透_是否為特別號(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0001(req);
@@ -87,10 +91,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-B");
-		req.setT_01_0002__t_describe_1("樂透-B");
-		req.setT_01_0002__t_describe_2("樂透-B(英文)");
+		req.setT_01_0001__t_code_1("02");
+		req.setT_01_0002__t_code_2("B");
+		req.setT_01_0002__t_describe_1("不是");
+		req.setT_01_0002__t_describe_2("不是(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0002(req);
@@ -113,7 +117,7 @@ class LottoProjectApplicationTests {
 	}
 
 	// -----------------------------------------------
-	// "查詢" - T_01_0001 - 1
+	// "查詢" - T_01_0002 - 1
 	@Test
 	public void Search__T_01_0002___1() {
 		Lotto_Req_1 req = new Lotto_Req_1();
@@ -163,6 +167,7 @@ class LottoProjectApplicationTests {
 		req.setT_01_0003__top_winning_total_several_numbers(5);
 		req.setT_01_0003__special_total_several_numbers(4);
 		req.setT_01_0003__generally_total_several_numbers(1);
+		req.setLottoPrice(50);
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -183,9 +188,75 @@ class LottoProjectApplicationTests {
 		req.setT_01_0003__winning_several_numbers(2);
 		req.setT_01_0003__top_winning_total_several_numbers(6);
 		req.setT_01_0003__special_total_several_numbers(1);
-		req.setT_01_0003__generally_total_several_numbers(5);
+		req.setT_01_0003__generally_total_several_numbers(6);
+		req.setLottoPrice(100);
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
+	// -----------------------------------------------
+	// "查詢" - T_01_0003 - 1
+	@Test
+	public void Search__T_01_0003___1() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0002__t_code_2("");
+		req.setT_describe("");
+		Lotto_Res_1 res = lotto_Service_1.Search__T_01_0003___1(req);
+		List<T_01_0003> t_01_0003_List = res.getT_01_0003_List();
+		for (T_01_0003 item : t_01_0003_List) {
+			System.out.println("-------------");
+			System.out.println("代碼1 : " + item.getTableCode1());
+			System.out.println("代碼2 : " + item.getTableCode2());
+			System.out.println("描述1 : " + item.getTableDescribe1());
+			System.out.println("描述2 : " + item.getTableDescribe2());
+			System.out.println("價格 : " + item.getLottoPrice());
+			System.out.println("-------------");
+		}
+		System.out.println("訊息 : " + res.getRtn_Message());
+		System.out.println("資料長度 : " + res.getT_01_0003_List().size());
+	}
+
+	// -----------------------------------------------
+	@Test
+	public void generateRandomNumber() {
+		// 定義範圍的起始數字和結束數字
+		int start = 01; // 起始數字
+		int end = 49; // 結束數字
+		Set<Integer> numberSetList = new TreeSet<Integer>();
+		for (; true;) {
+			// 生成範圍內的隨機數
+			int randomNumber = generateRandomNumber(start, end);
+			if (randomNumber < start || randomNumber > end) {
+				System.out.println("隨機數字 : " + randomNumber);
+				System.out.println("超過了");
+				break;
+			}
+			if (randomNumber == 0) {
+				System.out.println("隨機數字 : " + randomNumber);
+				System.out.println("等於0");
+				break;
+			}
+
+			numberSetList.add(randomNumber);
+			if (numberSetList.size() == 6) {
+				break;
+			}
+		}
+		for (int item : numberSetList) {
+			System.out.println("數字 : " + item);
+		}
+
+	}
+
+	public static int generateRandomNumber(int start, int end) {
+		if (start >= end) {
+			throw new IllegalArgumentException("結束數字必須大於起始數字");
+		}
+
+		Random random = new Random();
+		// nextInt(end - start + 1) 生成 0 到 (end - start) 之間的隨機數，加上 start 後就變成 start 到
+		// end 之間的隨機數
+		return random.nextInt(end - start + 1) + start;
+	}
 }

@@ -11,9 +11,17 @@ public enum Lotto_RtnCode_3 {
 	// 是或否_代碼
 	Bol_Y("Y"),
 	//
-	Bol_N("N")
+	Bol_N("N"),
+	// 02 - A、B
+	T_01_0002__T_CODE_1__02("02"),
 	//
-	;
+	T_01_0002__T_CODE_1__02_A("A"),
+	//
+	T_01_0002__T_CODE_1__02_B("B"),
+	// 樂透的起始數字
+	START_NUMBER("01"),
+	//
+	;;
 
 	// -----------------------------------------------
 	private String special_code_1;

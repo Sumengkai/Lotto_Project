@@ -20,6 +20,7 @@ public interface T_01_0002_Dao extends JpaRepository<T_01_0002, Integer> {
 	public Optional<T_01_0002> findByTableCode1AndTableCode2(String tableCode1, String tableCode2);
 
 	// -----------------------------------------------
+	// "查詢" - 條件 : 編碼_1、編碼_2、描述
 	@Query("SELECT t FROM T_01_0002 t "
 			//
 			+ "WHERE 1 = 1 "

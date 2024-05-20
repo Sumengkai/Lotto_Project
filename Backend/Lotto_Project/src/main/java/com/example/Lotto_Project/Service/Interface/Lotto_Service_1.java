@@ -52,4 +52,8 @@ public interface Lotto_Service_1 {
 	// "查詢"(R) - T_01_0003
 	public Lotto_Res_1 Search__T_01_0003___1(Lotto_Req_1 req);
 
+	// -----------------------------------------------
+	// "新增"(C) - T_01_0004 (排程)
+	public Lotto_Res_1 Create__T_01_0004(Lotto_Req_1 req);
+
 }

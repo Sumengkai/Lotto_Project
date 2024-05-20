@@ -6,6 +6,7 @@ import com.example.Lotto_Project.Entity.T_00_0001;
 import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
+import com.example.Lotto_Project.Entity.T_01_0004;
 
 public class Lotto_Res_1 {
 	// -----------------------------------------------
@@ -25,9 +26,15 @@ public class Lotto_Res_1 {
 	private List<T_01_0002> t_01_0002_List;
 	// 物件<T_01_0003>
 	private T_01_0003 t_01_0003;
+	// 物件<T_01_0002> List
+	private List<T_01_0003> t_01_0003_List;
+	// 物件<T_01_0004>
+	private T_01_0004 t_01_0004;
 	// -----------------------
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_1;
+	// 無意義字串_用來讓建構方法區分用的
+	private String not_Interesting_2;
 
 	// -----------------------
 	// -----------------------------------------------
@@ -80,6 +87,22 @@ public class Lotto_Res_1 {
 		this.rtn_Code = rtn_Code;
 		this.t_01_0003 = t_01_0003;
 	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0003> t_01_0003_List, String not_Interesting_1,
+			String not_Interesting_2) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0003_List = t_01_0003_List;
+		this.not_Interesting_1 = not_Interesting_1;
+		this.not_Interesting_2 = not_Interesting_2;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, T_01_0004 t_01_0004) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0004 = t_01_0004;
+	}
+
 	// -----------------------------------------------
 
 	public String getRtn_Message() {
@@ -152,6 +175,30 @@ public class Lotto_Res_1 {
 
 	public void setT_01_0003(T_01_0003 t_01_0003) {
 		this.t_01_0003 = t_01_0003;
+	}
+
+	public List<T_01_0003> getT_01_0003_List() {
+		return t_01_0003_List;
+	}
+
+	public void setT_01_0003_List(List<T_01_0003> t_01_0003_List) {
+		this.t_01_0003_List = t_01_0003_List;
+	}
+
+	public String getNot_Interesting_2() {
+		return not_Interesting_2;
+	}
+
+	public void setNot_Interesting_2(String not_Interesting_2) {
+		this.not_Interesting_2 = not_Interesting_2;
+	}
+
+	public T_01_0004 getT_01_0004() {
+		return t_01_0004;
+	}
+
+	public void setT_01_0004(T_01_0004 t_01_0004) {
+		this.t_01_0004 = t_01_0004;
 	}
 
 }
