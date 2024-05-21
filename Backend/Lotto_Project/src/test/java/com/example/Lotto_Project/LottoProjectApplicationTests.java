@@ -13,6 +13,7 @@ import com.example.Lotto_Project.Constants.Lotto_RtnCode_2;
 import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
+import com.example.Lotto_Project.Entity.T_01_0004;
 import com.example.Lotto_Project.Service.Interface.Lotto_Service_1;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -156,18 +157,19 @@ class LottoProjectApplicationTests {
 	public void Create__T_01_0003() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-B");
-		req.setT_01_0003__t_describe_1("樂透-B- EX: 小樂透");
-		req.setT_01_0003__t_describe_2("樂透-B- EX: 小樂透 (英文)");
-		req.setT_01_0003__t_describe_3("樂透-B- EX: 小樂透 (玩法描述)");
-		req.setT_01_0003__t_describe_4("樂透-B- EX: 小樂透 (玩法描述) (英文)");
+		req.setT_01_0002__t_code_2("01-A");
+		req.setT_01_0003__t_describe_1("樂透-A- EX: 大樂透");
+		req.setT_01_0003__t_describe_2("樂透-A- EX: 大樂透 (英文)");
+		req.setT_01_0003__t_describe_3("樂透-A- EX: 大樂透 (玩法描述)");
+		req.setT_01_0003__t_describe_4("樂透-A- EX: 大樂透 (玩法描述) (英文)");
 		req.setT_01_0003__t_special_treatment_1("");
-		req.setT_01_0003__total_several_numbers(20);
+		req.setT_01_0003__total_several_numbers(49);
 		req.setT_01_0003__winning_several_numbers(2);
-		req.setT_01_0003__top_winning_total_several_numbers(5);
-		req.setT_01_0003__special_total_several_numbers(4);
-		req.setT_01_0003__generally_total_several_numbers(1);
+		req.setT_01_0003__top_winning_total_several_numbers(6);
+		req.setT_01_0003__special_total_several_numbers(1);
+		req.setT_01_0003__generally_total_several_numbers(6);
 		req.setLottoPrice(50);
+		req.setOpenNumbers(7);
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -189,7 +191,8 @@ class LottoProjectApplicationTests {
 		req.setT_01_0003__top_winning_total_several_numbers(6);
 		req.setT_01_0003__special_total_several_numbers(1);
 		req.setT_01_0003__generally_total_several_numbers(6);
-		req.setLottoPrice(100);
+		req.setLottoPrice(50);
+		req.setOpenNumbers(7);
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -218,45 +221,23 @@ class LottoProjectApplicationTests {
 	}
 
 	// -----------------------------------------------
+	// "新增"(C) - T_01_0004 (排程)
 	@Test
-	public void generateRandomNumber() {
-		// 定義範圍的起始數字和結束數字
-		int start = 01; // 起始數字
-		int end = 49; // 結束數字
-		Set<Integer> numberSetList = new TreeSet<Integer>();
-		for (; true;) {
-			// 生成範圍內的隨機數
-			int randomNumber = generateRandomNumber(start, end);
-			if (randomNumber < start || randomNumber > end) {
-				System.out.println("隨機數字 : " + randomNumber);
-				System.out.println("超過了");
-				break;
-			}
-			if (randomNumber == 0) {
-				System.out.println("隨機數字 : " + randomNumber);
-				System.out.println("等於0");
-				break;
-			}
-
-			numberSetList.add(randomNumber);
-			if (numberSetList.size() == 6) {
-				break;
-			}
+	public void Create__T_01_0004() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004(req);
+		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
+		for (T_01_0004 item : t_01_0004_List) {
+			System.out.println("-------------");
+			System.out.println("代碼1 : " + item.getTableCode1());
+			System.out.println("代碼2 : " + item.getTableCode2());
+			System.out.println("開獎號碼 : " + item.getWinningNumber());
+			System.out.println("是特別號碼嗎 : " + item.getSpecialWinningNumberBol());
+			System.out.println("描述1 : " + item.getTableDescribe1());
+			System.out.println("描述2 : " + item.getTableDescribe2());
+			System.out.println("-------------");
 		}
-		for (int item : numberSetList) {
-			System.out.println("數字 : " + item);
-		}
-
-	}
-
-	public static int generateRandomNumber(int start, int end) {
-		if (start >= end) {
-			throw new IllegalArgumentException("結束數字必須大於起始數字");
-		}
-
-		Random random = new Random();
-		// nextInt(end - start + 1) 生成 0 到 (end - start) 之間的隨機數，加上 start 後就變成 start 到
-		// end 之間的隨機數
-		return random.nextInt(end - start + 1) + start;
+		System.out.println("訊息 : " + res.getRtn_Message());
+		System.out.println("資料長度 : " + res.getT_01_0004_List().size());
 	}
 }

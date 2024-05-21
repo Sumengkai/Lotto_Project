@@ -12,12 +12,12 @@ public enum Lotto_RtnCode_3 {
 	Bol_Y("Y"),
 	//
 	Bol_N("N"),
-	// 02 - A、B
+	// 02 - Y、N (是、否)
 	T_01_0002__T_CODE_1__02("02"),
 	//
-	T_01_0002__T_CODE_1__02_A("A"),
+	T_01_0002__T_CODE_1__02_Y("Y"),
 	//
-	T_01_0002__T_CODE_1__02_B("B"),
+	T_01_0002__T_CODE_1__02_N("N"),
 	// 樂透的起始數字
 	START_NUMBER("01"),
 	//

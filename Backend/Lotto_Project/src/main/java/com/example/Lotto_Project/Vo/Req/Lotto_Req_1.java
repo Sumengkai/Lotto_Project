@@ -32,6 +32,7 @@ public class Lotto_Req_1 {
 	private int t_01_0003__generally_total_several_numbers;
 	private String t_01_0003__t_special_treatment_1;
 	private int lottoPrice;
+	private int openNumbers;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -238,6 +239,14 @@ public class Lotto_Req_1 {
 
 	public void setLottoPrice(int lottoPrice) {
 		this.lottoPrice = lottoPrice;
+	}
+
+	public int getOpenNumbers() {
+		return openNumbers;
+	}
+
+	public void setOpenNumbers(int openNumbers) {
+		this.openNumbers = openNumbers;
 	}
 
 }

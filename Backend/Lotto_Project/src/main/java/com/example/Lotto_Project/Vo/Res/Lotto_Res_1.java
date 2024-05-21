@@ -30,11 +30,15 @@ public class Lotto_Res_1 {
 	private List<T_01_0003> t_01_0003_List;
 	// 物件<T_01_0004>
 	private T_01_0004 t_01_0004;
+	// 物件<T_01_0002> List
+	private List<T_01_0004> t_01_0004_List;
 	// -----------------------
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_1;
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_2;
+	// 無意義字串_用來讓建構方法區分用的
+	private String not_Interesting_3;
 
 	// -----------------------
 	// -----------------------------------------------
@@ -101,6 +105,16 @@ public class Lotto_Res_1 {
 		this.rtn_Message = rtn_Message;
 		this.rtn_Code = rtn_Code;
 		this.t_01_0004 = t_01_0004;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0004> t_01_0004_List, String not_Interesting_1,
+			String not_Interesting_2, String not_Interesting_3) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0004_List = t_01_0004_List;
+		this.not_Interesting_1 = not_Interesting_1;
+		this.not_Interesting_2 = not_Interesting_2;
+		this.not_Interesting_3 = not_Interesting_3;
 	}
 
 	// -----------------------------------------------
@@ -199,6 +213,22 @@ public class Lotto_Res_1 {
 
 	public void setT_01_0004(T_01_0004 t_01_0004) {
 		this.t_01_0004 = t_01_0004;
+	}
+
+	public List<T_01_0004> getT_01_0004_List() {
+		return t_01_0004_List;
+	}
+
+	public void setT_01_0004_List(List<T_01_0004> t_01_0004_List) {
+		this.t_01_0004_List = t_01_0004_List;
+	}
+
+	public String getNot_Interesting_3() {
+		return not_Interesting_3;
+	}
+
+	public void setNot_Interesting_3(String not_Interesting_3) {
+		this.not_Interesting_3 = not_Interesting_3;
 	}
 
 }
