@@ -14,6 +14,7 @@ import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
+import com.example.Lotto_Project.Repository.T_01_0004_Dao;
 import com.example.Lotto_Project.Service.Interface.Lotto_Service_1;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -23,6 +24,8 @@ class LottoProjectApplicationTests {
 	// -----------------------------------------------
 	@Autowired
 	private Lotto_Service_1 lotto_Service_1;
+	@Autowired
+	private T_01_0004_Dao t_01_0004_Dao;
 
 	// -----------------------------------------------
 	@Test
@@ -224,11 +227,11 @@ class LottoProjectApplicationTests {
 	// "新增"(C) - T_01_0004 (排程)
 	@Test
 	public void Create__T_01_0004() {
-		Lotto_Req_1 req = new Lotto_Req_1();
-		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004(req);
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004();
 		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
 		for (T_01_0004 item : t_01_0004_List) {
 			System.out.println("-------------");
+			System.out.println("第 " + item.getLottoSort() + " 期");
 			System.out.println("代碼1 : " + item.getTableCode1());
 			System.out.println("代碼2 : " + item.getTableCode2());
 			System.out.println("開獎號碼 : " + item.getWinningNumber());
@@ -240,4 +243,30 @@ class LottoProjectApplicationTests {
 		System.out.println("訊息 : " + res.getRtn_Message());
 		System.out.println("資料長度 : " + res.getT_01_0004_List().size());
 	}
+
+	// -----------------------------------------------
+	// "查詢" - T_01_0003 - 1
+	@Test
+	public void Search__T_01_0004___1() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0002__t_code_2("01-A");
+		req.setT_describe("");
+		req.setT_startDate("");
+		req.setT_endDate("");
+		Lotto_Res_1 res = lotto_Service_1.Search__T_01_0004___1(req);
+		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
+		for (T_01_0004 item : t_01_0004_List) {
+			System.out.println("-------------");
+			System.out.println("代碼1 : " + item.getTableCode1());
+			System.out.println("代碼2 : " + item.getTableCode2());
+			System.out.println("描述1 : " + item.getTableDescribe1());
+			System.out.println("描述2 : " + item.getTableDescribe2());
+			System.out.println("開獎號碼 : " + item.getWinningNumber());
+			System.out.println("-------------");
+		}
+		System.out.println("訊息 : " + res.getRtn_Message());
+		System.out.println("資料長度 : " + res.getT_01_0004_List().size());
+	}
+
 }

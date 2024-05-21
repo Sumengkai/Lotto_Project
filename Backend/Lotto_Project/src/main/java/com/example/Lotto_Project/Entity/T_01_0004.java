@@ -40,6 +40,8 @@ public class T_01_0004 {
 	private String tableSpecialTreatment1;
 	@Column(name = "number_sort")
 	private int numberSort;
+	@Column(name = "lotto_sort")
+	private int lottoSort;
 	@Column(name = "delete_bol")
 	private String deleteBol;
 
@@ -47,7 +49,6 @@ public class T_01_0004 {
 	public T_01_0004() {
 
 	}
-
 
 	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
 			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
@@ -65,6 +66,26 @@ public class T_01_0004 {
 		this.tableName = tableName;
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 		this.numberSort = numberSort;
+		this.deleteBol = deleteBol;
+	}
+
+	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
+			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
+			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, int numberSort, int lottoSort,
+			String deleteBol) {
+		this.tableSerialNumber1 = tableSerialNumber1;
+		this.tableCode1 = tableCode1;
+		this.tableCode2 = tableCode2;
+		this.winningNumber = winningNumber;
+		this.specialWinningNumberBol = specialWinningNumberBol;
+		this.tableDescribe1 = tableDescribe1;
+		this.tableDescribe2 = tableDescribe2;
+		this.tableDate1 = tableDate1;
+		this.tableDate2 = tableDate2;
+		this.tableName = tableName;
+		this.tableSpecialTreatment1 = tableSpecialTreatment1;
+		this.numberSort = numberSort;
+		this.lottoSort = lottoSort;
 		this.deleteBol = deleteBol;
 	}
 
@@ -172,6 +193,14 @@ public class T_01_0004 {
 
 	public void setNumberSort(int numberSort) {
 		this.numberSort = numberSort;
+	}
+
+	public int getLottoSort() {
+		return lottoSort;
+	}
+
+	public void setLottoSort(int lottoSort) {
+		this.lottoSort = lottoSort;
 	}
 
 }

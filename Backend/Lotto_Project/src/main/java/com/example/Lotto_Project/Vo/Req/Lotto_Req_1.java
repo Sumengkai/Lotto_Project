@@ -6,6 +6,9 @@ public class Lotto_Req_1 {
 	private String table_name;
 	// 描述
 	private String t_describe;
+	// 日期字串
+	private String t_startDate;
+	private String t_endDate;
 	// T_01_0001
 	private String t_01_0001__t_serial_number_1;
 	private String t_01_0001__t_code_1;
@@ -247,6 +250,22 @@ public class Lotto_Req_1 {
 
 	public void setOpenNumbers(int openNumbers) {
 		this.openNumbers = openNumbers;
+	}
+
+	public String getT_startDate() {
+		return t_startDate;
+	}
+
+	public void setT_startDate(String t_startDate) {
+		this.t_startDate = t_startDate;
+	}
+
+	public String getT_endDate() {
+		return t_endDate;
+	}
+
+	public void setT_endDate(String t_endDate) {
+		this.t_endDate = t_endDate;
 	}
 
 }
