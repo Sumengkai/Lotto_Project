@@ -1,6 +1,7 @@
 package com.example.Lotto_Project.Entity;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,11 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name = "t_01_0004")
 public class T_01_0004 {
 	// -----------------------------------------------
-	// 樂透開獎紀錄table
+	// 樂透開獎紀錄table - 號碼
 	// -----------------------------------------------
 	@Id
 	@Column(name = "t_serial_number_1")
@@ -40,8 +43,9 @@ public class T_01_0004 {
 	private String tableSpecialTreatment1;
 	@Column(name = "number_sort")
 	private int numberSort;
-	@Column(name = "lotto_sort")
-	private int lottoSort;
+	@Column(name = "t_uuid_1")
+	@Type(type = "uuid-char")
+	private UUID tableUuid1;
 	@Column(name = "delete_bol")
 	private String deleteBol;
 
@@ -52,7 +56,7 @@ public class T_01_0004 {
 
 	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
 			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
-			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, int numberSort,
+			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, int numberSort, UUID tableUuid1,
 			String deleteBol) {
 		this.tableSerialNumber1 = tableSerialNumber1;
 		this.tableCode1 = tableCode1;
@@ -66,26 +70,7 @@ public class T_01_0004 {
 		this.tableName = tableName;
 		this.tableSpecialTreatment1 = tableSpecialTreatment1;
 		this.numberSort = numberSort;
-		this.deleteBol = deleteBol;
-	}
-
-	public T_01_0004(int tableSerialNumber1, String tableCode1, String tableCode2, String winningNumber,
-			String specialWinningNumberBol, String tableDescribe1, String tableDescribe2, LocalDateTime tableDate1,
-			LocalDateTime tableDate2, String tableName, String tableSpecialTreatment1, int numberSort, int lottoSort,
-			String deleteBol) {
-		this.tableSerialNumber1 = tableSerialNumber1;
-		this.tableCode1 = tableCode1;
-		this.tableCode2 = tableCode2;
-		this.winningNumber = winningNumber;
-		this.specialWinningNumberBol = specialWinningNumberBol;
-		this.tableDescribe1 = tableDescribe1;
-		this.tableDescribe2 = tableDescribe2;
-		this.tableDate1 = tableDate1;
-		this.tableDate2 = tableDate2;
-		this.tableName = tableName;
-		this.tableSpecialTreatment1 = tableSpecialTreatment1;
-		this.numberSort = numberSort;
-		this.lottoSort = lottoSort;
+		this.tableUuid1 = tableUuid1;
 		this.deleteBol = deleteBol;
 	}
 
@@ -195,12 +180,12 @@ public class T_01_0004 {
 		this.numberSort = numberSort;
 	}
 
-	public int getLottoSort() {
-		return lottoSort;
+	public UUID getTableUuid1() {
+		return tableUuid1;
 	}
 
-	public void setLottoSort(int lottoSort) {
-		this.lottoSort = lottoSort;
+	public void setTableUuid1(UUID tableUuid1) {
+		this.tableUuid1 = tableUuid1;
 	}
 
 }

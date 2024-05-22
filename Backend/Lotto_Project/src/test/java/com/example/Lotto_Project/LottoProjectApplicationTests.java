@@ -14,7 +14,10 @@ import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
+import com.example.Lotto_Project.Entity.T_01_0005;
+import com.example.Lotto_Project.Repository.SearchTable_1;
 import com.example.Lotto_Project.Repository.T_01_0004_Dao;
+import com.example.Lotto_Project.Repository.T_01_0005_Dao;
 import com.example.Lotto_Project.Service.Interface.Lotto_Service_1;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -26,10 +29,21 @@ class LottoProjectApplicationTests {
 	private Lotto_Service_1 lotto_Service_1;
 	@Autowired
 	private T_01_0004_Dao t_01_0004_Dao;
+	@Autowired
+	private T_01_0005_Dao t_01_0005_Dao;
+	@Autowired
+	private SearchTable_1 searchTable_1;
 
 	// -----------------------------------------------
 	@Test
 	void contextLoads() {
+		List<Object[]> test = searchTable_1.search_1("", "");
+		for (Object[] item : test) {
+			for (Object item2 : item) {
+				System.out.println("Value : " + item2);
+			}
+		}
+		System.out.println("test : " + test.size());
 	}
 
 	// -----------------------------------------------
@@ -160,19 +174,19 @@ class LottoProjectApplicationTests {
 	public void Create__T_01_0003() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-A");
-		req.setT_01_0003__t_describe_1("樂透-A- EX: 大樂透");
-		req.setT_01_0003__t_describe_2("樂透-A- EX: 大樂透 (英文)");
-		req.setT_01_0003__t_describe_3("樂透-A- EX: 大樂透 (玩法描述)");
-		req.setT_01_0003__t_describe_4("樂透-A- EX: 大樂透 (玩法描述) (英文)");
+		req.setT_01_0002__t_code_2("01-B");
+		req.setT_01_0003__t_describe_1("樂透-B- EX: 小樂透");
+		req.setT_01_0003__t_describe_2("樂透-B- EX: 小樂透 (英文)");
+		req.setT_01_0003__t_describe_3("樂透-B- EX: 小樂透 (玩法描述)");
+		req.setT_01_0003__t_describe_4("樂透-B- EX: 小樂透 (玩法描述) (英文)");
 		req.setT_01_0003__t_special_treatment_1("");
-		req.setT_01_0003__total_several_numbers(49);
-		req.setT_01_0003__winning_several_numbers(2);
+		req.setT_01_0003__total_several_numbers(20);
+		req.setT_01_0003__winning_several_numbers(3);
 		req.setT_01_0003__top_winning_total_several_numbers(6);
-		req.setT_01_0003__special_total_several_numbers(1);
+		req.setT_01_0003__special_total_several_numbers(0);
 		req.setT_01_0003__generally_total_several_numbers(6);
-		req.setLottoPrice(50);
-		req.setOpenNumbers(7);
+		req.setLottoPrice(20);
+		req.setOpenNumbers(6);
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -205,7 +219,7 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Search__T_01_0003___1() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0001__t_code_1("");
 		req.setT_01_0002__t_code_2("");
 		req.setT_describe("");
 		Lotto_Res_1 res = lotto_Service_1.Search__T_01_0003___1(req);
@@ -224,40 +238,86 @@ class LottoProjectApplicationTests {
 	}
 
 	// -----------------------------------------------
-	// "新增"(C) - T_01_0004 (排程)
+	// "新增"(C) - T_01_0005、T_01_0004 (排程)
 	@Test
-	public void Create__T_01_0004() {
-		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004();
+	public void Create__T_01_0005__T_01_0004() {
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0005__T_01_0004();
+		List<T_01_0003> t_01_0003_List = res.getT_01_0003_List();
 		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
-		for (T_01_0004 item : t_01_0004_List) {
-			System.out.println("-------------");
-			System.out.println("第 " + item.getLottoSort() + " 期");
-			System.out.println("代碼1 : " + item.getTableCode1());
-			System.out.println("代碼2 : " + item.getTableCode2());
-			System.out.println("開獎號碼 : " + item.getWinningNumber());
-			System.out.println("是特別號碼嗎 : " + item.getSpecialWinningNumberBol());
-			System.out.println("描述1 : " + item.getTableDescribe1());
-			System.out.println("描述2 : " + item.getTableDescribe2());
-			System.out.println("-------------");
+		List<T_01_0005> t_01_0005_List = res.getT_01_0005_List();
+		for (T_01_0003 item1 : t_01_0003_List) {
+			for (T_01_0005 item2 : t_01_0005_List) {
+				if (item1.getTableCode1().equals(item2.getTableCode1())) {
+					if (item1.getTableCode2().equals(item2.getTableCode2())) {
+						System.out.println("==================================");
+						System.out.println("樂透名稱 : " + item1.getTableDescribe1());
+						System.out.println("價格 : " + item1.getLottoPrice());
+						System.out.println("總共開獎幾個數字 : " + item1.getOpenNumbers());
+						System.out.println("一般號碼有幾個數字 : " + item1.getGenerallyTotalSeveralNumbers());
+						System.out.println("特別號碼有幾個數字 : " + item1.getSpecialTotalSeveralNumbers());
+						System.out.println("----------------------");
+						System.out.println(item2.getTableDescribe1());
+						for (T_01_0004 item3 : t_01_0004_List) {
+							if (item3.getTableUuid1().equals(item2.getTableUuid1())) {
+								System.out.println("-------------");
+								System.out.println("代碼1 : " + item3.getTableCode1());
+								System.out.println("代碼2 : " + item3.getTableCode2());
+								System.out.println("開獎號碼 : " + item3.getWinningNumber());
+								System.out.println("是特別號碼嗎 : " + item3.getSpecialWinningNumberBol());
+								System.out.println("描述1 : " + item3.getTableDescribe1());
+								System.out.println("描述2 : " + item3.getTableDescribe2());
+								System.out.println("-------------");
+							}
+
+						}
+						System.out.println("----------------------");
+						System.out.println("==================================");
+					}
+				}
+
+			}
+
 		}
 		System.out.println("訊息 : " + res.getRtn_Message());
-		System.out.println("資料長度 : " + res.getT_01_0004_List().size());
 	}
 
 	// -----------------------------------------------
-	// "查詢" - T_01_0003 - 1
+	// "查詢" - T_01_0005 - 1
+	@Test
+	public void Search__T_01_0005___1() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("01");
+		req.setT_01_0002__t_code_2("");
+		req.setT_01_0005__lottoSort(1);
+		req.setT_startDate("2024-05-20");
+		req.setT_endDate("2024-05-22");
+		Lotto_Res_1 res = lotto_Service_1.Search__T_01_0005___1(req);
+		List<T_01_0005> t_01_0005_List = res.getT_01_0005_List();
+		for (T_01_0005 item : t_01_0005_List) {
+			System.out.println("-------------");
+			System.out.println("UUID : " + item.getTableUuid1());
+			System.out.println("代碼1 : " + item.getTableCode1());
+			System.out.println("代碼2 : " + item.getTableCode2());
+			System.out.println("描述1 : " + item.getTableDescribe1());
+			System.out.println("描述2 : " + item.getTableDescribe2());
+			System.out.println("發布日期 : " + item.getTableDate1());
+			System.out.println("-------------");
+		}
+		System.out.println("訊息 : " + res.getRtn_Message());
+		System.out.println("資料長度 : " + t_01_0005_List.size());
+	}
+
+	// -----------------------------------------------
+	// "查詢" - T_01_0004 - 1
 	@Test
 	public void Search__T_01_0004___1() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-A");
-		req.setT_describe("");
-		req.setT_startDate("");
-		req.setT_endDate("");
+		req.setT_01_0005__t_uuid_1("68326483-4101-4b78-8281-2b8edc3ab0f0");
 		Lotto_Res_1 res = lotto_Service_1.Search__T_01_0004___1(req);
 		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
 		for (T_01_0004 item : t_01_0004_List) {
 			System.out.println("-------------");
+			System.out.println("UUID : " + item.getTableUuid1());
 			System.out.println("代碼1 : " + item.getTableCode1());
 			System.out.println("代碼2 : " + item.getTableCode2());
 			System.out.println("描述1 : " + item.getTableDescribe1());
@@ -266,7 +326,45 @@ class LottoProjectApplicationTests {
 			System.out.println("-------------");
 		}
 		System.out.println("訊息 : " + res.getRtn_Message());
-		System.out.println("資料長度 : " + res.getT_01_0004_List().size());
+		System.out.println("資料長度 : " + t_01_0004_List.size());
 	}
 
+	// -----------------------------------------------
+	@Test
+	public void Search_1() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setT_01_0001__t_code_1("");
+		req.setT_01_0002__t_code_2("");
+		req.setT_describe("");
+		List<T_01_0003> t_01_0003_List = lotto_Service_1.Search__T_01_0003___1(req).getT_01_0003_List();
+		for (T_01_0003 item1 : t_01_0003_List) {
+			String tableCode1 = item1.getTableCode1();
+			String tableCode2 = item1.getTableCode2();
+			System.out.println("======================");
+			System.out.println("樂透名稱 : " + item1.getTableDescribe1());
+			req = new Lotto_Req_1();
+			req.setT_01_0001__t_code_1(tableCode1);
+			req.setT_01_0002__t_code_2(tableCode2);
+			req.setT_01_0005__lottoSort(0);
+			req.setT_startDate("");
+			req.setT_endDate("");
+			List<T_01_0005> t_01_0005_List = lotto_Service_1.Search__T_01_0005___1(req).getT_01_0005_List();
+			for (T_01_0005 item2 : t_01_0005_List) {
+				req = new Lotto_Req_1();
+				req.setT_01_0005__t_uuid_1(String.valueOf(item2.getTableUuid1()));
+				System.out.println("--------------");
+				System.out.println("第 " + item2.getLottoSort() + " 期");
+				System.out.println("--------------");
+				List<T_01_0004> t_01_0004_List = lotto_Service_1.Search__T_01_0004___1(req).getT_01_0004_List();
+				for (T_01_0004 item3 : t_01_0004_List) {
+					System.out.println("------");
+					System.out.println("描述1 : " + item3.getTableDescribe1());
+					System.out.println("開獎號碼 : " + item3.getWinningNumber());
+					System.out.println("是特別號碼嗎 : " + item3.getSpecialWinningNumberBol());
+					System.out.println("------");
+				}
+			}
+			System.out.println("======================");
+		}
+	}
 }

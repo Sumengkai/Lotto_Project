@@ -7,6 +7,7 @@ import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
+import com.example.Lotto_Project.Entity.T_01_0005;
 
 public class Lotto_Res_1 {
 	// -----------------------------------------------
@@ -30,8 +31,12 @@ public class Lotto_Res_1 {
 	private List<T_01_0003> t_01_0003_List;
 	// 物件<T_01_0004>
 	private T_01_0004 t_01_0004;
-	// 物件<T_01_0002> List
+	// 物件<T_01_0004> List
 	private List<T_01_0004> t_01_0004_List;
+	// 物件<T_01_0005>
+	private T_01_0005 t_01_0005;
+	// 物件<T_01_0005> List
+	private List<T_01_0005> t_01_0005_List;
 	// -----------------------
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_1;
@@ -39,6 +44,8 @@ public class Lotto_Res_1 {
 	private String not_Interesting_2;
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_3;
+	// 無意義字串_用來讓建構方法區分用的
+	private String not_Interesting_4;
 
 	// -----------------------
 	// -----------------------------------------------
@@ -117,7 +124,41 @@ public class Lotto_Res_1 {
 		this.not_Interesting_3 = not_Interesting_3;
 	}
 
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, T_01_0005 t_01_0005) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0005 = t_01_0005;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0005> t_01_0005_List, String not_Interesting_1,
+			String not_Interesting_2, String not_Interesting_3, String not_Interesting_4) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0005_List = t_01_0005_List;
+		this.not_Interesting_1 = not_Interesting_1;
+		this.not_Interesting_2 = not_Interesting_2;
+		this.not_Interesting_3 = not_Interesting_3;
+		this.not_Interesting_4 = not_Interesting_4;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0004> t_01_0004_List,
+			List<T_01_0005> t_01_0005_List) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0004_List = t_01_0004_List;
+		this.t_01_0005_List = t_01_0005_List;
+	}
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_01_0003> t_01_0003_List,
+			List<T_01_0004> t_01_0004_List, List<T_01_0005> t_01_0005_List) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_01_0003_List = t_01_0003_List;
+		this.t_01_0004_List = t_01_0004_List;
+		this.t_01_0005_List = t_01_0005_List;
+	}
 	// -----------------------------------------------
+
+
 
 	public String getRtn_Message() {
 		return rtn_Message;
@@ -229,6 +270,30 @@ public class Lotto_Res_1 {
 
 	public void setNot_Interesting_3(String not_Interesting_3) {
 		this.not_Interesting_3 = not_Interesting_3;
+	}
+
+	public T_01_0005 getT_01_0005() {
+		return t_01_0005;
+	}
+
+	public void setT_01_0005(T_01_0005 t_01_0005) {
+		this.t_01_0005 = t_01_0005;
+	}
+
+	public List<T_01_0005> getT_01_0005_List() {
+		return t_01_0005_List;
+	}
+
+	public void setT_01_0005_List(List<T_01_0005> t_01_0005_List) {
+		this.t_01_0005_List = t_01_0005_List;
+	}
+
+	public String getNot_Interesting_4() {
+		return not_Interesting_4;
+	}
+
+	public void setNot_Interesting_4(String not_Interesting_4) {
+		this.not_Interesting_4 = not_Interesting_4;
 	}
 
 }

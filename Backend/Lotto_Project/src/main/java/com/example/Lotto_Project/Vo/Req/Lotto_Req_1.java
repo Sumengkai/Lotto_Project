@@ -36,6 +36,9 @@ public class Lotto_Req_1 {
 	private String t_01_0003__t_special_treatment_1;
 	private int lottoPrice;
 	private int openNumbers;
+	// T_01_0005
+	private int t_01_0005__lottoSort;
+	private String t_01_0005__t_uuid_1;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -266,6 +269,22 @@ public class Lotto_Req_1 {
 
 	public void setT_endDate(String t_endDate) {
 		this.t_endDate = t_endDate;
+	}
+
+	public int getT_01_0005__lottoSort() {
+		return t_01_0005__lottoSort;
+	}
+
+	public void setT_01_0005__lottoSort(int t_01_0005__lottoSort) {
+		this.t_01_0005__lottoSort = t_01_0005__lottoSort;
+	}
+
+	public String getT_01_0005__t_uuid_1() {
+		return t_01_0005__t_uuid_1;
+	}
+
+	public void setT_01_0005__t_uuid_1(String t_01_0005__t_uuid_1) {
+		this.t_01_0005__t_uuid_1 = t_01_0005__t_uuid_1;
 	}
 
 }
