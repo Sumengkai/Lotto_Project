@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// -----------------------------------------------
 	// Log所需參數
 	private static final Logger _logger = LoggerFactory.getLogger(Lotto_Impl_1.class);
+	// 對密碼進行加密參數
 	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	// -----------------------------------------------
 	// 管理需要流水號的table
@@ -908,11 +911,11 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		_logger.info("方法名稱 : " + "Create__T_03_0001");
 		// -------------------------
 		// 需求參數
-		String userAccount = req.getUserAcount().trim();
-		String userPassword = passwordEncoder.encode(req.getUserPassword()).trim();
-		String userName = req.getUserName().trim();
+		String userAccount = req.getUserAcount();
+		String userPassword = passwordEncoder.encode(req.getUserPassword());
+		String userName = req.getUserName();
 		String userGender = req.getUserGender().trim();
-		String userMail = req.getUserMail().trim();
+		String userMail = req.getUserMail();
 		String companyBol = req.getCompanyBol().trim();
 		String t_03_0001__t_special_treatment_1 = req.getT_03_0001__t_special_treatment_1();
 		// -------------------------
@@ -935,6 +938,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		T_03_0001 t_03_0001 = new T_03_0001();
 		// T_01_0002
 		T_01_0002 t_01_0002 = new T_01_0002();
+		// 檢查字串的List
 		List<String> checkStringList = Arrays.asList(userAccount, userName, userGender, userMail, userPassword,
 				companyBol);
 		boolean checkInT_01_0002 = true;
@@ -964,6 +968,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 			_logger.info("資料重複。已被彈出該方法");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
 		}
+		// 檢查字串
 		boolean checkString = checkString_1(checkStringList);
 		if (checkString == false) {
 			_logger.info("資料錯誤。已被彈出該方法");
@@ -982,6 +987,208 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
 		// -------------------------
 		_logger.info("新增 : T_03_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+	}
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001
+	@Override
+	public Lotto_Res_1 Update__T_03_0001(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("修改 : T_03_0001 (Start)");
+		_logger.info("方法名稱 : " + "Update__T_03_0001");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount();
+		String userName = req.getUserName();
+		String userGender = req.getUserGender().trim();
+		String userMail = req.getUserMail();
+		String companyBol = req.getCompanyBol().trim();
+		String t_03_0001__t_special_treatment_1 = req.getT_03_0001__t_special_treatment_1();
+		// -------------------------
+		// 一般參數
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		// 代碼_TableCode
+		String t_01_0002__03 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__03.getSpecial_code_1();
+		String t_01_0002__02 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02.getSpecial_code_1();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// T_01_0002
+		T_01_0002 t_01_0002 = new T_01_0002();
+		// 檢查字串的List
+		List<String> checkStringList = Arrays.asList(userAccount, userName, userGender, userMail, companyBol);
+		boolean checkInT_01_0002 = true;
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		// 檢查有沒有存在 - T_01_0002 表裡
+		try {
+			t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__03, userGender).get();
+		} catch (Exception e) {
+			checkInT_01_0002 = false;
+			_logger.info("提醒錯誤訊息 : " + e);
+		}
+		try {
+			t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__02, companyBol).get();
+		} catch (Exception e) {
+			checkInT_01_0002 = false;
+			_logger.info("提醒錯誤訊息 : " + e);
+		}
+		// 是null會掉進去 (應該不會)
+		if (checkInT_01_0002 == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("資料找不到。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		// 檢查字串
+		boolean checkString = checkString_1(checkStringList);
+		if (checkString == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		// 取資料
+		t_03_0001 = t_03_0001_O.get();
+		t_03_0001.setUserName(userName);
+		t_03_0001.setUserGender(userGender);
+		t_03_0001.setUserMail(userMail);
+		t_03_0001.setCompanyBol(companyBol);
+		t_03_0001.setTableSpecialTreatment1(t_03_0001__t_special_treatment_1);
+		t_03_0001.setTableDate2(localDateTime);
+		// 儲存
+		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
+		// -------------------------
+		_logger.info("修改 : T_03_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+	}
+
+	// -----------------------------------------------
+	// "登入"(R) - T_03_0001
+	@Override
+	public Lotto_Res_1 Login(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("登入 : T_03_0001 (Start)");
+		_logger.info("方法名稱 : " + "Login");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount();
+		// -------------------------
+		// 一般參數
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("帳號錯誤");
+			_logger.info("帳號 : " + userAccount);
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001, false);
+		}
+		// 取資料
+		t_03_0001 = t_03_0001_O.get();
+		// 一定要直接拿到req裡面的密碼，不能經過編譯
+		boolean pwdCheck = passwordEncoder.matches(req.getUserPassword(), t_03_0001.getUserPassword());
+		if (!pwdCheck) {
+			_logger.info("密碼錯誤");
+			_logger.info("帳號 : " + userAccount);
+			_logger.info("名字 : " + t_03_0001.getUserName());
+			_logger.info("時間 : " + localDateTime);
+			// 把"T_03_0001"清空
+			t_03_0001 = new T_03_0001();
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001, false);
+		} else {
+			_logger.info("登入成功");
+			_logger.info("帳號 : " + userAccount);
+			_logger.info("名字 : " + t_03_0001.getUserName());
+			_logger.info("時間 : " + localDateTime);
+		}
+		// -------------------------
+		_logger.info("登入 : T_03_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001, true);
+	}
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001 Ps. 修改密碼
+	@Override
+	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSessions) {
+		Object attValue = httpSessions.getAttribute("AA");
+		System.out.println("AA ============== Value : " + attValue);
+		if (1 == 1) {
+			return new Lotto_Res_1();
+		}
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("修改密碼 : T_03_0001 (Start)");
+		_logger.info("方法名稱 : " + "Update__UserPassword");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount().trim();
+		String userPassword = passwordEncoder.encode(req.getUserPassword());
+
+		// -------------------------
+		// 一般參數
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// 檢查字串的List
+		List<String> checkStringList = Arrays.asList(userPassword);
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("找不到資料");
+			_logger.info("輸入的帳號 : " + userAccount);
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001);
+		}
+		// 檢查字串
+		boolean checkString = checkString_1(checkStringList);
+		if (checkString == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		// 取資料
+		t_03_0001 = t_03_0001_O.get();
+		t_03_0001.setUserPassword(userPassword);
+		t_03_0001.setTableDate2(localDateTime);
+		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
+		// -------------------------
+		_logger.info("修改密碼 : T_03_0001 (End)");
 		_logger.info("-----------------------------------------------");
 		// -------------------------
 		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
@@ -1281,5 +1488,11 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
+	public HttpSession send(HttpSession httpSession) {
+		httpSession.setAttribute("AA", "AAA");
+		// 設定有效時間
+		httpSession.setMaxInactiveInterval(20);
+		return httpSession;
+	}
 
 }

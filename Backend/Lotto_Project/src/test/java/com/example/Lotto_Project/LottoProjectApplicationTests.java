@@ -334,14 +334,40 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_03_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setUserAcount("E125...");
-		req.setUserPassword("A...");
+		req.setUserAcount("E121...");
+		req.setUserPassword("A");
 		req.setUserMail("a097303...");
 		req.setUserName("蘇盟凱");
 		req.setT_03_0001__t_special_treatment_1("");
 		req.setUserGender("M");
 		req.setCompanyBol("N");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_03_0001(req);
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001
+	@Test
+	public void Update__T_03_0001() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setUserAcount("E125...");
+		req.setUserMail("a097303...");
+		req.setUserName("蘇盟凱");
+		req.setT_03_0001__t_special_treatment_1("");
+		req.setUserGender("M");
+		req.setCompanyBol("N");
+		Lotto_Res_1 res = lotto_Service_1.Update__T_03_0001(req);
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001
+	@Test
+	public void Login() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setUserAcount("E125...");
+		req.setUserPassword("A...");
+		Lotto_Res_1 res = lotto_Service_1.Login(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 

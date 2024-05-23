@@ -2,6 +2,8 @@ package com.example.Lotto_Project.Service.Interface;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.Lotto_Project.Entity.T_01_0005;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -87,4 +89,18 @@ public interface Lotto_Service_1 {
 	// -----------------------------------------------
 	// "新增"(C) - T_03_0001 Ps. 註冊
 	public Lotto_Res_1 Create__T_03_0001(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001
+	public Lotto_Res_1 Update__T_03_0001(Lotto_Req_1 req);
+
+	// -----------------------------------------------
+	// "修改"(U) - T_03_0001 Ps. 修改密碼
+	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSessions);
+
+	public HttpSession send(HttpSession httpSession);
+
+	// -----------------------------------------------
+	// "登入"(R) - T_03_0001
+	public Lotto_Res_1 Login(Lotto_Req_1 req);
 }
