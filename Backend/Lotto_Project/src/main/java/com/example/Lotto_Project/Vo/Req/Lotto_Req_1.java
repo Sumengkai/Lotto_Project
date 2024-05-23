@@ -39,6 +39,14 @@ public class Lotto_Req_1 {
 	// T_01_0005
 	private int t_01_0005__lottoSort;
 	private String t_01_0005__t_uuid_1;
+	// T_03_0001
+	private String userAcount;
+	private String userPassword;
+	private String userName;
+	private String userGender;
+	private String userMail;
+	private String companyBol;
+	private String t_03_0001__t_special_treatment_1;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -285,6 +293,62 @@ public class Lotto_Req_1 {
 
 	public void setT_01_0005__t_uuid_1(String t_01_0005__t_uuid_1) {
 		this.t_01_0005__t_uuid_1 = t_01_0005__t_uuid_1;
+	}
+
+	public String getUserAcount() {
+		return userAcount;
+	}
+
+	public void setUserAcount(String userAcount) {
+		this.userAcount = userAcount;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserGender() {
+		return userGender;
+	}
+
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
+	}
+
+	public String getUserMail() {
+		return userMail;
+	}
+
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
+
+	public String getCompanyBol() {
+		return companyBol;
+	}
+
+	public void setCompanyBol(String companyBol) {
+		this.companyBol = companyBol;
+	}
+
+	public String getT_03_0001__t_special_treatment_1() {
+		return t_03_0001__t_special_treatment_1;
+	}
+
+	public void setT_03_0001__t_special_treatment_1(String t_03_0001__t_special_treatment_1) {
+		this.t_03_0001__t_special_treatment_1 = t_03_0001__t_special_treatment_1;
 	}
 
 }

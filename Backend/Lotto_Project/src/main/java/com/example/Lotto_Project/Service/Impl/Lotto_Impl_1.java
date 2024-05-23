@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_1;
@@ -28,6 +29,7 @@ import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
 import com.example.Lotto_Project.Entity.T_01_0005;
+import com.example.Lotto_Project.Entity.T_03_0001;
 import com.example.Lotto_Project.Repository.T_00_0001_Dao;
 import com.example.Lotto_Project.Repository.T_01_0001_Dao;
 import com.example.Lotto_Project.Repository.T_01_0002_Dao;
@@ -46,6 +48,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// -----------------------------------------------
 	// Log所需參數
 	private static final Logger _logger = LoggerFactory.getLogger(Lotto_Impl_1.class);
+	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	// -----------------------------------------------
 	// 管理需要流水號的table
 	@Autowired
@@ -95,7 +98,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -245,7 +248,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "Y"
-		String delete_Bol = Lotto_RtnCode_3.Bol_Y.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_Y.getSpecial_code_1();
 		// 訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -305,7 +308,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -461,7 +464,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "Y"
-		String delete_Bol = Lotto_RtnCode_3.Bol_Y.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_Y.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -532,7 +535,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		String T_01_0001__T_CODE_1__01 = Lotto_RtnCode_3.T_01_0001__T_CODE_1__01.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
@@ -752,7 +755,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
@@ -896,6 +899,95 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
+	// "新增"(C) - T_03_0001 Ps. 註冊
+	@Override
+	public Lotto_Res_1 Create__T_03_0001(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("新增 : T_03_0001 (Start)");
+		_logger.info("方法名稱 : " + "Create__T_03_0001");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount().trim();
+		String userPassword = passwordEncoder.encode(req.getUserPassword()).trim();
+		String userName = req.getUserName().trim();
+		String userGender = req.getUserGender().trim();
+		String userMail = req.getUserMail().trim();
+		String companyBol = req.getCompanyBol().trim();
+		String t_03_0001__t_special_treatment_1 = req.getT_03_0001__t_special_treatment_1();
+		// -------------------------
+		// 一般參數
+		// 代碼_刪除布林值 - "N"
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		// 代碼_TableCode
+		String t_01_0002__03 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__03.getSpecial_code_1();
+		String t_01_0002__02 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02.getSpecial_code_1();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// T_01_0002
+		T_01_0002 t_01_0002 = new T_01_0002();
+		List<String> checkStringList = Arrays.asList(userAccount, userName, userGender, userMail, userPassword,
+				companyBol);
+		boolean checkInT_01_0002 = true;
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		// 檢查有沒有存在 - T_01_0002 表裡
+		try {
+			t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__03, userGender).get();
+		} catch (Exception e) {
+			checkInT_01_0002 = false;
+			_logger.info("提醒錯誤訊息 : " + e);
+		}
+		try {
+			t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__02, companyBol).get();
+		} catch (Exception e) {
+			checkInT_01_0002 = false;
+			_logger.info("提醒錯誤訊息 : " + e);
+		}
+		// 是null會掉進去 (應該不會)
+		if (checkInT_01_0002 == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		// 不是null會掉進去
+		if (t_03_0001_O.isPresent()) {
+			_logger.info("資料重複。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		boolean checkString = checkString_1(checkStringList);
+		if (checkString == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3);
+		}
+		while (true) {
+			UUID tableUuid = UUID.randomUUID();
+			t_03_0001_O = t_03_0001_Dao.findById(tableUuid);
+			if (!t_03_0001_O.isPresent()) {
+				t_03_0001 = new T_03_0001(tableUuid, userAccount, userPassword, userName, userGender, userMail,
+						companyBol, localDateTime, localDateTime, t_03_0001__t_special_treatment_1, delete_Bol);
+				break;
+			}
+		}
+		// 儲存
+		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
+		// -------------------------
+		_logger.info("新增 : T_03_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+	}
+
+	// -----------------------------------------------
 	// ==============================================================================================================
 	// -----------------------------------------------
 	// (私有方法)
@@ -941,7 +1033,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0001> FilterList__T_01_0001___1(List<T_01_0001> list) {
 		List<T_01_0001> newList = new ArrayList<T_01_0001>();
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		for (T_01_0001 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
@@ -956,7 +1048,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0002> FilterList__T_01_0002___1(List<T_01_0002> list) {
 		List<T_01_0002> newList = new ArrayList<T_01_0002>();
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		for (T_01_0002 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
@@ -970,7 +1062,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0003> FilterList__T_01_0003___1(List<T_01_0003> list) {
 		List<T_01_0003> newList = new ArrayList<T_01_0003>();
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		for (T_01_0003 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
@@ -984,7 +1076,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0004> FilterList__T_01_0004___1(List<T_01_0004> list) {
 		List<T_01_0004> newList = new ArrayList<T_01_0004>();
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		for (T_01_0004 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
@@ -998,13 +1090,29 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 篩選"刪除布林值" = "N"
 	private List<T_01_0005> FilterList__T_01_0005___1(List<T_01_0005> list) {
 		List<T_01_0005> newList = new ArrayList<T_01_0005>();
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		for (T_01_0005 item : list) {
 			if (item.getDeleteBol().equals(delete_Bol)) {
 				newList.add(item);
 			}
 		}
 		return newList;
+	}
+
+	// -----------------------------------------------
+	// 檢查字串_1 - 空格、空
+	private boolean checkString_1(List<String> list) {
+		for (String item : list) {
+			// 檢查有沒有空格
+			if (item.contains(" ")) {
+				return false;
+			}
+			if (item.equals("")) {
+				return false;
+			}
+		}
+		return true;
+
 	}
 
 	// -----------------------------------------------
@@ -1095,7 +1203,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		// -------------------------
 		// 一般參數
 		// 代碼_刪除布林值 - "N"
-		String delete_Bol = Lotto_RtnCode_3.Bol_N.getSpecial_code_1();
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
 		// 代碼_表名
 		String t_01_0004_table_name = Lotto_RtnCode_2.T_01_0004.getTable_name();
 		// 代碼_TableCode
@@ -1173,10 +1281,5 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
-	// 排程 - 範例
-//	@Scheduled(cron = "* * * * * *")
-//	public void schedulePrintDate() {
-//		System.out.println("排程");
-//	}
 
 }

@@ -51,9 +51,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("02");
-		req.setT_01_0001__t_describe_1("樂透_是否為特別號");
-		req.setT_01_0001__t_describe_2("樂透_是否為特別號(英文)");
+		req.setT_01_0001__t_code_1("03");
+		req.setT_01_0001__t_describe_1("性別");
+		req.setT_01_0001__t_describe_2("性別(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0001(req);
@@ -65,9 +65,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Update__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0001__t_describe_1("樂透_樂透種類_改");
-		req.setT_01_0001__t_describe_2("樂透_樂透種類(英文)_改");
+		req.setT_01_0001__t_code_1("02");
+		req.setT_01_0001__t_describe_1("是或否");
+		req.setT_01_0001__t_describe_2("是或否(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0001(req);
@@ -109,10 +109,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("02");
-		req.setT_01_0002__t_code_2("B");
-		req.setT_01_0002__t_describe_1("不是");
-		req.setT_01_0002__t_describe_2("不是(英文)");
+		req.setT_01_0001__t_code_1("03");
+		req.setT_01_0002__t_code_2("G");
+		req.setT_01_0002__t_describe_1("男生");
+		req.setT_01_0002__t_describe_2("男生(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0002(req);
@@ -124,10 +124,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Update__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-B");
-		req.setT_01_0002__t_describe_1("樂透-B_改");
-		req.setT_01_0002__t_describe_2("樂透-B(英文)_改");
+		req.setT_01_0001__t_code_1("03");
+		req.setT_01_0002__t_code_2("G");
+		req.setT_01_0002__t_describe_1("女生");
+		req.setT_01_0002__t_describe_2("女生(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0002(req);
@@ -327,6 +327,22 @@ class LottoProjectApplicationTests {
 		}
 		System.out.println("訊息 : " + res.getRtn_Message());
 		System.out.println("資料長度 : " + t_01_0004_List.size());
+	}
+
+	// -----------------------------------------------
+	// "新增"(C) - T_03_0001 Ps. 註冊
+	@Test
+	public void Create__T_03_0001() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		req.setUserAcount("E125...");
+		req.setUserPassword("A...");
+		req.setUserMail("a097303...");
+		req.setUserName("蘇盟凱");
+		req.setT_03_0001__t_special_treatment_1("");
+		req.setUserGender("M");
+		req.setCompanyBol("N");
+		Lotto_Res_1 res = lotto_Service_1.Create__T_03_0001(req);
+		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
 	// -----------------------------------------------
