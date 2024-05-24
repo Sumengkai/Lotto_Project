@@ -17,6 +17,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,6 +28,8 @@ import org.springframework.stereotype.Service;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_1;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_2;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_3;
+import com.example.Lotto_Project.Constants.Lotto_RtnCode_4;
+import com.example.Lotto_Project.Constants.Lotto_RtnCode_5;
 import com.example.Lotto_Project.Entity.T_00_0001;
 import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
@@ -80,6 +85,8 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 用戶帳號密碼管理table
 	@Autowired
 	T_03_0001_Dao t_03_0001_Dao;
+	@Autowired
+	JavaMailSender mailSender;
 
 	// ==========================================================================
 	// T_01_0001
@@ -1079,6 +1086,81 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
+	// "修改"(U) - T_03_0001 Ps. 修改密碼
+	@Override
+	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSession) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("修改密碼 : T_03_0001 (Start)");
+		_logger.info("方法名稱 : " + "Update__UserPassword");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount();
+		String userPassword = passwordEncoder.encode(req.getUserPassword());
+		String verificationCode = req.getVerificationCode();
+		// -------------------------
+		// 一般參數
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// Session
+		String session_01 = Lotto_RtnCode_5.SESSION_01.getSessionKey();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// 檢查字串的List
+		List<String> checkStringList = Arrays.asList(userPassword);
+		Object session_01_Object = httpSession.getAttribute(session_01);
+		String session_01_VerificationCode = "";
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("找不到資料");
+			_logger.info("輸入的帳號 : " + userAccount);
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001);
+		}
+		// 檢查字串
+		boolean checkString = checkString_1(checkStringList);
+		if (checkString == false) {
+			_logger.info("資料錯誤。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		if (session_01_Object == null) {
+			_logger.info("Session異常。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		if (verificationCode == null) {
+			_logger.info("驗證碼錯誤。已被彈出該方法");
+			_logger.info("驗證碼 : " + verificationCode);
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		session_01_VerificationCode = session_01_Object.toString();
+		verificationCode = verificationCode.trim();
+		if (!session_01_VerificationCode.equals(verificationCode)) {
+			_logger.info("驗證碼錯誤。已被彈出該方法");
+			_logger.info("驗證碼 : " + verificationCode);
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+		}
+		// 取資料
+		t_03_0001 = t_03_0001_O.get();
+		t_03_0001.setUserPassword(userPassword);
+		t_03_0001.setTableDate2(localDateTime);
+		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
+		// -------------------------
+		_logger.info("修改密碼 : T_03_0001 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+	}
+
+	// -----------------------------------------------
 	// "登入"(R) - T_03_0001
 	@Override
 	public Lotto_Res_1 Login(Lotto_Req_1 req) {
@@ -1135,66 +1217,34 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
-	// "修改"(U) - T_03_0001 Ps. 修改密碼
+	// 寄信 - ( 透過字串判斷執行什麼方法 )
 	@Override
-	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSessions) {
-		Object attValue = httpSessions.getAttribute("AA");
-		System.out.println("AA ============== Value : " + attValue);
-		if (1 == 1) {
-			return new Lotto_Res_1();
-		}
+	public Lotto_Res_1 SendMail(Lotto_Req_1 req, String mailMethodName, HttpSession httpSession) {
 		// -------------------------
 		_logger.info("-----------------------------------------------");
-		_logger.info("修改密碼 : T_03_0001 (Start)");
-		_logger.info("方法名稱 : " + "Update__UserPassword");
-		// -------------------------
-		// 需求參數
-		String userAccount = req.getUserAcount().trim();
-		String userPassword = passwordEncoder.encode(req.getUserPassword());
-
+		_logger.info("寄信 : 寄信方法 (Start)");
+		_logger.info("方法名稱 : " + "SendMail");
+		_logger.info("信箱方法類型 : " + mailMethodName);
 		// -------------------------
 		// 一般參數
 		// 代碼_訊息
-		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
-		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
 		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
 		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
-		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
-		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
-		// 日期時間
-		LocalDateTime localDateTime = LocalDateTime.now();
-		// T_03_0001
-		T_03_0001 t_03_0001 = new T_03_0001();
-		// 檢查字串的List
-		List<String> checkStringList = Arrays.asList(userPassword);
-		// -------------------------
-		// 邏輯處理
-		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
-		// 是null會掉進去
-		if (!t_03_0001_O.isPresent()) {
-			_logger.info("找不到資料");
-			_logger.info("輸入的帳號 : " + userAccount);
-			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001);
-		}
-		// 檢查字串
-		boolean checkString = checkString_1(checkStringList);
-		if (checkString == false) {
-			_logger.info("資料錯誤。已被彈出該方法");
+		// 代碼_方法
+		String mailMethodName_1 = Lotto_RtnCode_4.MAIL_METHOD_NAME__1.getMailMethodName();
+		Lotto_Res_1 res = new Lotto_Res_1();
+		if (mailMethodName.equals(mailMethodName_1)) {
+			res = SendMailMethod_1(req, httpSession);
+		} else {
+			_logger.info("寄信 : 寄信方法 (Error)");
+			_logger.info("-----------------------------------------------");
 			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
 		}
-		// 取資料
-		t_03_0001 = t_03_0001_O.get();
-		t_03_0001.setUserPassword(userPassword);
-		t_03_0001.setTableDate2(localDateTime);
-		t_03_0001 = t_03_0001_Dao.save(t_03_0001);
-		// -------------------------
-		_logger.info("修改密碼 : T_03_0001 (End)");
+		_logger.info("寄信 : 寄信方法 (End)");
 		_logger.info("-----------------------------------------------");
-		// -------------------------
-		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+		return res;
 	}
 
-	// -----------------------------------------------
 	// ==============================================================================================================
 	// -----------------------------------------------
 	// (私有方法)
@@ -1488,11 +1538,80 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// -----------------------------------------------
-	public HttpSession send(HttpSession httpSession) {
-		httpSession.setAttribute("AA", "AAA");
+	// 寄信方法_1
+	private Lotto_Res_1 SendMailMethod_1(Lotto_Req_1 req, HttpSession httpSession) {
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount();
+		// -------------------------
+		// 一般參數
+		SimpleMailMessage gmail = new SimpleMailMessage();
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// Session
+		String session_01 = Lotto_RtnCode_5.SESSION_01.getSessionKey();
+		// 代碼_TableCode
+		String t_01_0002__04 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04.getSpecial_code_1();
+		String t_01_0002__04_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04_01.getSpecial_code_1();
+		String t_01_0002__05 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05.getSpecial_code_1();
+		String t_01_0002__05_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05_01.getSpecial_code_1();
+		UUID uuid = UUID.randomUUID();
+		T_03_0001 t_03_0001 = new T_03_0001();
+		T_01_0002 t_01_0002__1 = new T_01_0002();
+		T_01_0002 t_01_0002__2 = new T_01_0002();
+		boolean checkSuccessful = true;
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		Optional<T_01_0002> t_01_0002_O_1 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__04,
+				t_01_0002__04_01);
+		Optional<T_01_0002> t_01_0002_O_2 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__05,
+				t_01_0002__05_01);
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("找不到資料");
+			_logger.info("輸入的帳號 : " + userAccount);
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001);
+		}
+		// 是null會掉進去
+		if (!t_01_0002_O_1.isPresent()) {
+			_logger.info("找不到資料");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
+		}
+		// 是null會掉進去
+		if (!t_01_0002_O_2.isPresent()) {
+			_logger.info("找不到資料");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
+		}
+		// 抓資料
+		t_03_0001 = t_03_0001_O.get();
+		t_01_0002__1 = t_01_0002_O_1.get();
+		t_01_0002__2 = t_01_0002_O_2.get();
+		// 設定key - value
+		httpSession.setAttribute(session_01, uuid);
 		// 設定有效時間
-		httpSession.setMaxInactiveInterval(20);
-		return httpSession;
+		httpSession.setMaxInactiveInterval(600);
+		gmail.setFrom("programkaitest@gmail.com");
+		gmail.setTo(t_03_0001.getUserMail());
+		gmail.setSubject(t_01_0002__1.getTableDescribe1());
+		gmail.setText(t_01_0002__2.getTableDescribe1() + " : " + uuid);
+		try {
+			mailSender.send(gmail);
+		} catch (Exception e) {
+			checkSuccessful = false;
+			_logger.info("提醒錯誤訊息 : " + e);
+		}
+		if (checkSuccessful == false) {
+			// 清空資料
+			t_03_0001 = new T_03_0001();
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
+		}
+		_logger.info("驗證碼 : " + uuid);
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
 	}
-
 }

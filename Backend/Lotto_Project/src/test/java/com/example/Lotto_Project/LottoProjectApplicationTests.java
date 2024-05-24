@@ -51,9 +51,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("03");
-		req.setT_01_0001__t_describe_1("性別");
-		req.setT_01_0001__t_describe_2("性別(英文)");
+		req.setT_01_0001__t_code_1("05");
+		req.setT_01_0001__t_describe_1("寄信內容");
+		req.setT_01_0001__t_describe_2("寄信內容(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0001(req);
@@ -65,9 +65,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Update__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("02");
-		req.setT_01_0001__t_describe_1("是或否");
-		req.setT_01_0001__t_describe_2("是或否(英文)");
+		req.setT_01_0001__t_code_1("04");
+		req.setT_01_0001__t_describe_1("寄信主旨");
+		req.setT_01_0001__t_describe_2("寄信主旨(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0001(req);
@@ -109,10 +109,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("03");
-		req.setT_01_0002__t_code_2("G");
-		req.setT_01_0002__t_describe_1("男生");
-		req.setT_01_0002__t_describe_2("男生(英文)");
+		req.setT_01_0001__t_code_1("05");
+		req.setT_01_0002__t_code_2("01");
+		req.setT_01_0002__t_describe_1("測試信件-內容");
+		req.setT_01_0002__t_describe_2("測試信件-內容(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0002(req);
@@ -124,10 +124,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Update__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("03");
-		req.setT_01_0002__t_code_2("G");
-		req.setT_01_0002__t_describe_1("女生");
-		req.setT_01_0002__t_describe_2("女生(英文)");
+		req.setT_01_0001__t_code_1("04");
+		req.setT_01_0002__t_code_2("01");
+		req.setT_01_0002__t_describe_1("測試信件-主旨");
+		req.setT_01_0002__t_describe_2("測試信件-主旨(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0002(req);
@@ -351,7 +351,7 @@ class LottoProjectApplicationTests {
 	public void Update__T_03_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setUserAcount("E125...");
-		req.setUserMail("a097303...");
+		req.setUserMail("a0973038822@gmail.com");
 		req.setUserName("蘇盟凱");
 		req.setT_03_0001__t_special_treatment_1("");
 		req.setUserGender("M");
@@ -366,7 +366,7 @@ class LottoProjectApplicationTests {
 	public void Login() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setUserAcount("E125...");
-		req.setUserPassword("A...");
+		req.setUserPassword("C");
 		Lotto_Res_1 res = lotto_Service_1.Login(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}

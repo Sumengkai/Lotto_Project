@@ -96,11 +96,16 @@ public interface Lotto_Service_1 {
 
 	// -----------------------------------------------
 	// "修改"(U) - T_03_0001 Ps. 修改密碼
-	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSessions);
-
-	public HttpSession send(HttpSession httpSession);
+	public Lotto_Res_1 Update__UserPassword(Lotto_Req_1 req, HttpSession httpSession);
 
 	// -----------------------------------------------
 	// "登入"(R) - T_03_0001
 	public Lotto_Res_1 Login(Lotto_Req_1 req);
+
+	// ==========================================================================
+	// 其他
+	// -----------------------------------------------
+	// 寄信 - ( 透過字串判斷執行什麼方法 )
+	public Lotto_Res_1 SendMail(Lotto_Req_1 req, String mailMethodName, HttpSession httpSession);
+
 }

@@ -33,6 +33,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// 引入 JUnit 平台啟動器，用於執行測試。
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// 對密碼加密
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 

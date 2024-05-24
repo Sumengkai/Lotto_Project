@@ -9,6 +9,8 @@ public class Lotto_Req_1 {
 	// 日期字串
 	private String t_startDate;
 	private String t_endDate;
+	// 驗證碼
+	private String verificationCode;
 	// T_01_0001
 	private String t_01_0001__t_serial_number_1;
 	private String t_01_0001__t_code_1;
@@ -349,6 +351,14 @@ public class Lotto_Req_1 {
 
 	public void setT_03_0001__t_special_treatment_1(String t_03_0001__t_special_treatment_1) {
 		this.t_03_0001__t_special_treatment_1 = t_03_0001__t_special_treatment_1;
+	}
+
+	public String getVerificationCode() {
+		return verificationCode;
+	}
+
+	public void setVerificationCode(String verificationCode) {
+		this.verificationCode = verificationCode;
 	}
 
 }
