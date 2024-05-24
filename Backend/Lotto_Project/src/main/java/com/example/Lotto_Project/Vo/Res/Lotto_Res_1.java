@@ -16,6 +16,8 @@ public class Lotto_Res_1 {
 	private String rtn_Message;
 	// 回應訊息代碼
 	private String rtn_Code;
+	// 登入成功布林值
+	private boolean login;
 	// 物件<T_00_0001>
 	private T_00_0001 t_00_0001;
 	// 物件<T_01_0001>
@@ -40,8 +42,7 @@ public class Lotto_Res_1 {
 	private List<T_01_0005> t_01_0005_List;
 	// 物件<T_03_0001>
 	private T_03_0001 t_03_0001;
-	// 登入成功布林值
-	private boolean login;
+
 	// -----------------------
 	// 無意義字串_用來讓建構方法區分用的
 	private String not_Interesting_1;
@@ -320,6 +321,14 @@ public class Lotto_Res_1 {
 
 	public void setT_03_0001(T_03_0001 t_03_0001) {
 		this.t_03_0001 = t_03_0001;
+	}
+
+	public boolean isLogin() {
+		return login;
+	}
+
+	public void setLogin(boolean login) {
+		this.login = login;
 	}
 
 }

@@ -45,6 +45,7 @@ import com.example.Lotto_Project.Repository.T_01_0004_Dao;
 import com.example.Lotto_Project.Repository.T_01_0005_Dao;
 import com.example.Lotto_Project.Repository.T_03_0001_Dao;
 import com.example.Lotto_Project.Service.Interface.Lotto_Service_1;
+import com.example.Lotto_Project.Service.Interface.Lotto_Service_2;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
 import com.mysql.cj.log.Log;
@@ -85,8 +86,14 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	// 用戶帳號密碼管理table
 	@Autowired
 	T_03_0001_Dao t_03_0001_Dao;
+	// -------------------------
+	// 信箱要用到的接口
 	@Autowired
 	JavaMailSender mailSender;
+	// -------------------------
+	// 管理寄信方法
+	@Autowired
+	Lotto_Service_2 lotto_Service_2;
 
 	// ==========================================================================
 	// T_01_0001
@@ -751,11 +758,11 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 	}
 
 	// ==========================================================================
-	// T_01_0005、T_01_0004
+	// T_01_0005
 	// -----------------------------------------------
-	// "新增"(C) - T_01_0005、T_01_0004 (排程) Ps. 開獎
+	// "新增"(C) - T_01_0005 Ps. 開樂透期數 (排程)
 	@Override
-	public Lotto_Res_1 Create__T_01_0005__T_01_0004() {
+	public Lotto_Res_1 Create__T_01_0005() {
 		// -------------------------
 		_logger.info("-----------------------------------------------");
 		_logger.info("新增 : T_01_0005 (Start)");
@@ -813,12 +820,9 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		_logger.info("新增 : T_01_0005 (End)");
 		_logger.info("-----------------------------------------------");
 		// -------------------------
-		List<T_01_0004> t_01_0004_List = Create__T_01_0004(t_01_0005_List);
-		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0003_List, t_01_0004_List, t_01_0005_List);
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0005_List, "", "", "", "");
 	}
 
-	// ==========================================================================
-	// T_01_0005
 	// -----------------------------------------------
 	// "查詢"(R) - T_01_0005
 	@Override
@@ -1234,7 +1238,7 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		String mailMethodName_1 = Lotto_RtnCode_4.MAIL_METHOD_NAME__1.getMailMethodName();
 		Lotto_Res_1 res = new Lotto_Res_1();
 		if (mailMethodName.equals(mailMethodName_1)) {
-			res = SendMailMethod_1(req, httpSession);
+			res = lotto_Service_2.SendMailMethod_1(req, httpSession);
 		} else {
 			_logger.info("寄信 : 寄信方法 (Error)");
 			_logger.info("-----------------------------------------------");
@@ -1537,81 +1541,102 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		return t_01_0004_List;
 	}
 
-	// -----------------------------------------------
-	// 寄信方法_1
-	private Lotto_Res_1 SendMailMethod_1(Lotto_Req_1 req, HttpSession httpSession) {
+	@Override
+	public Lotto_Res_1 Create__T_01_0004() {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("新增 : T_01_0004 (Start)");
+		_logger.info("方法名稱 : " + "Create__T_01_0004");
 		// -------------------------
 		// 需求參數
-		String userAccount = req.getUserAcount();
 		// -------------------------
 		// 一般參數
-		SimpleMailMessage gmail = new SimpleMailMessage();
+		// 代碼_刪除布林值 - "N"
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
+		// 代碼_表名
+		String t_01_0004_table_name = Lotto_RtnCode_2.T_01_0004.getTable_name();
+		// 代碼_TableCode
+		String t_01_0002__02 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02.getSpecial_code_1();
+		String t_01_0002__02_Y = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02_Y.getSpecial_code_1();
+		String t_01_0002__02_N = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02_N.getSpecial_code_1();
 		// 代碼_訊息
 		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
-		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
-		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
-		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
-		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
-		// Session
-		String session_01 = Lotto_RtnCode_5.SESSION_01.getSessionKey();
-		// 代碼_TableCode
-		String t_01_0002__04 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04.getSpecial_code_1();
-		String t_01_0002__04_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04_01.getSpecial_code_1();
-		String t_01_0002__05 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05.getSpecial_code_1();
-		String t_01_0002__05_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05_01.getSpecial_code_1();
-		UUID uuid = UUID.randomUUID();
-		T_03_0001 t_03_0001 = new T_03_0001();
-		T_01_0002 t_01_0002__1 = new T_01_0002();
-		T_01_0002 t_01_0002__2 = new T_01_0002();
-		boolean checkSuccessful = true;
+		String rtn_Message_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// 代碼_樂透起始數字
+		int startNumber = Integer.valueOf(Lotto_RtnCode_3.START_NUMBER.getSpecial_code_1());
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_01_0004
+		T_01_0004 t_01_0004 = new T_01_0004();
+		List<T_01_0004> t_01_0004_List = new ArrayList<T_01_0004>();
+		// T_01_0005
+		List<T_01_0005> t_01_0005_List = t_01_0005_Dao.findAll();
 		// -------------------------
-		// 邏輯處理
-		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
-		Optional<T_01_0002> t_01_0002_O_1 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__04,
-				t_01_0002__04_01);
-		Optional<T_01_0002> t_01_0002_O_2 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__05,
-				t_01_0002__05_01);
-		// 是null會掉進去
-		if (!t_03_0001_O.isPresent()) {
-			_logger.info("找不到資料");
-			_logger.info("輸入的帳號 : " + userAccount);
-			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001);
+		// 邏輯處理 (應該不會)
+		if (t_01_0005_List.size() == 0) {
+			_logger.info("資料長度為 0 。已被彈出該方法");
+			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
 		}
-		// 是null會掉進去
-		if (!t_01_0002_O_1.isPresent()) {
-			_logger.info("找不到資料");
-			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
+		for (T_01_0005 item : t_01_0005_List) {
+			UUID tableUuid = item.getTableUuid1();
+			List<T_01_0004> checkSize__T_01_0004 = t_01_0004_Dao.search_By_TableUuid1(String.valueOf(tableUuid));
+			if (checkSize__T_01_0004.size() != 0) {
+				continue;
+			}
+			String tableCode1 = item.getTableCode1();
+			String tableCode2 = item.getTableCode2();
+			T_01_0003 t_01_0003 = t_01_0003_Dao.findByTableCode1AndTableCode2(tableCode1, tableCode2).get();
+			// 蒐集開獎號碼清單
+			List<Integer> winningNumberList = new ArrayList<Integer>();
+			// 號碼順序
+			int numberSort = 0;
+			// 蒐集開獎號碼，同時檢查有無重複號碼
+			while (true) {
+				int randomNumber = getRandomNumber(startNumber, t_01_0003.getTotalSeveralNumbers());
+				if (winningNumberList.contains(randomNumber)) {
+					continue;
+				}
+				winningNumberList.add(randomNumber);
+				if (winningNumberList.size() == t_01_0003.getOpenNumbers()) {
+					break;
+				}
+
+			}
+			for (int i = 0; i < winningNumberList.size(); i++) {
+				numberSort++;
+				T_01_0002 t_01_0002 = new T_01_0002();
+				int winningNumber = winningNumberList.get(i);
+				String winningNumberString = String.valueOf(winningNumber);
+				// 個位數補"0"
+				if (winningNumber >= 1 && winningNumber < 10) {
+					winningNumberString = "0" + winningNumberString;
+				}
+				String tableDescribe1 = "第 " + numberSort + " 個數字";
+				String tableDescribe2 = "第 " + numberSort + " 個數字(英文)";
+				// 檢查是否是特別號 (去撈出"T_01_0002"的資料)
+				if ((winningNumberList.size() - numberSort) < t_01_0003.getSpecialTotalSeveralNumbers()) {
+					t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__02, t_01_0002__02_Y).get();
+				} else {
+					t_01_0002 = t_01_0002_Dao.findByTableCode1AndTableCode2(t_01_0002__02, t_01_0002__02_N).get();
+				}
+				// 處理該表流水號
+				int T_01_0003_t_serialNumber_1 = Create_Update__T_00_0001(t_01_0004_table_name).getT_00_0001()
+						.getTableSerialNumber1();
+				t_01_0004 = new T_01_0004(T_01_0003_t_serialNumber_1, tableCode1, tableCode2, winningNumberString,
+						t_01_0002.getTableCode2(), tableDescribe1, tableDescribe2, localDateTime, localDateTime,
+						t_01_0004_table_name, "", numberSort, tableUuid, delete_Bol);
+				t_01_0004_List.add(t_01_0004);
+			}
 		}
-		// 是null會掉進去
-		if (!t_01_0002_O_2.isPresent()) {
-			_logger.info("找不到資料");
-			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
-		}
-		// 抓資料
-		t_03_0001 = t_03_0001_O.get();
-		t_01_0002__1 = t_01_0002_O_1.get();
-		t_01_0002__2 = t_01_0002_O_2.get();
-		// 設定key - value
-		httpSession.setAttribute(session_01, uuid);
-		// 設定有效時間
-		httpSession.setMaxInactiveInterval(600);
-		gmail.setFrom("programkaitest@gmail.com");
-		gmail.setTo(t_03_0001.getUserMail());
-		gmail.setSubject(t_01_0002__1.getTableDescribe1());
-		gmail.setText(t_01_0002__2.getTableDescribe1() + " : " + uuid);
-		try {
-			mailSender.send(gmail);
-		} catch (Exception e) {
-			checkSuccessful = false;
-			_logger.info("提醒錯誤訊息 : " + e);
-		}
-		if (checkSuccessful == false) {
-			// 清空資料
-			t_03_0001 = new T_03_0001();
-			return new Lotto_Res_1(rtn_Message_2, rtn_Code_2, t_03_0001);
-		}
-		_logger.info("驗證碼 : " + uuid);
-		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001);
+		// 儲存
+		t_01_0004_List = t_01_0004_Dao.saveAll(t_01_0004_List);
+		// -------------------------
+		_logger.info("新增 : T_01_0004 (End)");
+		_logger.info("-----------------------------------------------");
+		// -------------------------
+		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_01_0004_List, "", "", "");
 	}
+
 }

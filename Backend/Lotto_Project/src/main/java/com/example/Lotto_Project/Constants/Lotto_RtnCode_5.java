@@ -2,7 +2,7 @@ package com.example.Lotto_Project.Constants;
 
 public enum Lotto_RtnCode_5 {
 	// -----------------------------------------------
-	// 管理"Session"的"Key"值得"Enum"
+	// 管理"Session"的"Key"值的"Enum"
 	// -----------------------------------------------
 	//
 	SESSION_01("01")

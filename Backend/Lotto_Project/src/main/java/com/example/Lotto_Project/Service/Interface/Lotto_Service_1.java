@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.example.Lotto_Project.Entity.T_01_0004;
 import com.example.Lotto_Project.Entity.T_01_0005;
 import com.example.Lotto_Project.Vo.Req.Lotto_Req_1;
 import com.example.Lotto_Project.Vo.Res.Lotto_Res_1;
@@ -67,19 +68,21 @@ public interface Lotto_Service_1 {
 	public Lotto_Res_1 Search__T_01_0003___1(Lotto_Req_1 req);
 
 	// ==========================================================================
-	// T_01_0005、T_01_0004
-	// -----------------------------------------------
-	// "新增"(C) - T_01_0005、T_01_0004 (排程) Ps. 開獎
-	public Lotto_Res_1 Create__T_01_0005__T_01_0004();
-
-	// ==========================================================================
 	// T_01_0005
+	// -----------------------------------------------
+	// "新增"(C) - T_01_0005 Ps. 開樂透期數 (排程)
+	public Lotto_Res_1 Create__T_01_0005();
+
 	// -----------------------------------------------
 	// "查詢"(R) - T_01_0005
 	public Lotto_Res_1 Search__T_01_0005___1(Lotto_Req_1 req);
 
 	// ==========================================================================
 	// T_01_0004
+	// -----------------------------------------------
+	// "新增"(C) - T_01_0004 Ps. 開樂透號碼 (排程)
+	public Lotto_Res_1 Create__T_01_0004();
+
 	// -----------------------------------------------
 	// "查詢"(R) - T_01_0004
 	public Lotto_Res_1 Search__T_01_0004___1(Lotto_Req_1 req);

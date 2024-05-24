@@ -241,43 +241,14 @@ class LottoProjectApplicationTests {
 	// "新增"(C) - T_01_0005、T_01_0004 (排程)
 	@Test
 	public void Create__T_01_0005__T_01_0004() {
-		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0005__T_01_0004();
-		List<T_01_0003> t_01_0003_List = res.getT_01_0003_List();
-		List<T_01_0004> t_01_0004_List = res.getT_01_0004_List();
-		List<T_01_0005> t_01_0005_List = res.getT_01_0005_List();
-		for (T_01_0003 item1 : t_01_0003_List) {
-			for (T_01_0005 item2 : t_01_0005_List) {
-				if (item1.getTableCode1().equals(item2.getTableCode1())) {
-					if (item1.getTableCode2().equals(item2.getTableCode2())) {
-						System.out.println("==================================");
-						System.out.println("樂透名稱 : " + item1.getTableDescribe1());
-						System.out.println("價格 : " + item1.getLottoPrice());
-						System.out.println("總共開獎幾個數字 : " + item1.getOpenNumbers());
-						System.out.println("一般號碼有幾個數字 : " + item1.getGenerallyTotalSeveralNumbers());
-						System.out.println("特別號碼有幾個數字 : " + item1.getSpecialTotalSeveralNumbers());
-						System.out.println("----------------------");
-						System.out.println(item2.getTableDescribe1());
-						for (T_01_0004 item3 : t_01_0004_List) {
-							if (item3.getTableUuid1().equals(item2.getTableUuid1())) {
-								System.out.println("-------------");
-								System.out.println("代碼1 : " + item3.getTableCode1());
-								System.out.println("代碼2 : " + item3.getTableCode2());
-								System.out.println("開獎號碼 : " + item3.getWinningNumber());
-								System.out.println("是特別號碼嗎 : " + item3.getSpecialWinningNumberBol());
-								System.out.println("描述1 : " + item3.getTableDescribe1());
-								System.out.println("描述2 : " + item3.getTableDescribe2());
-								System.out.println("-------------");
-							}
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0005();
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
 
-						}
-						System.out.println("----------------------");
-						System.out.println("==================================");
-					}
-				}
-
-			}
-
-		}
+	// "新增"(C) - T_01_0005、T_01_0004 (排程)
+	@Test
+	public void Create__T_01_0004() {
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004();
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 

@@ -18,6 +18,6 @@ public class Scheduled_1 {
 	// -----------------------------------------------
 	@Scheduled(cron = "0 0 20 * * *")
 	public void ScheduledWork_1() {
-		lotto_Service_1.Create__T_01_0005__T_01_0004();
+		lotto_Service_1.Create__T_01_0005();
 	}
 }

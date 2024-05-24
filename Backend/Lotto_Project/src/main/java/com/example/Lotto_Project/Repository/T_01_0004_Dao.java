@@ -2,6 +2,7 @@ package com.example.Lotto_Project.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -44,5 +45,4 @@ public interface T_01_0004_Dao extends JpaRepository<T_01_0004, Integer> {
 			//
 			@Param("tableCode2") String tableCode2);
 
-	// -----------------------------------------------
 }
