@@ -32,9 +32,20 @@ CREATE TABLE `t_02_0001` (
   `number_selection_method` varchar(45) DEFAULT NULL,
   `table_name` varchar(45) DEFAULT NULL,
   `t_special_treatment_1` varchar(45) DEFAULT NULL,
+  `user_account` varchar(45) DEFAULT NULL,
+  `delete_bol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`t_uuid_1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_02_0001`
+--
+
+LOCK TABLES `t_02_0001` WRITE;
+/*!40000 ALTER TABLE `t_02_0001` DISABLE KEYS */;
+/*!40000 ALTER TABLE `t_02_0001` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -45,4 +56,4 @@ CREATE TABLE `t_02_0001` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 15:41:19
+-- Dump completed on 2024-05-27 16:12:18

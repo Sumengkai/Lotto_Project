@@ -37,6 +37,16 @@ CREATE TABLE `t_01_0005` (
   PRIMARY KEY (`t_uuid_1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_01_0005`
+--
+
+LOCK TABLES `t_01_0005` WRITE;
+/*!40000 ALTER TABLE `t_01_0005` DISABLE KEYS */;
+INSERT INTO `t_01_0005` VALUES ('3f3d09d6-33b9-495a-80ef-04ab55a08878','01','01-B','第 1 期','第 1 期(英文)',1,'2024-05-24 16:17:34','2024-05-24 16:17:34','','T_01_0005','N'),('73cc70d9-fc9a-4131-8058-84465e0931f9','01','01-A','第 2 期','第 2 期(英文)',2,'2024-05-24 16:18:35','2024-05-24 16:18:35','','T_01_0005','N'),('f52acffc-ea79-401b-8d38-c4d5791e0745','01','01-B','第 2 期','第 2 期(英文)',2,'2024-05-24 16:18:35','2024-05-24 16:18:35','','T_01_0005','N'),('fa460a65-001c-425f-9a38-a201084ad5fa','01','01-A','第 1 期','第 1 期(英文)',1,'2024-05-24 16:17:34','2024-05-24 16:17:34','','T_01_0005','N');
+/*!40000 ALTER TABLE `t_01_0005` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -47,4 +57,4 @@ CREATE TABLE `t_01_0005` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 15:41:19
+-- Dump completed on 2024-05-27 16:12:19

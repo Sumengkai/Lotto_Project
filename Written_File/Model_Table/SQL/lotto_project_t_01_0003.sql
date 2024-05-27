@@ -45,6 +45,16 @@ CREATE TABLE `t_01_0003` (
   PRIMARY KEY (`t_serial_number_1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_01_0003`
+--
+
+LOCK TABLES `t_01_0003` WRITE;
+/*!40000 ALTER TABLE `t_01_0003` DISABLE KEYS */;
+INSERT INTO `t_01_0003` VALUES (1,'01','01-A','樂透-A- EX: 大樂透_改','樂透-A- EX: 大樂透 (英文)_改','樂透-A- EX: 大樂透 (玩法描述)_改','樂透-A- EX: 大樂透 (玩法描述) (英文)_改',49,2,6,1,6,'2024-05-17 15:28:52','2024-05-22 11:41:55','T_01_0003','','N',50,7),(5,'01','01-B','樂透-B- EX: 小樂透_改','樂透-B- EX: 小樂透 (英文)_改','樂透-B- EX: 小樂透 (玩法描述)_改','樂透-B- EX: 小樂透 (玩法描述) (英文)_改',20,3,5,0,5,'2024-05-22 10:33:32','2024-05-22 11:39:22','T_01_0003','','N',20,5);
+/*!40000 ALTER TABLE `t_01_0003` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +65,4 @@ CREATE TABLE `t_01_0003` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 15:41:19
+-- Dump completed on 2024-05-27 16:12:18

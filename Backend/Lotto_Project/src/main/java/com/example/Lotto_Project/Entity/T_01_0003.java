@@ -31,7 +31,7 @@ public class T_01_0003 {
 	@Column(name = "t_describe_4")
 	private String tableDescribe4;
 	@Column(name = "total_several_numbers")
-	private int totalSeveralNumbers;// 號碼總數
+	private int totalSeveralNumbers;// 總共幾個號碼
 	@Column(name = "winning_several_numbers")
 	private int winningSeveralNumbers;// 中獎號碼數量 (至少需要中幾個號碼)
 	@Column(name = "top_winning_total_several_numbers")

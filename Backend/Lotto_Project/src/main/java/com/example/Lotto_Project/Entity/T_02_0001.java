@@ -23,10 +23,12 @@ public class T_02_0001 {
 	@Column(name = "t_uuid_2")
 	@Type(type = "uuid-char")
 	private UUID tableUuid2;
+	@Column(name = "user_account")
+	private String userAccount;
 	@Column(name = "t_code_1")
-	private String tableCode1;
+	private String tableCode1; // 感覺不需要了
 	@Column(name = "t_code_2")
-	private String tableCode2;
+	private String tableCode2; // 感覺不需要了
 	@Column(name = "t_date_1")
 	private LocalDateTime tableDate1;
 	@Column(name = "t_date_2")
@@ -45,11 +47,11 @@ public class T_02_0001 {
 
 	}
 
-	public T_02_0001(UUID tableUuid1, UUID tableUuid2, String tableCode1, String tableCode2, LocalDateTime tableDate1,
-			LocalDateTime tableDate2, String numberSelectionMethod, String tableName, String tableSpecialTreatment1,
-			String deleteBol) {
+	public T_02_0001(UUID tableUuid1, String userAccount, String tableCode1, String tableCode2,
+			LocalDateTime tableDate1, LocalDateTime tableDate2, String numberSelectionMethod, String tableName,
+			String tableSpecialTreatment1, String deleteBol) {
 		this.tableUuid1 = tableUuid1;
-		this.tableUuid2 = tableUuid2;
+		this.userAccount = userAccount;
 		this.tableCode1 = tableCode1;
 		this.tableCode2 = tableCode2;
 		this.tableDate1 = tableDate1;
@@ -69,12 +71,12 @@ public class T_02_0001 {
 		this.tableUuid1 = tableUuid1;
 	}
 
-	public UUID getTableUuid2() {
-		return tableUuid2;
+	public String getUserAccount() {
+		return userAccount;
 	}
 
-	public void setTableUuid2(UUID tableUuid2) {
-		this.tableUuid2 = tableUuid2;
+	public void setUserAccount(String userAccount) {
+		this.userAccount = userAccount;
 	}
 
 	public String getTableCode1() {

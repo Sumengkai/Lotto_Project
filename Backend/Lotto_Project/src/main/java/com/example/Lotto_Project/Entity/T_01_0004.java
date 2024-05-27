@@ -21,10 +21,15 @@ public class T_01_0004 {
 	@Id
 	@Column(name = "t_serial_number_1")
 	private int tableSerialNumber1;
+	@Column(name = "t_uuid_1")
+	@Type(type = "uuid-char")
+	private UUID tableUuid1;
 	@Column(name = "t_code_1")
-	private String tableCode1;
+	private String tableCode1; // 感覺不需要了
 	@Column(name = "t_code_2")
-	private String tableCode2;
+	private String tableCode2; // 感覺不需要了
+	@Column(name = "number_sort")
+	private int numberSort;
 	@Column(name = "winning_number")
 	private String winningNumber;
 	@Column(name = "special_winning_number_bol")
@@ -41,11 +46,6 @@ public class T_01_0004 {
 	private String tableName;
 	@Column(name = "t_special_treatment_1")
 	private String tableSpecialTreatment1;
-	@Column(name = "number_sort")
-	private int numberSort;
-	@Column(name = "t_uuid_1")
-	@Type(type = "uuid-char")
-	private UUID tableUuid1;
 	@Column(name = "delete_bol")
 	private String deleteBol;
 
