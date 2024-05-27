@@ -1,5 +1,9 @@
 package com.example.Lotto_Project.Vo.Req;
 
+import java.util.List;
+
+import com.example.Lotto_Project.Box.Box_1;
+
 public class Lotto_Req_1 {
 	// -----------------------------------------------
 	// Table名稱
@@ -49,6 +53,11 @@ public class Lotto_Req_1 {
 	private String userMail;
 	private String companyBol;
 	private String t_03_0001__t_special_treatment_1;
+	// T_02_0001
+	private String numberSelectionMethod;
+	private String t_02_0001__t_special_treatment_1;
+	// 請求封箱
+	private List<Box_1> listBox_1;
 
 	// -----------------------------------------------
 	public Lotto_Req_1() {
@@ -359,6 +368,30 @@ public class Lotto_Req_1 {
 
 	public void setVerificationCode(String verificationCode) {
 		this.verificationCode = verificationCode;
+	}
+
+	public String getNumberSelectionMethod() {
+		return numberSelectionMethod;
+	}
+
+	public void setNumberSelectionMethod(String numberSelectionMethod) {
+		this.numberSelectionMethod = numberSelectionMethod;
+	}
+
+	public String getT_02_0001__t_special_treatment_1() {
+		return t_02_0001__t_special_treatment_1;
+	}
+
+	public void setT_02_0001__t_special_treatment_1(String t_02_0001__t_special_treatment_1) {
+		this.t_02_0001__t_special_treatment_1 = t_02_0001__t_special_treatment_1;
+	}
+
+	public List<Box_1> getListBox_1() {
+		return listBox_1;
+	}
+
+	public void setListBox_1(List<Box_1> listBox_1) {
+		this.listBox_1 = listBox_1;
 	}
 
 }

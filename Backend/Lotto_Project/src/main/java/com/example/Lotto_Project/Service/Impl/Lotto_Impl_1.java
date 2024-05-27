@@ -25,6 +25,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.Lotto_Project.Box.Box_1;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_1;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_2;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_3;
@@ -1220,6 +1221,67 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		return new Lotto_Res_1(rtn_Message_1, rtn_Code_1, t_03_0001, true);
 	}
 
+	// ==========================================================================
+	// T_02_0001
+	// -----------------------------------------------
+	// "新增"(C) - T_02_0001 Ps. 買樂透
+	@Override
+	public Lotto_Res_1 Create__T_02_0001__T_02_0002(Lotto_Req_1 req) {
+		// -------------------------
+		_logger.info("-----------------------------------------------");
+		_logger.info("新增 : T_02_0001 (Start)");
+		_logger.info("方法名稱 : " + "Create__T_02_0001");
+		// -------------------------
+		// 需求參數
+		String userAccount = req.getUserAcount();
+		String numberSelectionMethod = req.getNumberSelectionMethod();
+		String t_01_0005__t_uuid_1 = req.getT_01_0005__t_uuid_1();
+		String t_02_0001__t_special_treatment_1 = req.getT_02_0001__t_special_treatment_1();
+		List<Box_1> listBox_1 = req.getListBox_1();
+		// -------------------------
+		// 一般參數
+		// 代碼_刪除布林值 - "N"
+		String delete_Bol = Lotto_RtnCode_3.DELETE_Bol_N.getSpecial_code_1();
+		// 代碼_訊息
+		String rtn_Message_1 = Lotto_RtnCode_1.SUCCESSFUL.getMessage();
+		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
+		String rtn_Message_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getMessage();
+		String rtn_Code_2 = Lotto_RtnCode_1.DUPLICATE_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.ERROR_DATA.getCode();
+		String rtn_Message_4 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_4 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		// 代碼_TableCode
+		String t_01_0002__02 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__02.getSpecial_code_1();
+		// 代碼_表名
+		String T_02_0001_table_name = Lotto_RtnCode_2.T_02_0001.getTable_name();
+		// 日期時間
+		LocalDateTime localDateTime = LocalDateTime.now();
+		// T_03_0001
+		T_03_0001 t_03_0001 = new T_03_0001();
+		// T_01_0005
+		T_01_0005 t_01_0005 = new T_01_0005();
+		// -------------------------
+		// 邏輯處理
+		Optional<T_03_0001> t_03_0001_O = t_03_0001_Dao.findByUserAccount(userAccount);
+		Optional<T_01_0005> t_01_0005_O = t_01_0005_Dao.findById(UUID.fromString(t_01_0005__t_uuid_1));
+		// 是null會掉進去
+		if (!t_03_0001_O.isPresent()) {
+			_logger.info("帳號錯誤(嘗試重新登入)");
+			_logger.info("帳號 : " + userAccount);
+			return new Lotto_Res_1(rtn_Message_4, rtn_Code_4, t_03_0001, false);
+		}
+		// 是null會掉進去 (應該不會)
+		if (!t_01_0005_O.isPresent()) {
+			_logger.info("樂透錯誤(樂透資料異常)");
+			_logger.info("樂透 : " + t_01_0005__t_uuid_1);
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_01_0005);
+		}
+		return null;
+	}
+
+	// ==========================================================================
+	// 其他
 	// -----------------------------------------------
 	// 寄信 - ( 透過字串判斷執行什麼方法 )
 	@Override
