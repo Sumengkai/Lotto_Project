@@ -14,7 +14,7 @@ import org.hibernate.annotations.Type;
 @Table(name = "t_02_0001")
 public class T_02_0001 {
 	// -----------------------------------------------
-	// 用戶買樂透table
+	// 用戶買樂透table - 樂透本身
 	// -----------------------------------------------
 	@Id
 	@Column(name = "t_uuid_1")
@@ -120,6 +120,14 @@ public class T_02_0001 {
 
 	public void setDeleteBol(String deleteBol) {
 		this.deleteBol = deleteBol;
+	}
+
+	public UUID getTableUuid2() {
+		return tableUuid2;
+	}
+
+	public void setTableUuid2(UUID tableUuid2) {
+		this.tableUuid2 = tableUuid2;
 	}
 
 }

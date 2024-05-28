@@ -1,20 +1,26 @@
 package com.example.Lotto_Project;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.SystemPropertyUtils;
 
+import com.example.Lotto_Project.Box.Box_1;
 import com.example.Lotto_Project.Constants.Lotto_RtnCode_2;
 import com.example.Lotto_Project.Entity.T_01_0001;
 import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
 import com.example.Lotto_Project.Entity.T_01_0005;
+import com.example.Lotto_Project.Entity.T_02_0001;
+import com.example.Lotto_Project.Entity.T_02_0002;
 import com.example.Lotto_Project.Repository.SearchTable_1;
 import com.example.Lotto_Project.Repository.T_01_0004_Dao;
 import com.example.Lotto_Project.Repository.T_01_0005_Dao;
@@ -51,9 +57,9 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0001() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("05");
-		req.setT_01_0001__t_describe_1("寄信內容");
-		req.setT_01_0001__t_describe_2("寄信內容(英文)");
+		req.setT_01_0001__t_code_1("06");
+		req.setT_01_0001__t_describe_1("選號方式");
+		req.setT_01_0001__t_describe_2("選號方式(英文)");
 		req.setT_01_0001__t_user("");
 		req.setT_01_0001__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0001(req);
@@ -109,10 +115,10 @@ class LottoProjectApplicationTests {
 	@Test
 	public void Create__T_01_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		req.setT_01_0001__t_code_1("05");
-		req.setT_01_0002__t_code_2("01");
-		req.setT_01_0002__t_describe_1("測試信件-內容");
-		req.setT_01_0002__t_describe_2("測試信件-內容(英文)");
+		req.setT_01_0001__t_code_1("06");
+		req.setT_01_0002__t_code_2("B");
+		req.setT_01_0002__t_describe_1("手動選號");
+		req.setT_01_0002__t_describe_2("手動選號(英文)");
 		req.setT_01_0002__t_user("");
 		req.setT_01_0002__t_special_treatment_1("");
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0002(req);
@@ -174,7 +180,7 @@ class LottoProjectApplicationTests {
 	public void Create__T_01_0003() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-B");
+		req.setT_01_0002__t_code_2("01-C");
 		req.setT_01_0003__t_describe_1("樂透-B- EX: 小樂透");
 		req.setT_01_0003__t_describe_2("樂透-B- EX: 小樂透 (英文)");
 		req.setT_01_0003__t_describe_3("樂透-B- EX: 小樂透 (玩法描述)");
@@ -187,6 +193,7 @@ class LottoProjectApplicationTests {
 		req.setT_01_0003__generally_total_several_numbers(6);
 		req.setLottoPrice(20);
 		req.setOpenNumbers(6);
+		req.setSelectTotalNumbers(6);
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -197,7 +204,7 @@ class LottoProjectApplicationTests {
 	public void Update__T_01_0003() {
 		Lotto_Req_1 req = new Lotto_Req_1();
 		req.setT_01_0001__t_code_1("01");
-		req.setT_01_0002__t_code_2("01-A");
+		req.setT_01_0002__t_code_2("01-C");
 		req.setT_01_0003__t_describe_1("樂透-A- EX: 大樂透_改");
 		req.setT_01_0003__t_describe_2("樂透-A- EX: 大樂透 (英文)_改");
 		req.setT_01_0003__t_describe_3("樂透-A- EX: 大樂透 (玩法描述)_改");
@@ -210,6 +217,7 @@ class LottoProjectApplicationTests {
 		req.setT_01_0003__generally_total_several_numbers(6);
 		req.setLottoPrice(50);
 		req.setOpenNumbers(7);
+		req.setSelectTotalNumbers(8);
 		Lotto_Res_1 res = lotto_Service_1.Update__T_01_0003(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -240,7 +248,7 @@ class LottoProjectApplicationTests {
 	// -----------------------------------------------
 	// "新增"(C) - T_01_0005、T_01_0004 (排程)
 	@Test
-	public void Create__T_01_0005__T_01_0004() {
+	public void Create__T_01_0005() {
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0005();
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
@@ -340,6 +348,39 @@ class LottoProjectApplicationTests {
 		req.setUserPassword("C");
 		Lotto_Res_1 res = lotto_Service_1.Login(req);
 		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
+	// -----------------------------------------------
+	// "新增"(C) - T_02_0001、T_02_0002 Ps. 買樂透
+	@Test
+	public void Create__T_02_0001__T_02_0002() {
+		Lotto_Req_1 req = new Lotto_Req_1();
+		String[] numberArray_1 = { "01", "02", "03", "04", "05", "06" };
+		String[] numberArray_2 = { "07", "08", "09", "10", "11", "12" };
+		String[] numberArray_3 = {};
+		Box_1 box1 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_1, "", "B");
+		Box_1 box2 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_2, "", "B");
+		Box_1 box3 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_3, "", "A");
+		List<Box_1> box_List = Arrays.asList(box1, box3);
+		req.setUserAcount("E125...");
+		req.setListBox_1(box_List);
+		Lotto_Res_1 res = lotto_Service_1.Create__T_02_0001__T_02_0002(req);
+		List<T_02_0001> t_02_0001List = res.getT_02_0001_List();
+		List<T_02_0002> t_02_0002List = res.getT_02_0002_List();
+		for (T_02_0001 item1 : t_02_0001List) {
+			T_01_0005 t_01_0005 = t_01_0005_Dao.findById(item1.getTableUuid2()).get();
+			System.out.println("============================================");
+			System.out.println("樂透期數 : " + t_01_0005.getTableDescribe1());
+			for (T_02_0002 item2 : t_02_0002List) {
+				if (item1.getTableUuid1().equals(item2.getTableUuid2())) {
+					System.out.println("---------------------");
+					System.out.println("所選號碼 : " + item2.getSelectNumber1());
+					System.out.println("是特別號碼嗎 : " + item2.getSpecialWinningNumberBol());
+					System.out.println("---------------------");
+				}
+			}
+			System.out.println("============================================");
+		}
 	}
 
 	// -----------------------------------------------

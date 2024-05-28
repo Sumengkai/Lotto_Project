@@ -8,6 +8,8 @@ import com.example.Lotto_Project.Entity.T_01_0002;
 import com.example.Lotto_Project.Entity.T_01_0003;
 import com.example.Lotto_Project.Entity.T_01_0004;
 import com.example.Lotto_Project.Entity.T_01_0005;
+import com.example.Lotto_Project.Entity.T_02_0001;
+import com.example.Lotto_Project.Entity.T_02_0002;
 import com.example.Lotto_Project.Entity.T_03_0001;
 
 public class Lotto_Res_1 {
@@ -42,6 +44,10 @@ public class Lotto_Res_1 {
 	private List<T_01_0005> t_01_0005_List;
 	// 物件<T_03_0001>
 	private T_03_0001 t_03_0001;
+	// 物件<T_02_0001> List
+	private List<T_02_0001> t_02_0001_List;
+	// 物件<T_02_0002> List
+	private List<T_02_0002> t_02_0002_List;
 
 	// -----------------------
 	// 無意義字串_用來讓建構方法區分用的
@@ -175,6 +181,15 @@ public class Lotto_Res_1 {
 		this.rtn_Code = rtn_Code;
 		this.t_03_0001 = t_03_0001;
 		this.login = login;
+	}
+
+	public Lotto_Res_1(String rtn_Message, String rtn_Code, List<T_02_0001> t_02_0001_List,
+			List<T_02_0002> t_02_0002_List, String not_Interesting_1) {
+		this.rtn_Message = rtn_Message;
+		this.rtn_Code = rtn_Code;
+		this.t_02_0001_List = t_02_0001_List;
+		this.t_02_0002_List = t_02_0002_List;
+		this.not_Interesting_1 = not_Interesting_1;
 	}
 
 	// -----------------------------------------------
@@ -329,6 +344,22 @@ public class Lotto_Res_1 {
 
 	public void setLogin(boolean login) {
 		this.login = login;
+	}
+
+	public List<T_02_0001> getT_02_0001_List() {
+		return t_02_0001_List;
+	}
+
+	public void setT_02_0001_List(List<T_02_0001> t_02_0001_List) {
+		this.t_02_0001_List = t_02_0001_List;
+	}
+
+	public List<T_02_0002> getT_02_0002_List() {
+		return t_02_0002_List;
+	}
+
+	public void setT_02_0002_List(List<T_02_0002> t_02_0002_List) {
+		this.t_02_0002_List = t_02_0002_List;
 	}
 
 }

@@ -14,7 +14,7 @@ import org.hibernate.annotations.Type;
 @Table(name = "t_02_0002")
 public class T_02_0002 {
 	// -----------------------------------------------
-	// 用戶買樂透的號碼table
+	// 用戶買樂透的號碼table - 號碼
 	// -----------------------------------------------
 	@Id
 	@Column(name = "t_uuid_1")

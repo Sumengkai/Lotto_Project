@@ -42,6 +42,7 @@ public class Lotto_Req_1 {
 	private String t_01_0003__t_special_treatment_1;
 	private int lottoPrice;
 	private int openNumbers;
+	private int selectTotalNumbers;
 	// T_01_0005
 	private int t_01_0005__lottoSort;
 	private String t_01_0005__t_uuid_1;
@@ -392,6 +393,14 @@ public class Lotto_Req_1 {
 
 	public void setListBox_1(List<Box_1> listBox_1) {
 		this.listBox_1 = listBox_1;
+	}
+
+	public int getSelectTotalNumbers() {
+		return selectTotalNumbers;
+	}
+
+	public void setSelectTotalNumbers(int selectTotalNumbers) {
+		this.selectTotalNumbers = selectTotalNumbers;
 	}
 
 }

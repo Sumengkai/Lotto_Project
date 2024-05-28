@@ -87,9 +87,9 @@ public class Lotto_Impl_2 implements Lotto_Service_2 {
 		// Session
 		String session_01 = Lotto_RtnCode_5.SESSION_01.getSessionKey();
 		// 代碼_TableCode
-		String t_01_0002__04 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04.getSpecial_code_1();
+		String t_01_0002__04 = Lotto_RtnCode_3.T_01_0001__T_CODE_1__04.getSpecial_code_1();
 		String t_01_0002__04_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__04_01.getSpecial_code_1();
-		String t_01_0002__05 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05.getSpecial_code_1();
+		String t_01_0002__05 = Lotto_RtnCode_3.T_01_0001__T_CODE_1__05.getSpecial_code_1();
 		String t_01_0002__05_01 = Lotto_RtnCode_3.T_01_0002__T_CODE_1__05_01.getSpecial_code_1();
 		UUID uuid = UUID.randomUUID();
 		String uuidString = uuid.toString().substring(0, 5);
