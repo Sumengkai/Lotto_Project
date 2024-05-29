@@ -1,0 +1,357 @@
+08:45:25.617 INFO  [main][SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration(AbstractTestContextBootstrapper.java:305)] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Lotto_Project.LottoProjectApplicationTests], using SpringBootContextLoader
+08:45:25.623 INFO  [main][AbstractContextLoader.generateDefaultLocations(AbstractContextLoader.java:264)] Could not detect default resource locations for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+08:45:25.624 INFO  [main][AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(AnnotationConfigContextLoaderUtils.java:83)] Could not detect default configuration classes for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: LottoProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:45:25.705 INFO  [main][SpringBootTestContextBootstrapper.getOrFindConfigurationClasses(SpringBootTestContextBootstrapper.java:238)] Found @SpringBootConfiguration com.example.Lotto_Project.LottoProjectApplication for test class com.example.Lotto_Project.LottoProjectApplicationTests
+08:45:25.788 INFO  [main][SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:245)] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:45:25.799 INFO  [main][SpringBootTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:174)] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27a5328c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e5f4170, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c345c5f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5966e1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65e61854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1568159, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4fcee388, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f9879ac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37f21974, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f4d427e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e521c1e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@224b4d61]
+08:45:26.086 INFO  [main][LottoProjectApplicationTests.logStarting(StartupInfoLogger.java:55)] Starting LottoProjectApplicationTests using Java 17.0.10 on LAPTOP-FFEFJF33 with PID 4884 (started by fansy_w1161jp in D:\SpringBoot\WorkSpace\Demo_20240513\Lotto_Project)
+08:45:26.087 INFO  [main][LottoProjectApplicationTests.logStartupProfileInfo(SpringApplication.java:631)] No active profile set, falling back to 1 default profile: "default"
+08:45:26.567 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:45:26.629 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 54 ms. Found 10 JPA repository interfaces.
+08:45:27.046 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+08:45:27.195 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+08:45:27.248 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+08:45:27.289 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.14.Final
+08:45:27.431 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08:45:27.585 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+08:45:28.069 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:45:28.077 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:45:28.832 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:45:29.262 INFO  [main][LottoProjectApplicationTests.logStarted(StartupInfoLogger.java:61)] Started LottoProjectApplicationTests in 3.43 seconds (JVM running for 4.87)
+08:45:29.408 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1248)] -----------------------------------------------
+08:45:29.408 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1249)] 新增 : T_02_0001 (Start)
+08:45:29.409 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1250)] 方法名稱 : Create__T_02_0001
+08:45:29.607 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1396)] 新增 : T_02_0001 (End)
+08:45:29.608 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1397)] -----------------------------------------------
+08:45:29.634 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+08:45:29.635 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+08:45:29.642 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+08:46:27.875 INFO  [main][SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration(AbstractTestContextBootstrapper.java:305)] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Lotto_Project.LottoProjectApplicationTests], using SpringBootContextLoader
+08:46:27.881 INFO  [main][AbstractContextLoader.generateDefaultLocations(AbstractContextLoader.java:264)] Could not detect default resource locations for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+08:46:27.881 INFO  [main][AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(AnnotationConfigContextLoaderUtils.java:83)] Could not detect default configuration classes for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: LottoProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:46:27.957 INFO  [main][SpringBootTestContextBootstrapper.getOrFindConfigurationClasses(SpringBootTestContextBootstrapper.java:238)] Found @SpringBootConfiguration com.example.Lotto_Project.LottoProjectApplication for test class com.example.Lotto_Project.LottoProjectApplicationTests
+08:46:28.050 INFO  [main][SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:245)] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:46:28.061 INFO  [main][SpringBootTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:174)] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27a5328c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e5f4170, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c345c5f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5966e1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65e61854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1568159, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4fcee388, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f9879ac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37f21974, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f4d427e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e521c1e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@224b4d61]
+08:46:28.296 INFO  [main][LottoProjectApplicationTests.logStarting(StartupInfoLogger.java:55)] Starting LottoProjectApplicationTests using Java 17.0.10 on LAPTOP-FFEFJF33 with PID 14228 (started by fansy_w1161jp in D:\SpringBoot\WorkSpace\Demo_20240513\Lotto_Project)
+08:46:28.296 INFO  [main][LottoProjectApplicationTests.logStartupProfileInfo(SpringApplication.java:631)] No active profile set, falling back to 1 default profile: "default"
+08:46:28.721 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:46:28.788 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 62 ms. Found 10 JPA repository interfaces.
+08:46:29.214 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+08:46:29.361 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+08:46:29.408 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+08:46:29.446 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.14.Final
+08:46:29.591 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08:46:29.714 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+08:46:30.214 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:46:30.223 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:46:30.949 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:46:31.381 INFO  [main][LottoProjectApplicationTests.logStarted(StartupInfoLogger.java:61)] Started LottoProjectApplicationTests in 3.285 seconds (JVM running for 4.261)
+08:46:31.535 INFO  [main][Lotto_Impl_1.Create__T_01_0005(Lotto_Impl_1.java:785)] -----------------------------------------------
+08:46:31.535 INFO  [main][Lotto_Impl_1.Create__T_01_0005(Lotto_Impl_1.java:786)] 新增 : T_01_0005 (Start)
+08:46:31.536 INFO  [main][Lotto_Impl_1.Create__T_01_0005(Lotto_Impl_1.java:787)] 方法名稱 : Create__T_01_0005
+08:46:31.629 INFO  [main][Lotto_Impl_1.getLottoSort(Lotto_Impl_1.java:1618)] 提醒錯誤訊息 : org.springframework.aop.AopInvocationException: Null return value from advice does not match primitive return type for: public abstract int com.example.Lotto_Project.Repository.T_01_0005_Dao.search_MAX_LottoSort_By_TableCode1_TableCode2(java.lang.String,java.lang.String)
+08:46:31.678 INFO  [main][Lotto_Impl_1.Create__T_01_0005(Lotto_Impl_1.java:838)] 新增 : T_01_0005 (End)
+08:46:31.678 INFO  [main][Lotto_Impl_1.Create__T_01_0005(Lotto_Impl_1.java:839)] -----------------------------------------------
+08:46:31.693 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+08:46:31.695 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+08:46:31.703 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+08:46:56.019 INFO  [main][SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration(AbstractTestContextBootstrapper.java:305)] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Lotto_Project.LottoProjectApplicationTests], using SpringBootContextLoader
+08:46:56.024 INFO  [main][AbstractContextLoader.generateDefaultLocations(AbstractContextLoader.java:264)] Could not detect default resource locations for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+08:46:56.025 INFO  [main][AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(AnnotationConfigContextLoaderUtils.java:83)] Could not detect default configuration classes for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: LottoProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:46:56.105 INFO  [main][SpringBootTestContextBootstrapper.getOrFindConfigurationClasses(SpringBootTestContextBootstrapper.java:238)] Found @SpringBootConfiguration com.example.Lotto_Project.LottoProjectApplication for test class com.example.Lotto_Project.LottoProjectApplicationTests
+08:46:56.185 INFO  [main][SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:245)] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:46:56.197 INFO  [main][SpringBootTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:174)] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27a5328c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e5f4170, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c345c5f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5966e1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65e61854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1568159, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4fcee388, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f9879ac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37f21974, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f4d427e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e521c1e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@224b4d61]
+08:46:56.448 INFO  [main][LottoProjectApplicationTests.logStarting(StartupInfoLogger.java:55)] Starting LottoProjectApplicationTests using Java 17.0.10 on LAPTOP-FFEFJF33 with PID 17396 (started by fansy_w1161jp in D:\SpringBoot\WorkSpace\Demo_20240513\Lotto_Project)
+08:46:56.449 INFO  [main][LottoProjectApplicationTests.logStartupProfileInfo(SpringApplication.java:631)] No active profile set, falling back to 1 default profile: "default"
+08:46:56.890 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:46:56.950 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 52 ms. Found 10 JPA repository interfaces.
+08:46:57.362 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+08:46:57.500 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+08:46:57.548 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+08:46:57.591 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.14.Final
+08:46:57.735 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08:46:57.868 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+08:46:58.379 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:46:58.388 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:46:59.138 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:46:59.565 INFO  [main][LottoProjectApplicationTests.logStarted(StartupInfoLogger.java:61)] Started LottoProjectApplicationTests in 3.333 seconds (JVM running for 4.26)
+08:46:59.722 INFO  [main][Lotto_Impl_1.Create__T_01_0004(Lotto_Impl_1.java:1733)] -----------------------------------------------
+08:46:59.722 INFO  [main][Lotto_Impl_1.Create__T_01_0004(Lotto_Impl_1.java:1734)] 新增 : T_01_0004 (Start)
+08:46:59.722 INFO  [main][Lotto_Impl_1.Create__T_01_0004(Lotto_Impl_1.java:1735)] 方法名稱 : Create__T_01_0004
+08:46:59.811 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:46:59.811 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:46:59.811 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:46:59.851 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:46:59.852 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 49
+08:46:59.852 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:46:59.852 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:46:59.855 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:46:59.855 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:46:59.855 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:46:59.958 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:46:59.958 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 50
+08:46:59.959 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:46:59.959 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:46:59.963 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:46:59.963 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:46:59.963 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:46:59.972 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:46:59.972 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 51
+08:46:59.972 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:46:59.973 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:46:59.976 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:46:59.977 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:46:59.977 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:46:59.986 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:46:59.986 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 52
+08:46:59.987 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:46:59.987 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:46:59.991 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:46:59.991 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:46:59.991 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:46:59.998 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:46:59.999 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 53
+08:46:59.999 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:46:59.999 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.002 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.002 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.002 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.011 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.011 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 54
+08:47:00.011 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.011 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.014 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.014 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.014 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.021 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.022 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 55
+08:47:00.022 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.022 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.033 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.033 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.033 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.040 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.040 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 56
+08:47:00.041 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.041 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.043 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.043 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.043 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.050 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.050 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 57
+08:47:00.050 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.050 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.053 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.053 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.053 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.059 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.059 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 58
+08:47:00.059 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.059 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.061 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.062 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.062 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.068 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.068 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 59
+08:47:00.069 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.069 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.071 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.071 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.071 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.077 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.077 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 60
+08:47:00.078 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.078 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.080 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.080 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.080 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.087 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.087 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 61
+08:47:00.087 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.087 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.089 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.089 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.090 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.095 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.096 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 62
+08:47:00.096 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.096 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.105 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.105 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.106 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.113 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.113 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 63
+08:47:00.113 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.113 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.118 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.118 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.118 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.126 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.126 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 64
+08:47:00.126 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.126 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.128 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.129 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.129 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.138 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.139 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 65
+08:47:00.139 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.139 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.141 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.141 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.141 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.150 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.150 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 66
+08:47:00.151 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.151 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.153 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.153 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.154 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.163 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.164 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 67
+08:47:00.164 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.164 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.170 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.171 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.171 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.176 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.177 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 68
+08:47:00.177 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.177 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.179 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.179 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.179 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.184 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.184 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 69
+08:47:00.184 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.185 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.187 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.187 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.187 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.192 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.192 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 70
+08:47:00.192 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.192 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.196 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.196 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.197 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.203 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.204 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 71
+08:47:00.204 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.204 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.206 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.206 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.206 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.212 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.212 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 72
+08:47:00.212 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.212 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.218 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.218 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.219 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.224 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.224 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 73
+08:47:00.224 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.224 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.226 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.226 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.226 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.231 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.231 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 74
+08:47:00.231 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.231 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.234 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.235 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.235 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.240 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.240 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 75
+08:47:00.240 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.240 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.242 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.242 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.242 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.248 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.248 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 76
+08:47:00.248 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.248 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.250 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.250 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.250 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.256 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.256 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 77
+08:47:00.256 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.256 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.258 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.258 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.258 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.263 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.263 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 78
+08:47:00.263 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.263 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.265 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1439)] -----------------------------------------------
+08:47:00.265 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1440)] 新增 修改 : T_00_0001 (Start)
+08:47:00.265 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1441)] 方法名稱 : Create_Update__T_00_0001
+08:47:00.270 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1465)] Table : T_01_0004
+08:47:00.270 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1466)] 流水號 : 79
+08:47:00.271 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1467)] 新增 修改 : T_00_0001 (End)
+08:47:00.271 INFO  [main][Lotto_Impl_1.Create_Update__T_00_0001(Lotto_Impl_1.java:1468)] -----------------------------------------------
+08:47:00.336 INFO  [main][Lotto_Impl_1.Create__T_01_0004(Lotto_Impl_1.java:1822)] 新增 : T_01_0004 (End)
+08:47:00.336 INFO  [main][Lotto_Impl_1.Create__T_01_0004(Lotto_Impl_1.java:1823)] -----------------------------------------------
+08:47:00.356 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+08:47:00.357 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+08:47:00.365 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+08:52:18.389 INFO  [main][SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration(AbstractTestContextBootstrapper.java:305)] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Lotto_Project.LottoProjectApplicationTests], using SpringBootContextLoader
+08:52:18.394 INFO  [main][AbstractContextLoader.generateDefaultLocations(AbstractContextLoader.java:264)] Could not detect default resource locations for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+08:52:18.394 INFO  [main][AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(AnnotationConfigContextLoaderUtils.java:83)] Could not detect default configuration classes for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: LottoProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:52:18.468 INFO  [main][SpringBootTestContextBootstrapper.getOrFindConfigurationClasses(SpringBootTestContextBootstrapper.java:238)] Found @SpringBootConfiguration com.example.Lotto_Project.LottoProjectApplication for test class com.example.Lotto_Project.LottoProjectApplicationTests
+08:52:18.548 INFO  [main][SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:245)] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:52:18.559 INFO  [main][SpringBootTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:174)] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27a5328c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e5f4170, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c345c5f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5966e1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65e61854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1568159, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4fcee388, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f9879ac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37f21974, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f4d427e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e521c1e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@224b4d61]
+08:52:18.797 INFO  [main][LottoProjectApplicationTests.logStarting(StartupInfoLogger.java:55)] Starting LottoProjectApplicationTests using Java 17.0.10 on LAPTOP-FFEFJF33 with PID 16436 (started by fansy_w1161jp in D:\SpringBoot\WorkSpace\Demo_20240513\Lotto_Project)
+08:52:18.798 INFO  [main][LottoProjectApplicationTests.logStartupProfileInfo(SpringApplication.java:631)] No active profile set, falling back to 1 default profile: "default"
+08:52:19.249 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:52:19.310 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 55 ms. Found 10 JPA repository interfaces.
+08:52:19.730 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+08:52:19.880 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+08:52:19.926 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+08:52:19.981 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.14.Final
+08:52:20.131 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08:52:20.267 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+08:52:20.764 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:52:20.770 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:52:21.521 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:52:21.951 INFO  [main][LottoProjectApplicationTests.logStarted(StartupInfoLogger.java:61)] Started LottoProjectApplicationTests in 3.358 seconds (JVM running for 4.27)
+08:52:22.115 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1248)] -----------------------------------------------
+08:52:22.116 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1249)] 新增 : T_02_0001 (Start)
+08:52:22.116 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1250)] 方法名稱 : Create__T_02_0001
+08:52:22.235 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1332)] 所選號碼數量有誤
+08:52:22.514 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+08:52:22.518 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+08:52:22.529 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.
+08:53:01.170 INFO  [main][SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration(AbstractTestContextBootstrapper.java:305)] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Lotto_Project.LottoProjectApplicationTests], using SpringBootContextLoader
+08:53:01.176 INFO  [main][AbstractContextLoader.generateDefaultLocations(AbstractContextLoader.java:264)] Could not detect default resource locations for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+08:53:01.176 INFO  [main][AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(AnnotationConfigContextLoaderUtils.java:83)] Could not detect default configuration classes for test class [com.example.Lotto_Project.LottoProjectApplicationTests]: LottoProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:53:01.258 INFO  [main][SpringBootTestContextBootstrapper.getOrFindConfigurationClasses(SpringBootTestContextBootstrapper.java:238)] Found @SpringBootConfiguration com.example.Lotto_Project.LottoProjectApplication for test class com.example.Lotto_Project.LottoProjectApplicationTests
+08:53:01.343 INFO  [main][SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:245)] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:53:01.357 INFO  [main][SpringBootTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:174)] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@841e575, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27a5328c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e5f4170, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c345c5f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5966e1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65e61854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1568159, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4fcee388, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f80fafe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3af17be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@f9879ac, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37f21974, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f4d427e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e521c1e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@224b4d61]
+08:53:01.632 INFO  [main][LottoProjectApplicationTests.logStarting(StartupInfoLogger.java:55)] Starting LottoProjectApplicationTests using Java 17.0.10 on LAPTOP-FFEFJF33 with PID 4264 (started by fansy_w1161jp in D:\SpringBoot\WorkSpace\Demo_20240513\Lotto_Project)
+08:53:01.633 INFO  [main][LottoProjectApplicationTests.logStartupProfileInfo(SpringApplication.java:631)] No active profile set, falling back to 1 default profile: "default"
+08:53:02.096 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:132)] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:53:02.159 INFO  [main][RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:201)] Finished Spring Data repository scanning in 56 ms. Found 10 JPA repository interfaces.
+08:53:02.633 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:110)] HikariPool-1 - Starting...
+08:53:02.786 INFO  [main][HikariDataSource.getConnection(HikariDataSource.java:123)] HikariPool-1 - Start completed.
+08:53:02.843 INFO  [main][LogHelper.logPersistenceUnitInformation(LogHelper.java:31)] HHH000204: Processing PersistenceUnitInfo [name: default]
+08:53:02.889 INFO  [main][Version.logVersion(Version.java:44)] HHH000412: Hibernate ORM core version 5.6.14.Final
+08:53:03.051 INFO  [main][Version.<clinit>(JavaReflectionManager.java:56)] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08:53:03.186 INFO  [main][Dialect.<init>(Dialect.java:175)] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+08:53:03.722 INFO  [main][JtaPlatformInitiator.initiateService(JtaPlatformInitiator.java:52)] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:53:03.729 INFO  [main][LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:437)] Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:53:04.525 WARN  [main][JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219)] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:53:04.978 INFO  [main][LottoProjectApplicationTests.logStarted(StartupInfoLogger.java:61)] Started LottoProjectApplicationTests in 3.581 seconds (JVM running for 4.528)
+08:53:05.140 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1248)] -----------------------------------------------
+08:53:05.141 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1249)] 新增 : T_02_0001 (Start)
+08:53:05.141 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1250)] 方法名稱 : Create__T_02_0001
+08:53:05.376 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1396)] 新增 : T_02_0001 (End)
+08:53:05.377 INFO  [main][Lotto_Impl_1.Create__T_02_0001__T_02_0002(Lotto_Impl_1.java:1397)] -----------------------------------------------
+08:53:05.403 INFO  [SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean.destroy(AbstractEntityManagerFactoryBean.java:651)] Closing JPA EntityManagerFactory for persistence unit 'default'
+08:53:05.405 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:350)] HikariPool-1 - Shutdown initiated...
+08:53:05.412 INFO  [SpringApplicationShutdownHook][HikariDataSource.close(HikariDataSource.java:352)] HikariPool-1 - Shutdown completed.

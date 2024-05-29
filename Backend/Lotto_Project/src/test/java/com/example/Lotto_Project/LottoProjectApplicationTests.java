@@ -52,6 +52,8 @@ class LottoProjectApplicationTests {
 		System.out.println("test : " + test.size());
 	}
 
+	// ==========================================================================
+	// T_01_0001
 	// -----------------------------------------------
 	// "新增" - T_01_0001
 	@Test
@@ -110,6 +112,8 @@ class LottoProjectApplicationTests {
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
+	// ==========================================================================
+	// T_01_0002
 	// -----------------------------------------------
 	// "新增" - T_01_0002
 	@Test
@@ -174,6 +178,8 @@ class LottoProjectApplicationTests {
 
 	}
 
+	// ==========================================================================
+	// T_01_0003
 	// -----------------------------------------------
 	// "新增" - T_01_0003
 	@Test
@@ -245,18 +251,13 @@ class LottoProjectApplicationTests {
 		System.out.println("資料長度 : " + res.getT_01_0003_List().size());
 	}
 
+	// ==========================================================================
+	// T_01_0005
 	// -----------------------------------------------
-	// "新增"(C) - T_01_0005、T_01_0004 (排程)
+	// "新增"(C) - T_01_0005 (排程)
 	@Test
 	public void Create__T_01_0005() {
 		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0005();
-		System.out.println("訊息 : " + res.getRtn_Message());
-	}
-
-	// "新增"(C) - T_01_0005、T_01_0004 (排程)
-	@Test
-	public void Create__T_01_0004() {
-		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004();
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
@@ -286,6 +287,16 @@ class LottoProjectApplicationTests {
 		System.out.println("資料長度 : " + t_01_0005_List.size());
 	}
 
+	// ==========================================================================
+	// T_01_0004
+	// -----------------------------------------------
+	// "新增"(C) - T_01_0004 (排程)
+	@Test
+	public void Create__T_01_0004() {
+		Lotto_Res_1 res = lotto_Service_1.Create__T_01_0004();
+		System.out.println("訊息 : " + res.getRtn_Message());
+	}
+
 	// -----------------------------------------------
 	// "查詢" - T_01_0004 - 1
 	@Test
@@ -308,6 +319,8 @@ class LottoProjectApplicationTests {
 		System.out.println("資料長度 : " + t_01_0004_List.size());
 	}
 
+	// ==========================================================================
+	// T_03_0001
 	// -----------------------------------------------
 	// "新增"(C) - T_03_0001 Ps. 註冊
 	@Test
@@ -350,18 +363,20 @@ class LottoProjectApplicationTests {
 		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
+	// ==========================================================================
+	// T_02_0001、T_02_0002
 	// -----------------------------------------------
 	// "新增"(C) - T_02_0001、T_02_0002 Ps. 買樂透
 	@Test
 	public void Create__T_02_0001__T_02_0002() {
 		Lotto_Req_1 req = new Lotto_Req_1();
-		String[] numberArray_1 = { "01", "02", "03", "04", "05", "06" };
-		String[] numberArray_2 = { "07", "08", "09", "10", "11", "12" };
-		String[] numberArray_3 = {};
-		Box_1 box1 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_1, "", "B");
-		Box_1 box2 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_2, "", "B");
-		Box_1 box3 = new Box_1("fa460a65-001c-425f-9a38-a201084ad5fa", numberArray_3, "", "A");
-		List<Box_1> box_List = Arrays.asList(box1, box3);
+		List<String> numberArray_1 = Arrays.asList("01", "02", "03", "04", "05", "06");
+		List<String> numberArray_2 = Arrays.asList("07", "08", "09", "10", "11", "12");
+		List<String> numberArray_3 = Arrays.asList("");
+		Box_1 box1 = new Box_1("561646c0-5dd2-4d91-ab68-dcb864a16a2a", numberArray_1, "", "B");
+		Box_1 box2 = new Box_1("561646c0-5dd2-4d91-ab68-dcb864a16a2a", numberArray_2, "", "B");
+		Box_1 box3 = new Box_1("561646c0-5dd2-4d91-ab68-dcb864a16a2a", numberArray_3, "", "A");
+		List<Box_1> box_List = Arrays.asList(box1, box2, box3);
 		req.setUserAcount("E125...");
 		req.setListBox_1(box_List);
 		Lotto_Res_1 res = lotto_Service_1.Create__T_02_0001__T_02_0002(req);
@@ -381,8 +396,11 @@ class LottoProjectApplicationTests {
 			}
 			System.out.println("============================================");
 		}
+		System.out.println("訊息 : " + res.getRtn_Message());
 	}
 
+	// ==========================================================================
+	// 其他
 	// -----------------------------------------------
 	@Test
 	public void Search_1() {

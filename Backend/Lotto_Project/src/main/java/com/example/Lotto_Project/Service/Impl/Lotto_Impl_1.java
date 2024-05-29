@@ -1261,8 +1261,8 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		String rtn_Code_1 = Lotto_RtnCode_1.SUCCESSFUL.getCode();
 		String rtn_Message_2 = Lotto_RtnCode_1.ERROR_DATA.getMessage();
 		String rtn_Code_2 = Lotto_RtnCode_1.ERROR_DATA.getCode();
-		String rtn_Message_4 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
-		String rtn_Code_4 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
+		String rtn_Message_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getMessage();
+		String rtn_Code_3 = Lotto_RtnCode_1.NOT_FOUND_DATA.getCode();
 		// 代碼_表名
 		String T_02_0001_table_name = Lotto_RtnCode_2.T_02_0001.getTable_name();
 		String T_02_0002_table_name = Lotto_RtnCode_2.T_02_0002.getTable_name();
@@ -1295,11 +1295,11 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 		if (!t_03_0001_O.isPresent()) {
 			_logger.info("帳號錯誤(嘗試重新登入)");
 			_logger.info("帳號 : " + userAccount);
-			return new Lotto_Res_1(rtn_Message_4, rtn_Code_4, t_03_0001, false);
+			return new Lotto_Res_1(rtn_Message_3, rtn_Code_3, t_03_0001, false);
 		}
 		for (Box_1 item : listBox_1) {
 			UUID t_01_0005__t_uuid_1 = UUID.fromString(item.getT_01_0005__t_uuid_1());
-			String[] numberArray = item.getNumberArray();
+			List<String> numberList = item.getNumberList();
 			String numberSelectionMethod = item.getNumberSelectionMethod();
 			T_01_0002 t_01_0002__1 = new T_01_0002();
 			T_01_0002 t_01_0002__2 = new T_01_0002();
@@ -1328,7 +1328,11 @@ public class Lotto_Impl_1 implements Lotto_Service_1 {
 			}
 			// 判斷選號方式 B (手選)
 			if (t_01_0002__1.getTableCode2().equals(t_01_0002__06_B)) {
-				for (String number : numberArray) {
+				if (numberList.size() != t_01_0003.getSelectTotalNumbers()) {
+					_logger.info("所選號碼數量有誤");
+					return new Lotto_Res_1(rtn_Message_2, rtn_Code_2);
+				}
+				for (String number : numberList) {
 					while (true) {
 						UUID uuid = UUID.randomUUID();
 						UUID t_02_0001__t_uuid_1 = t_02_0001.getTableUuid1();
